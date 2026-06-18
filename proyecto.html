@@ -35,10 +35,15 @@ body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
 .nav-links a{ color:var(--blanco);text-decoration:none;font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65; transition:background .25s,opacity .25s;white-space:nowrap; }
 .nav-links a:hover{background:rgba(102,34,29,.35);opacity:1;}
 .nav-links a.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
-.nav-inicio-btn{ display:flex;align-items:center;gap:7px; color:var(--blanco);font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65;background:none;border:none; font-family:'Carter One',cursive;cursor:pointer; transition:background .25s,opacity .25s;white-space:nowrap; }
-.nav-inicio-btn:hover{background:rgba(102,34,29,.35);opacity:1;}
+
+.nav-inicio-container { position: relative; }
+.nav-inicio-btn{ display:flex;align-items:center;gap:7px; color:var(--blanco);text-decoration:none;font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65;background:none;border:none; font-family:'Carter One',cursive;cursor:pointer; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-inicio-btn:hover{background:rgba(102,34,29,.35);opacity:1;text-decoration:none;}
+.nav-inicio-btn.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+
 .chevron{ display:inline-block;width:7px;height:7px; border-right:2px solid currentColor;border-bottom:2px solid currentColor; transform:rotate(45deg);transition:transform .35s var(--ease); margin-top:-2px;flex-shrink:0; }
 .chevron.up{transform:rotate(-135deg);margin-top:2px;}
+
 .nav-sub{ width:90%;max-width:1200px; background:var(--surface); border:1px solid var(--b-blue);border-top:none; box-shadow:0 0 0 1px var(--b-red),0 16px 32px rgba(0,0,0,.6); border-radius:0 0 16px 16px; display:flex;align-items:center;justify-content:center; gap:8px; pointer-events:auto; max-height:0;overflow:hidden;opacity:0;padding:0 24px; transition:max-height .4s var(--ease),opacity .35s var(--ease),padding .4s var(--ease); }
 .nav-sub.open{max-height:100px;opacity:1;padding:14px 24px;}
 .nav-sub a{ color:var(--blanco);text-decoration:none;font-size:.78rem; text-transform:uppercase;letter-spacing:1px;padding:9px 18px; border-radius:9px;opacity:.6; transition:background .25s,opacity .25s;white-space:nowrap; }
@@ -56,8 +61,8 @@ body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
     .nav-mob-close::before,.nav-mob-close::after{content:'';position:absolute;width:14px;height:2px;background:white;transform:rotate(45deg);} 
     .nav-mob-close::after{transform:rotate(-45deg);} 
     .nav-mob-logo{height:30px;margin-bottom:12px;} 
-    .nav-mob-panel a.mob-page-link, .nav-mob-panel button.mob-inicio-btn{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.95rem; text-transform:uppercase;letter-spacing:1px;padding:10px 16px; border-radius:10px;opacity:.7; transition:background .25s,opacity .25s; background:none;border:none;font-family:'Carter One',cursive;cursor:pointer; display:flex;align-items:center;justify-content:center;gap:7px; } 
-    .nav-mob-panel a.mob-page-link:hover, .nav-mob-panel button.mob-inicio-btn:hover{background:rgba(102,34,29,.35);opacity:1;} 
+    .nav-mob-panel a.mob-page-link, .nav-mob-panel a.mob-inicio-btn{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.95rem; text-transform:uppercase;letter-spacing:1px;padding:10px 16px; border-radius:10px;opacity:.7; transition:background .25s,opacity .25s; background:none;font-family:'Carter One',cursive;cursor:pointer; display:flex;align-items:center;justify-content:center;gap:7px; } 
+    .nav-mob-panel a.mob-page-link:hover, .nav-mob-panel a.mob-inicio-btn:hover{background:rgba(102,34,29,.35);opacity:1;text-decoration:none;} 
     .nav-mob-sub{ width:100%; overflow:hidden;max-height:0;opacity:0; transition:max-height .4s var(--ease),opacity .3s var(--ease); display:flex;flex-direction:column;gap:2px; background:rgba(33,38,67,.12); border-radius:10px; padding:0 6px; } 
     .nav-mob-sub.open{max-height:280px;opacity:1;padding:6px;} 
     .nav-mob-sub a{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.85rem; text-transform:uppercase;letter-spacing:1px;padding:9px 12px; border-radius:8px;opacity:.65; } 
@@ -69,10 +74,8 @@ body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
 section{padding:180px 5% 100px;max-width:1200px;margin:0 auto;}
 .page-title{font-size:clamp(3rem,8vw,5rem);text-transform:uppercase;margin-bottom:80px;}
 
-/* 1. MODELO 3D */
 model-viewer{width:100%;height:500px;background:transparent;margin-bottom:100px;}
 
-/* 2. FASES (Responsive) */
 .fases-container{display:flex;flex-direction:column;gap:40px;margin-bottom:100px;}
 .fase-item{display:flex;align-items:center;justify-content:space-between;background:var(--surface);padding:30px;border-radius:16px;border:1px solid var(--b-blue);}
 .fase-info{text-align:left;flex:1;padding-right:20px;}
@@ -86,7 +89,6 @@ model-viewer{width:100%;height:500px;background:transparent;margin-bottom:100px;
     .fase-img{width:100%; height:200px;}
 }
 
-/* 3. TESTIMONIOS (Responsive) */
 .testimonio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:100px;}
 .testimonio-card{background:var(--surface);padding:40px;border-radius:16px;border:1px solid var(--b-blue);}
 .testimonio-card p{font-style:italic;margin-bottom:15px;}
@@ -95,7 +97,6 @@ model-viewer{width:100%;height:500px;background:transparent;margin-bottom:100px;
     .testimonio-grid{grid-template-columns:1fr;}
 }
 
-/* 4. FOTOS COCHE (Responsive - Ajustado a 16:9) */
 .fotos-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-bottom:100px;}
 .foto-box{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:var(--surface);border-radius:8px;overflow:hidden;}
 .foto-box img{width:100%;height:100%;object-fit:cover;}
@@ -104,7 +105,6 @@ model-viewer{width:100%;height:500px;background:transparent;margin-bottom:100px;
     .fotos-grid{grid-template-columns:repeat(2,1fr);}
 }
 
-/* --- FOOTER --- */
 footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 1px 0 var(--b-red);padding:80px 8% 40px;text-align:left;color:var(--blanco);}
 .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1200px;margin:0 auto;align-items:start;}
 .footer-col h4{text-transform:uppercase;font-size:1.1rem;margin-bottom:25px;letter-spacing:1px;}
@@ -122,10 +122,14 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     <nav class="nav-main" id="navMain">
         <img src="Logonegativo.png" alt="Logo" class="nav-logo">
         <div class="nav-links">
-            <a href="index.html" class="nav-inicio-btn" id="inicioBtn">Inicio <span class="chevron" id="chevron"></span></a>
+            <div class="nav-inicio-container" id="inicioContainer">
+                <a href="index.html" class="nav-inicio-btn" id="inicioBtn">Inicio <span class="chevron" id="chevron"></span></a>
+            </div>
             <a href="proyecto.html" class="page-active">Proyecto</a>
             <a href="competiciones.html">Competiciones</a>
-            <a href="equipo.html">Equipo</a>
+            <div class="nav-inicio-container" id="equipoContainer">
+                <a href="equipo.html" class="nav-inicio-btn" id="equipoBtn">Equipo <span class="chevron" id="equipoChevron"></span></a>
+            </div>
         </div>
     </nav>
     <nav class="nav-sub" id="navSub">
@@ -133,6 +137,10 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
         <a href="index.html#coche-sec">Coche</a>
         <a href="index.html#donar">Impulsa</a>
         <a href="index.html#patrocinadores">Patrocinadores</a>
+    </nav>
+    <nav class="nav-sub" id="navSubEquipo">
+        <a href="columbaracing.html">Columba Racing</a>
+        <a href="laquimiaracing.html">Laquimia Racing</a>
     </nav>
 </div>
 
@@ -143,31 +151,28 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
 <div class="nav-mob-panel" id="mobPanel">
     <div class="nav-mob-close" id="mobClose"></div>
     <img src="Logonegativo.png" alt="Logo" class="nav-mob-logo">
-    <button class="mob-inicio-btn" id="mobInicioBtn">Inicio <span class="chevron" id="mobChevron"></span></button>
+    
+    <a href="index.html" class="mob-inicio-btn" id="mobInicioBtn">Inicio <span class="chevron" id="mobChevron"></span></a>
     <div class="nav-mob-sub" id="mobSub">
         <a href="index.html#nosotros">Nosotros</a>
         <a href="index.html#coche-sec">Coche</a>
         <a href="index.html#donar">Impulsa</a>
         <a href="index.html#patrocinadores">Patrocinadores</a>
     </div>
+
     <a href="proyecto.html" class="mob-page-link page-active">Proyecto</a>
     <a href="competiciones.html" class="mob-page-link">Competiciones</a>
-    <a href="equipo.html" class="mob-page-link">Equipo</a>
+    
+    <a href="equipo.html" class="mob-inicio-btn" id="mobEquipoBtn">Equipo <span class="chevron" id="mobEquipoChevron"></span></a>
+    <div class="nav-mob-sub" id="mobSubEquipo">
+        <a href="columbaracing.html">Columba Racing</a>
+        <a href="laquimiaracing.html">Laquimia Racing</a>
+    </div>
 </div>
 
 <section>
     <h1 class="page-title">Proyecto</h1>
-
-    <model-viewer 
-        src="Coche2025.glb" 
-        alt="Modelo 3D Coche 2025" 
-        auto-rotate 
-        camera-controls 
-        shadow-intensity="1"
-        camera-orbit="0deg 180deg 0.01m" 
-        camera-target="10m 50m 0m">
-    </model-viewer>
-
+    <model-viewer src="Coche2025.glb" alt="Modelo 3D Coche 2025" auto-rotate camera-controls shadow-intensity="1" camera-orbit="0deg 180deg 0.01m" camera-target="10m 50m 0m"></model-viewer>
     <div class="fases-container">
         <div class="fase-item">
             <div class="fase-info"><h3>Fase 1: Diseño</h3><p>Descripción técnica de la fase de diseño.</p></div>
@@ -182,13 +187,11 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
             <img src="fase3.jpg" class="fase-img">
         </div>
     </div>
-
     <div class="testimonio-grid">
         <div class="testimonio-card"><p>"Proyecto de alta ingeniería."</p><strong>- Testimonio 1</strong></div>
         <div class="testimonio-card"><p>"Innovación constante."</p><strong>- Testimonio 2</strong></div>
         <div class="testimonio-card"><p>"Resultados impecables."</p><strong>- Testimonio 3</strong></div>
     </div>
-
     <div class="fotos-grid">
         <div class="foto-box"><img src="foto1.jpg"></div>
         <div class="foto-box"><img src="foto2.jpg"></div>
@@ -221,18 +224,42 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     const navSub = document.getElementById('navSub');
     const navMain = document.getElementById('navMain');
     const chevron = document.getElementById('chevron');
+    const inicioContainer = document.getElementById('inicioContainer');
+    let timer;
 
-    inicioBtn.addEventListener('mouseenter', () => { navSub.classList.add('open'); navMain.classList.add('sub-open'); chevron.classList.add('up'); });
-    navSub.addEventListener('mouseenter', () => { navSub.classList.add('open'); navMain.classList.add('sub-open'); chevron.classList.add('up'); });
-    inicioBtn.addEventListener('mouseleave', () => { setTimeout(() => { if (!navSub.matches(':hover')) { navSub.classList.remove('open'); navMain.classList.remove('sub-open'); chevron.classList.remove('up'); } }, 50); });
-    navSub.addEventListener('mouseleave', () => { navSub.classList.remove('open'); navMain.classList.remove('sub-open'); chevron.classList.remove('up'); });
+    const equipoBtn = document.getElementById('equipoBtn');
+    const navSubEquipo = document.getElementById('navSubEquipo');
+    const equipoChevron = document.getElementById('equipoChevron');
+    const equipoContainer = document.getElementById('equipoContainer');
+    let timerEquipo;
 
-    const mobPill = document.getElementById('mobPill'), mobPanel = document.getElementById('mobPanel'), mobClose = document.getElementById('mobClose'), mobOverlay = document.getElementById('mobOverlay'), mobInicioBtn = document.getElementById('mobInicioBtn'), mobSub = document.getElementById('mobSub'), mobChevron = document.getElementById('mobChevron');
+    function openSub() { clearTimeout(timer); navSub.classList.add('open'); navMain.classList.add('sub-open'); chevron.classList.add('up'); }
+    function closeSub() { timer = setTimeout(() => { if (!navSub.matches(':hover') && !inicioContainer.matches(':hover')) { navSub.classList.remove('open'); if(!navSubEquipo.classList.contains('open')) navMain.classList.remove('sub-open'); chevron.classList.remove('up'); } }, 300); }
+    function openSubEquipo() { clearTimeout(timerEquipo); navSubEquipo.classList.add('open'); navMain.classList.add('sub-open'); equipoChevron.classList.add('up'); }
+    function closeSubEquipo() { timerEquipo = setTimeout(() => { if (!navSubEquipo.matches(':hover') && !equipoContainer.matches(':hover')) { navSubEquipo.classList.remove('open'); if(!navSub.classList.contains('open')) navMain.classList.remove('sub-open'); equipoChevron.classList.remove('up'); } }, 300); }
+
+    inicioBtn.addEventListener('mouseenter', openSub);
+    inicioContainer.addEventListener('mouseleave', closeSub);
+    navSub.addEventListener('mouseenter', openSub);
+    navSub.addEventListener('mouseleave', closeSub);
+
+    equipoBtn.addEventListener('mouseenter', openSubEquipo);
+    equipoContainer.addEventListener('mouseleave', closeSubEquipo);
+    navSubEquipo.addEventListener('mouseenter', openSubEquipo);
+    navSubEquipo.addEventListener('mouseleave', closeSubEquipo);
+
+    const mobPill = document.getElementById('mobPill'), mobPanel = document.getElementById('mobPanel'), mobClose = document.getElementById('mobClose'), mobOverlay = document.getElementById('mobOverlay'), mobInicioBtn = document.getElementById('mobInicioBtn'), mobSub = document.getElementById('mobSub'), mobChevron = document.getElementById('mobChevron'), mobEquipoBtn = document.getElementById('mobEquipoBtn'), mobSubEquipo = document.getElementById('mobSubEquipo'), mobEquipoChevron = document.getElementById('mobEquipoChevron');
+    
     mobPill.addEventListener('click', () => { mobPanel.classList.add('open'); mobOverlay.classList.add('open'); });
     const closeNav = () => { mobPanel.classList.remove('open'); mobOverlay.classList.remove('open'); };
     mobClose.addEventListener('click', closeNav); mobOverlay.addEventListener('click', closeNav);
-    mobInicioBtn.addEventListener('click', () => { mobSub.classList.toggle('open'); mobChevron.classList.toggle('up'); });
+    
+    mobInicioBtn.addEventListener('click', (e) => {
+        if(e.target === mobChevron) { e.preventDefault(); mobSub.classList.toggle('open'); mobChevron.classList.toggle('up'); }
+    });
+    mobEquipoBtn.addEventListener('click', (e) => {
+        if(e.target === mobEquipoChevron) { e.preventDefault(); mobSubEquipo.classList.toggle('open'); mobEquipoChevron.classList.toggle('up'); }
+    });
 </script>
-
 </body>
 </html>

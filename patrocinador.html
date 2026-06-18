@@ -82,16 +82,22 @@ body {
     box-shadow: 0 0 0 1px var(--b-red);
 }
 .nav-inicio-container { position: relative; }
-.nav-inicio-btn {
+.nav-inicio-link {
     display: flex; align-items: center; gap: 7px;
-    color: var(--blanco); font-size: .82rem;
+    color: var(--blanco); text-decoration: none; font-size: .82rem;
     text-transform: uppercase; letter-spacing: 1px; padding: 9px 16px;
-    border-radius: 10px; opacity: .65; background: none; border: none;
-    font-family: 'Carter One', cursive; cursor: pointer;
-    text-decoration: none;
-    transition: background .25s, opacity .25s; white-space: nowrap;
+    border-radius: 10px; opacity: .65;
+    transition: background .25s, opacity .25s; white-space: nowrap; cursor: pointer;
 }
-.nav-inicio-btn:hover { background: rgba(102,34,29,.35); opacity: 1; }
+.nav-inicio-link:hover { background: rgba(102,34,29,.35); opacity: 1; }
+.nav-inicio-link.page-active {
+    background: var(--principal); opacity: 1;
+    box-shadow: 0 0 0 1px var(--b-blue);
+}
+.nav-inicio-link.page-active:hover {
+    background: var(--secundario);
+    box-shadow: 0 0 0 1px var(--b-red);
+}
 .chevron {
     display: inline-block; width: 7px; height: 7px;
     border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
@@ -118,6 +124,8 @@ body {
     transition: background .25s, opacity .25s; white-space: nowrap;
 }
 .nav-sub a:hover { background: rgba(102,34,29,.35); opacity: 1; }
+.nav-sub a.section-active { background: var(--principal); opacity: 1; box-shadow: 0 0 0 1px var(--b-blue); }
+.nav-sub a.section-active:hover { background: var(--secundario); box-shadow: 0 0 0 1px var(--b-red); }
 
 /* ========================
    NAVEGACIÓN — MÓVIL
@@ -181,19 +189,19 @@ body {
     .nav-mob-logo { height: 30px; margin-bottom: 12px; }
 
     .nav-mob-panel a.mob-page-link,
-    .nav-mob-panel a.mob-inicio-btn {
+    .nav-mob-panel a.mob-inicio-link {
         width: 100%; text-align: center;
         color: var(--blanco); text-decoration: none; font-size: .95rem;
         text-transform: uppercase; letter-spacing: 1px; padding: 10px 16px;
         border-radius: 10px; opacity: .7;
         transition: background .25s, opacity .25s;
-        background: none; border: none; font-family: 'Carter One', cursive;
+        background: none; font-family: 'Carter One', cursive;
         cursor: pointer; display: flex; align-items: center;
         justify-content: center; gap: 7px;
     }
 
     .nav-mob-panel a.mob-page-link:hover,
-    .nav-mob-panel a.mob-inicio-btn:hover {
+    .nav-mob-panel a.mob-inicio-link:hover {
         background: rgba(102,34,29,.35); opacity: 1;
     }
 
@@ -203,6 +211,16 @@ body {
     }
 
     .nav-mob-panel a.mob-page-link.page-active:hover {
+        background: var(--secundario);
+        box-shadow: 0 0 0 1px var(--b-red);
+    }
+
+    .nav-mob-panel a.mob-inicio-link.page-active {
+        background: var(--principal); opacity: 1;
+        box-shadow: 0 0 0 1px var(--b-blue);
+    }
+
+    .nav-mob-panel a.mob-inicio-link.page-active:hover {
         background: var(--secundario);
         box-shadow: 0 0 0 1px var(--b-red);
     }
@@ -225,6 +243,9 @@ body {
     }
 
     .nav-mob-sub a:hover { background: rgba(102,34,29,.35); opacity: 1; }
+
+    .nav-mob-sub a.section-active { background: var(--principal); opacity: 1; box-shadow: 0 0 0 1px var(--b-blue); }
+    .nav-mob-sub a.section-active:hover { background: var(--secundario); box-shadow: 0 0 0 1px var(--b-red); }
 
     .nav-mob-overlay {
         position: fixed; inset: 0; z-index: 4999;
@@ -634,40 +655,57 @@ footer {
 
 <body>
 
-<!-- NAVEGACIÓN DESKTOP -->
+<!-- ========================
+     NAVEGACIÓN — DESKTOP
+======================== -->
 <div class="nav-wrap">
     <nav class="nav-main" id="navMain">
-        <img src="Logonegativo.png" alt="Logo Astra Racing" class="nav-logo">
+        <img src="Logonegativo.png" alt="Logo" class="nav-logo">
         <div class="nav-links">
             <div class="nav-inicio-container" id="inicioContainer">
-                <a href="index.html" class="nav-inicio-btn" id="inicioBtn">
+                <a href="index.html" class="nav-inicio-link" id="inicioBtn">
                     Inicio <span class="chevron" id="chevron"></span>
                 </a>
             </div>
             <a href="proyecto.html">Proyecto</a>
             <a href="competiciones.html">Competiciones</a>
-            <a href="equipo.html">Equipo</a>
+            <div class="nav-inicio-container" id="equipoContainer">
+                <a href="equipo.html" class="nav-inicio-link" id="equipoBtn">
+                    Equipo <span class="chevron" id="equipoChevron"></span>
+                </a>
+            </div>
         </div>
     </nav>
+    <!-- Submenú Inicio -->
     <nav class="nav-sub" id="navSub">
         <a href="index.html#nosotros">Nosotros</a>
         <a href="index.html#coche-sec">Coche</a>
         <a href="index.html#donar">Impulsa</a>
         <a href="index.html#patrocinadores">Patrocinadores</a>
     </nav>
+    <!-- Submenú Equipo -->
+    <nav class="nav-sub" id="navSubEquipo">
+        <a href="columbaracing.html">Columba Racing</a>
+        <a href="laquimiaracing.html">Laquimia Racing</a>
+    </nav>
 </div>
 
-<!-- NAVEGACIÓN MÓVIL -->
+<!-- ========================
+     NAVEGACIÓN — MÓVIL
+======================== -->
 <div class="nav-mob-overlay" id="mobOverlay"></div>
+
 <div class="nav-mob-pill" id="mobPill">
     <div class="menu-toggle">
         <span id="ms1"></span><span id="ms2"></span><span id="ms3"></span>
     </div>
 </div>
+
 <div class="nav-mob-panel" id="mobPanel">
     <div class="nav-mob-close" id="mobClose"></div>
-    <img src="Logonegativo.png" alt="Logo Astra Racing" class="nav-mob-logo">
-    <a href="index.html" class="mob-inicio-btn" id="mobInicioBtn">
+    <img src="Logonegativo.png" alt="Logo" class="nav-mob-logo">
+
+    <a href="index.html" class="mob-inicio-link" id="mobInicioBtn">
         Inicio <span class="chevron" id="mobChevron"></span>
     </a>
     <div class="nav-mob-sub" id="mobSub">
@@ -676,9 +714,17 @@ footer {
         <a href="index.html#donar">Impulsa</a>
         <a href="index.html#patrocinadores">Patrocinadores</a>
     </div>
+
     <a href="proyecto.html" class="mob-page-link">Proyecto</a>
     <a href="competiciones.html" class="mob-page-link">Competiciones</a>
-    <a href="equipo.html" class="mob-page-link">Equipo</a>
+
+    <a href="equipo.html" class="mob-inicio-link" id="mobEquipoBtn">
+        Equipo <span class="chevron" id="mobEquipoChevron"></span>
+    </a>
+    <div class="nav-mob-sub" id="mobSubEquipo">
+        <a href="columbaracing.html">Columba Racing</a>
+        <a href="laquimiaracing.html">Laquimia Racing</a>
+    </div>
 </div>
 
 <!-- HERO -->
@@ -760,7 +806,7 @@ footer {
                 <li>Invitación para asistir a las competiciones del equipo</li>
             </ul>
         </div>
-        
+
         <p class="legal-text">*Todos los planes están sujetos a cambios según la disponibilidad y necesidades del equipo.</p>
     </div>
 
@@ -816,25 +862,33 @@ footer {
 </footer>
 
 <script>
+    /* ========================
+       DESKTOP — Submenú Inicio
+    ======================== */
     const inicioBtn       = document.getElementById('inicioBtn');
     const navSub          = document.getElementById('navSub');
     const navMain         = document.getElementById('navMain');
     const chevron         = document.getElementById('chevron');
     const inicioContainer = document.getElementById('inicioContainer');
-    let closeTimer;
+    let timer;
 
     function openSub() {
-        clearTimeout(closeTimer);
+        clearTimeout(timer);
+        // Cierra el de Equipo si está abierto
+        navSubEquipo.classList.remove('open');
+        equipoChevron.classList.remove('up');
         navSub.classList.add('open');
         navMain.classList.add('sub-open');
         chevron.classList.add('up');
     }
 
     function closeSub() {
-        closeTimer = setTimeout(() => {
+        timer = setTimeout(() => {
             if (!navSub.matches(':hover') && !inicioContainer.matches(':hover')) {
                 navSub.classList.remove('open');
-                navMain.classList.remove('sub-open');
+                if (!navSubEquipo.classList.contains('open')) {
+                    navMain.classList.remove('sub-open');
+                }
                 chevron.classList.remove('up');
             }
         }, 300);
@@ -845,41 +899,95 @@ footer {
     navSub.addEventListener('mouseenter', openSub);
     navSub.addEventListener('mouseleave', closeSub);
 
-    const mobPill      = document.getElementById('mobPill');
-    const mobPanel     = document.getElementById('mobPanel');
-    const mobClose     = document.getElementById('mobClose');
-    const mobOverlay   = document.getElementById('mobOverlay');
-    const mobInicioBtn = document.getElementById('mobInicioBtn');
-    const mobSub       = document.getElementById('mobSub');
-    const mobChevron   = document.getElementById('mobChevron');
+    /* ========================
+       DESKTOP — Submenú Equipo
+    ======================== */
+    const equipoBtn       = document.getElementById('equipoBtn');
+    const navSubEquipo    = document.getElementById('navSubEquipo');
+    const equipoChevron   = document.getElementById('equipoChevron');
+    const equipoContainer = document.getElementById('equipoContainer');
+    let timerEquipo;
+
+    function openSubEquipo() {
+        clearTimeout(timerEquipo);
+        // Cierra el de Inicio si está abierto
+        navSub.classList.remove('open');
+        chevron.classList.remove('up');
+        navSubEquipo.classList.add('open');
+        navMain.classList.add('sub-open');
+        equipoChevron.classList.add('up');
+    }
+
+    function closeSubEquipo() {
+        timerEquipo = setTimeout(() => {
+            if (!navSubEquipo.matches(':hover') && !equipoContainer.matches(':hover')) {
+                navSubEquipo.classList.remove('open');
+                if (!navSub.classList.contains('open')) {
+                    navMain.classList.remove('sub-open');
+                }
+                equipoChevron.classList.remove('up');
+            }
+        }, 300);
+    }
+
+    equipoBtn.addEventListener('mouseenter', openSubEquipo);
+    equipoContainer.addEventListener('mouseleave', closeSubEquipo);
+    navSubEquipo.addEventListener('mouseenter', openSubEquipo);
+    navSubEquipo.addEventListener('mouseleave', closeSubEquipo);
+
+    /* ========================
+       MÓVIL
+    ======================== */
+    const mobPill         = document.getElementById('mobPill');
+    const mobPanel        = document.getElementById('mobPanel');
+    const mobClose        = document.getElementById('mobClose');
+    const mobOverlay      = document.getElementById('mobOverlay');
+    const mobInicioBtn    = document.getElementById('mobInicioBtn');
+    const mobSub          = document.getElementById('mobSub');
+    const mobChevron      = document.getElementById('mobChevron');
+    const mobEquipoBtn    = document.getElementById('mobEquipoBtn');
+    const mobSubEquipo    = document.getElementById('mobSubEquipo');
+    const mobEquipoChevron = document.getElementById('mobEquipoChevron');
+
+    function toggleMobMenu() {
+        mobPanel.classList.toggle('open');
+        mobOverlay.classList.toggle('open');
+    }
 
     function closeMobMenu() {
         mobPanel.classList.remove('open');
         mobOverlay.classList.remove('open');
         mobSub.classList.remove('open');
         mobChevron.classList.remove('up');
+        mobSubEquipo.classList.remove('open');
+        mobEquipoChevron.classList.remove('up');
     }
 
-    mobPill.addEventListener('click', () => {
-        mobPanel.classList.toggle('open');
-        mobOverlay.classList.toggle('open');
-    });
-
+    mobPill.addEventListener('click', toggleMobMenu);
     mobClose.addEventListener('click', closeMobMenu);
     mobOverlay.addEventListener('click', closeMobMenu);
 
     mobInicioBtn.addEventListener('click', (e) => {
-        if (!mobSub.classList.contains('open')) {
-            e.preventDefault();
-            mobSub.classList.add('open');
-            mobChevron.classList.add('up');
-        }
+        if (e.target !== mobInicioBtn && e.target !== mobChevron) return;
+        e.preventDefault();
+        mobSub.classList.toggle('open');
+        mobChevron.classList.toggle('up');
+    });
+
+    mobEquipoBtn.addEventListener('click', (e) => {
+        if (e.target !== mobEquipoBtn && e.target !== mobEquipoChevron) return;
+        e.preventDefault();
+        mobSubEquipo.classList.toggle('open');
+        mobEquipoChevron.classList.toggle('up');
     });
 
     document.querySelectorAll('.mob-page-link, .nav-mob-sub a').forEach(link => {
         link.addEventListener('click', closeMobMenu);
     });
 
+    /* ========================
+       REVEAL ON SCROLL
+    ======================== */
     const reveals = document.querySelectorAll('.reveal');
     function checkReveal() {
         const wh = window.innerHeight;
