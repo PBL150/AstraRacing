@@ -24,6 +24,23 @@
 html{scroll-behavior:smooth;background:var(--bg-deep);-webkit-font-smoothing:antialiased;}
 body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
 
+/* --- ESTILO BOTÓN DESCARGA --- */
+.download-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--secundario);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: background .3s var(--ease), transform .2s ease;
+    border: 1px solid var(--b-blue);
+}
+.download-btn:hover {
+    background: var(--principal);
+    transform: translateY(-2px);
+}
+
 /* --- NAVEGACIÓN DESKTOP --- */
 .nav-wrap{ position:fixed;top:0;left:0;width:100%; z-index:5000;display:flex;flex-direction:column; align-items:center;padding-top:22px; pointer-events:none; }
 .nav-main{ background:var(--surface); border:1px solid var(--b-blue); box-shadow:0 0 0 1px var(--b-red); width:90%;max-width:1200px;height:68px;padding:0 24px; border-radius:16px;display:flex;justify-content:space-between; align-items:center;pointer-events:auto; transition:border-radius .4s var(--ease); position:relative;z-index:2; }
@@ -167,63 +184,489 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
 </div>
 
 <main class="terms-container">
-    <h1>Términos y Condiciones</h1>
+    <h1>Aviso legal, condiciones generales de uso, política de privacidad y política de cookies</h1>
+    </div>
     <p><em>Última actualización: Junio 2026</em></p>
-    <p>Bienvenido al sitio web oficial de Astra Racing. El acceso y uso de esta página web implica la aceptación de los presentes Términos y Condiciones. Si no está de acuerdo con cualquiera de las disposiciones aquí establecidas, le recomendamos que no utilice este sitio.</p>
+    <a href="términosdeuso.pdf" class="download-btn" download>Descargar documento PDF</a>
 
-    <h2>1. Titularidad del sitio web</h2>
-    <p>Este sitio web es gestionado por Astra Racing y sus respectivos equipos participantes en competiciones STEM Racing. La información publicada tiene fines exclusivamente informativos, divulgativos y de presentación de las actividades desarrolladas por el equipo.</p>
-
-    <h2>2. Propiedad intelectual</h2>
-    <p>Todos los contenidos presentes en este sitio web son propiedad de Astra Racing o de sus legítimos titulares y están protegidos por la normativa aplicable en materia de propiedad intelectual e industrial. Entre dichos contenidos se incluyen, entre otros:</p>
+    <h2>1. AVISO LEGAL E INFORMACIÓN DEL TITULAR</h2>
+    <p>En cumplimiento de lo dispuesto en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), así como de cualquier otra normativa que resulte de aplicación, se informa a todos los usuarios del presente sitio web de los siguientes datos identificativos.</p>
+    <br>
+    <p>El presente sitio web constituye el portal oficial de Astra Racing, equipo participante en la competición internacional STEM Racing, desarrollado dentro del ámbito educativo del Colegio Alameda International School y dedicado al diseño, fabricación, desarrollo y promoción de proyectos tecnológicos, científicos y de innovación.</p>
+    <br>
     <ul>
-        <li>Textos y descripciones.</li>
-        <li>Fotografías e imágenes.</li>
-        <li>Logotipos e identidad visual del equipo.</li>
-        <li>Diseños gráficos y elementos visuales.</li>
-        <li>Vídeos y material audiovisual.</li>
-        <li>Documentación técnica.</li>
-        <li>Modelos CAD, bocetos y representaciones del vehículo.</li>
-        <li>Explicaciones del proceso de diseño, fabricación y desarrollo del coche.</li>
-        <li>Presentaciones, informes y materiales elaborados por el equipo.</li>
-        <li>Cualquier otro contenido original desarrollado por los integrantes de Astra Racing.</li>
+        <li><strong>Denominación:</strong> Astra Racing.</li>
+        <li><strong>Naturaleza:</strong> Equipo educativo participante en STEM Racing.</li>
+        <li><strong>Centro educativo:</strong> Colegio Alameda International School.</li>
+        <li><strong>Domicilio profesional:</strong> Madrid, España.</li>
+        <li><strong>Correo electrónico:</strong> at33stemracingteamoficial@gmail.com.</li>
     </ul>
+    <br>
+    <p>A efectos del presente documento, Astra Racing podrá ser denominado indistintamente como «la Entidad», «el Equipo», «el Titular» o «Astra Racing».</p>
+    <br>
+    <p>La utilización del presente sitio web atribuye la condición de usuario e implica la aceptación íntegra del presente Aviso Legal, de las Condiciones Generales de Uso, de la Política de Privacidad y de cualquier otro texto legal publicado en este portal.</p>
+    <br>
+    <p>Si el usuario no estuviera conforme con cualquiera de las condiciones aquí recogidas, deberá abstenerse de acceder, navegar o utilizar el presente sitio web.</p>
 
-    <h2>3. Uso no autorizado</h2>
-    <p>Queda expresamente prohibido, sin autorización previa y por escrito de AT33 STEM Racing Team:</p>
+    <h2>2. CONDICIONES GENERALES DE USO DEL SITIO WEB</h2>
+    <p>El acceso al presente sitio web tiene carácter gratuito, salvo en lo relativo al coste de la conexión a Internet suministrada por el proveedor contratado por el usuario. La navegación por cualquiera de sus páginas implica la aceptación expresa, plena y sin reservas de las presentes Condiciones Generales de Uso.</p>
+    <br>
+    <p>El usuario se compromete a utilizar el sitio web de forma diligente, lícita, responsable y conforme a la legislación vigente, la buena fe, el orden público y las presentes condiciones, absteniéndose de realizar cualquier actuación que pueda perjudicar los derechos, intereses o la imagen de Astra Racing o de terceros.</p>
+    <br>
+    <p>El acceso al portal no supone el establecimiento de ninguna relación contractual, mercantil, laboral, societaria, asociativa o profesional entre Astra Racing y el usuario, salvo que ambas partes lo acuerden expresamente y por escrito.</p>
+    <br>
+    <p>El usuario será el único responsable de la veracidad, exactitud y actualidad de la información que facilite mediante los formularios de contacto, patrocinio o cualquier otro medio de comunicación disponible en este sitio web.</p>
+    <br>
+    <p>Queda expresamente prohibido utilizar este sitio web con fines ilícitos, fraudulentos, difamatorios, lesivos para los intereses de Astra Racing o de terceros, o que puedan afectar negativamente a la seguridad, estabilidad o funcionamiento del portal.</p>
+    <br>
+    <p>Asimismo, el usuario se compromete a no introducir virus, malware, ransomware, spyware, troyanos, bots, scripts automatizados o cualquier otro elemento tecnológico susceptible de alterar, interrumpir, dañar o comprometer el correcto funcionamiento del sitio web o de los sistemas informáticos relacionados con el mismo.</p>
+    <br>
+    <p>No estará permitido intentar acceder a áreas restringidas del sitio web, servidores, bases de datos, sistemas de almacenamiento, cuentas de correo electrónico, infraestructuras tecnológicas o cualquier otro recurso interno perteneciente a Astra Racing sin autorización expresa.</p>
+    <br>
+    <p>Queda prohibida cualquier actuación destinada a eludir, vulnerar o neutralizar las medidas de seguridad implementadas por Astra Racing para proteger el presente sitio web, incluyendo, entre otras, técnicas de fuerza bruta, explotación de vulnerabilidades, ingeniería social o cualquier procedimiento equivalente.</p>
+    <br>
+    <p>El usuario se compromete igualmente a no realizar actuaciones que puedan provocar una sobrecarga innecesaria de la infraestructura tecnológica del sitio web, incluyendo el envío masivo de solicitudes, consultas automatizadas o cualquier otro mecanismo susceptible de afectar a la disponibilidad del servicio.</p>
+    <br>
+    <p>La utilización de herramientas automáticas destinadas a recopilar información del sitio web, tales como sistemas de scraping, crawling, harvesting, extracción masiva de datos, minería de datos o tecnologías equivalentes, requerirá autorización previa y expresa de Astra Racing.</p>
+    <br>
+    <p>El usuario no podrá utilizar el contenido del presente sitio web con fines que puedan inducir a error sobre el origen, autoría, titularidad o naturaleza de los proyectos desarrollados por Astra Racing.</p>
+    <br>
+    <p>Queda prohibido utilizar el nombre, logotipo, identidad visual, imágenes, fotografías, vídeos, renders, modelos tridimensionales, documentos técnicos o cualquier otro contenido publicado en este portal para atribuirse una vinculación inexistente con Astra Racing.</p>
+    <br>
+    <p>El usuario se abstendrá de realizar manifestaciones públicas que puedan generar confusión respecto a la existencia de relaciones comerciales, institucionales, educativas o profesionales con Astra Racing cuando dichas relaciones no existan realmente.</p>
+    <br>
+    <p>El acceso al presente sitio web tampoco autoriza al usuario a reproducir la estructura, organización, experiencia de usuario, arquitectura de navegación o elementos característicos del portal con el objetivo de desarrollar sitios web similares que puedan inducir a confusión respecto de su origen.</p>
+    <br>
+    <p>Astra Racing podrá limitar, suspender o bloquear el acceso al sitio web de cualquier usuario cuando existan indicios razonables de utilización contraria a las presentes condiciones, sin necesidad de comunicación previa y sin que ello genere derecho alguno a indemnización.</p>
+    <br>
+    <p>El Titular se reserva igualmente el derecho a eliminar cualquier comunicación recibida a través de los formularios del sitio web cuando considere que su contenido resulta ofensivo, discriminatorio, ilícito, publicitario, fraudulento, difamatorio o incompatible con los fines educativos e institucionales del proyecto.</p>
+    <br>
+    <p>El usuario responderá frente a Astra Racing y frente a terceros por cualesquiera daños y perjuicios derivados del incumplimiento de las presentes Condiciones Generales de Uso, comprometiéndose a mantener indemne al Titular frente a cualquier reclamación originada por su actuación.</p>
+    <br>
+    <p>La utilización continuada del presente sitio web tras la modificación de estas condiciones supondrá la aceptación expresa de las nuevas disposiciones publicadas por Astra Racing.</p>
+    <br>
+    <p>En caso de que alguna de las cláusulas contenidas en este documento fuese declarada total o parcialmente nula, inválida o inaplicable por resolución judicial o administrativa firme, dicha circunstancia no afectará a la validez del resto de las disposiciones, que continuarán siendo plenamente aplicables.</p>
+
+    <h2>3. DERECHOS Y OBLIGACIONES DEL USUARIO</h2>
+    <p>El usuario se compromete a utilizar el presente sitio web de forma responsable, diligente y conforme a la legislación vigente, respetando en todo momento los derechos e intereses legítimos de Astra Racing, de sus integrantes, de sus patrocinadores, colaboradores y de cualquier tercero que pudiera verse afectado por el uso del portal.</p>
+    <br>
+    <p>El acceso al sitio web tendrá exclusivamente fines personales, informativos, educativos o institucionales. Salvo autorización expresa y por escrito otorgada por Astra Racing, el usuario no podrá utilizar los contenidos publicados con fines comerciales, profesionales, competitivos o lucrativos.</p>
+    <br>
+    <p>El usuario se compromete a no utilizar la información contenida en este sitio web para desarrollar actividades que puedan perjudicar directa o indirectamente la imagen, reputación, identidad corporativa o actividad desarrollada por Astra Racing.</p>
+    <br>
+    <p>Queda expresamente prohibido utilizar cualquier contenido del presente portal para difundir información falsa, manipulada o descontextualizada que pueda inducir a error sobre la actividad desarrollada por Astra Racing o por cualquiera de sus equipos asociados.</p>
+    <br>
+    <p>El usuario deberá respetar en todo momento la autoría de los contenidos publicados, absteniéndose de eliminar, ocultar o modificar cualquier referencia relativa a los derechos de propiedad intelectual, industrial o de cualquier otra naturaleza incorporada a los mismos.</p>
+    <br>
+    <p>En caso de que el usuario detecte errores, incidencias técnicas, posibles vulnerabilidades de seguridad o cualquier otro funcionamiento anómalo del sitio web, se compromete a comunicarlo a Astra Racing mediante los canales oficiales de contacto, absteniéndose de explotar dichas circunstancias en beneficio propio o de terceros.</p>
+    <br>
+    <p>El usuario responderá personalmente de las consecuencias derivadas del uso indebido del presente sitio web, incluyendo cualquier actuación realizada utilizando su dispositivo, conexión o identidad digital.</p>
+    <br>
+    <p>Cuando el usuario facilite datos de terceras personas mediante cualquiera de los formularios disponibles en este sitio web, declara disponer de la correspondiente autorización o de la base jurídica necesaria para comunicar dichos datos, exonerando a Astra Racing de cualquier responsabilidad derivada de su incumplimiento.</p>
+    <br>
+    <p>El usuario acepta que cualquier comunicación remitida a Astra Racing deberá realizarse con respeto, buena fe y veracidad, evitando el envío de información ofensiva, discriminatoria, amenazante, difamatoria, ilícita o contraria al ordenamiento jurídico.</p>
+    <br>
+    <p>Queda prohibido utilizar el presente sitio web como plataforma para el envío de publicidad no solicitada, comunicaciones comerciales masivas, cadenas de mensajes, campañas de captación, spam o cualquier otra actuación similar.</p>
+    <br>
+    <p>El usuario reconoce que Astra Racing podrá adoptar las medidas técnicas y organizativas que considere necesarias para garantizar la seguridad, disponibilidad e integridad del sitio web, incluso cuando ello implique limitar temporalmente determinadas funcionalidades.</p>
+    <br>
+    <p>La utilización del presente portal no otorga al usuario derecho alguno sobre las tecnologías, diseños, metodologías, procedimientos, conocimientos técnicos o soluciones de ingeniería desarrolladas por Astra Racing, aun cuando parte de dicha información pueda mostrarse con fines exclusivamente divulgativos.</p>
+    <br>
+    <p>El usuario reconoce que la información publicada en este sitio web constituye una representación parcial de la actividad desarrollada por Astra Racing y que, por motivos de confidencialidad, estrategia competitiva, protección de la propiedad intelectual o seguridad, determinada información podrá no hacerse pública o mostrarse de forma resumida.</p>
+    <br>
+    <p>La navegación por este sitio web no supondrá, en ningún caso, autorización para reproducir proyectos, metodologías de trabajo, estrategias de patrocinio, campañas de comunicación, diseños técnicos, procedimientos organizativos o cualquier otro elemento característico del proyecto Astra Racing.</p>
+    <br>
+    <p>En caso de incumplimiento de cualquiera de las obligaciones establecidas en el presente documento, Astra Racing podrá adoptar las medidas que estime oportunas para proteger sus derechos e intereses legítimos, incluyendo la restricción del acceso al sitio web, la eliminación de comunicaciones recibidas y, cuando proceda, el ejercicio de las acciones legales previstas en la legislación vigente.</p>
+    <br>
+    <p>El usuario se compromete a mantener indemne a Astra Racing frente a cualquier reclamación, daño, responsabilidad, coste o gasto que pudiera derivarse del incumplimiento de las presentes condiciones o del uso ilícito, negligente o contrario a derecho del presente sitio web.</p>
+
+    <h2>4. PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
+    <p>La totalidad del contenido del presente sitio web, incluyendo de forma enunciativa pero no limitativa los textos, artículos, documentos, publicaciones, imágenes, fotografías, ilustraciones, renders, modelos tridimensionales, animaciones, vídeos, archivos multimedia, diseños gráficos, logotipos, marcas, nombres comerciales, iconografía, tipografías, esquemas, documentación técnica, código fuente, hojas de estilo, scripts, bases de datos, estructura de navegación, interfaz de usuario, elementos audiovisuales, documentación descargable y cualquier otro contenido publicado o accesible a través del presente portal, constituye una obra protegida por la normativa vigente en materia de propiedad intelectual e industrial.</p>
+    <br>
+    <p>Todos los derechos de explotación sobre dichos contenidos corresponden a Astra Racing, a sus respectivos autores o, en su caso, a los titulares que hayan autorizado expresamente su utilización, sin que el acceso al presente sitio web implique la cesión, transmisión, licencia o autorización de uso de ninguno de dichos derechos más allá del uso estrictamente personal, informativo y privado derivado de la navegación por el portal.</p>
+    <br>
+    <p>Las denominaciones «Astra Racing», «Columba Racing» y «Laquimia Racing», así como sus logotipos, elementos gráficos, signos distintivos, identidad visual, material corporativo y cualquier otro elemento susceptible de identificación del proyecto constituyen activos propios de sus respectivos titulares y no podrán ser utilizados, reproducidos, modificados o distribuidos sin autorización previa, expresa y por escrito.</p>
+    <br>
+    <p>Queda prohibida la reproducción total o parcial de los contenidos publicados en este sitio web por cualquier medio o procedimiento, ya sea electrónico, mecánico, digital, fotográfico, audiovisual o de cualquier otra naturaleza, salvo autorización expresa del Titular o cuando dicha reproducción se encuentre expresamente permitida por la legislación aplicable.</p>
+    <br>
+    <p>Igualmente queda prohibida la distribución, comunicación pública, transformación, traducción, adaptación, modificación, cesión, sublicencia, comercialización, publicación o cualquier otra forma de explotación de los contenidos del presente sitio web sin la autorización previa y por escrito de Astra Racing.</p>
+    <br>
+    <p>Las fotografías, renders, modelos tridimensionales, ilustraciones, animaciones y demás recursos gráficos publicados en este sitio web tienen una finalidad exclusivamente informativa, divulgativa e institucional y no podrán ser reutilizados, editados, redistribuidos, incorporados a otras publicaciones o utilizados para la elaboración de material promocional, comercial o técnico sin autorización expresa.</p>
+    <br>
+    <p>La publicación de información relativa a los proyectos desarrollados por Astra Racing no supondrá, en ningún caso, la renuncia a los derechos de propiedad intelectual o industrial que pudieran corresponder sobre dichos proyectos, ni implicará autorización para su reproducción, análisis técnico, fabricación, adaptación o utilización por terceros.</p>
+    <br>
+    <p>Los diseños, conceptos, modelos CAD, representaciones tridimensionales, esquemas de ingeniería, metodologías de trabajo, documentación técnica y demás elementos relacionados con el desarrollo de los vehículos de competición constituyen parte del patrimonio intelectual del Equipo y podrán encontrarse protegidos por la legislación vigente en materia de propiedad intelectual, competencia desleal, secretos empresariales y cualquier otra normativa que resulte de aplicación.</p>
+    <br>
+    <p>El acceso al presente sitio web no autoriza la realización de procesos de ingeniería inversa, análisis técnico exhaustivo, extracción de medidas, recreación digital, reproducción física, digitalización, modelado tridimensional, escaneado, vectorización o cualquier otro procedimiento destinado a obtener información técnica susceptible de ser utilizada para la elaboración de productos, proyectos o desarrollos similares.</p>
+    <br>
+    <p>Asimismo, queda prohibida la extracción sistemática de información mediante herramientas automatizadas, robots, rastreadores, sistemas de scraping, minería de datos, harvesting, web crawling o tecnologías equivalentes cuando dicha actividad tenga por finalidad recopilar, reproducir o reutilizar los contenidos publicados por Astra Racing.</p>
+    <br>
+    <p>Salvo autorización expresa y por escrito, tampoco podrá utilizarse el contenido del presente sitio web para el entrenamiento, ajuste, validación, desarrollo o mejora de modelos de inteligencia artificial, sistemas de aprendizaje automático, modelos fundacionales, modelos generativos o cualquier otra tecnología equivalente destinada a procesar información de forma automatizada.</p>
+    <br>
+    <p>La estructura del sitio web, su organización visual, arquitectura de navegación, experiencia de usuario, identidad gráfica, composición estética y estilo comunicativo forman parte de la identidad digital de Astra Racing y no podrán reproducirse de forma que puedan generar riesgo de confusión respecto al origen empresarial o institucional del proyecto.</p>
+    <br>
+    <p>La cita parcial de contenidos publicados en este sitio web únicamente estará permitida cuando tenga una finalidad informativa, educativa o divulgativa, siempre que se realice de conformidad con los límites establecidos por la legislación vigente, se identifique adecuadamente la autoría y se incluya una referencia visible al sitio web oficial de Astra Racing.</p>
+    <br>
+    <p>Cualquier utilización no autorizada de los contenidos publicados podrá dar lugar al ejercicio de las acciones civiles, administrativas o penales que correspondan para la defensa de los derechos e intereses legítimos de Astra Racing, sin perjuicio de las reclamaciones por daños y perjuicios que pudieran derivarse de dicha utilización.</p>
+    <br>
+    <p>Astra Racing se reserva expresamente todos aquellos derechos que no hayan sido concedidos de forma explícita en el presente documento, entendiéndose que el acceso al sitio web no supone en ningún caso la adquisición de derecho alguno sobre los contenidos, tecnologías, desarrollos o activos intelectuales del Equipo.</p>
+
+    <h2>5. PROTECCIÓN DEL CONTENIDO TÉCNICO Y DE LOS PROYECTOS DE INGENIERÍA</h2>
+    <p>Astra Racing desarrolla proyectos tecnológicos, científicos y de ingeniería en el marco de la competición internacional STEM Racing. Parte del contenido publicado en este sitio web tiene carácter exclusivamente divulgativo e institucional, mostrando únicamente aquellos aspectos cuya difusión ha sido considerada adecuada por el Equipo.</p>
+    <br>
+    <p>La publicación de imágenes, renders, fotografías, vídeos, modelos tridimensionales, diagramas, esquemas o cualquier otra representación gráfica de los proyectos desarrollados por Astra Racing no implica la publicación íntegra de la información técnica asociada a los mismos ni constituye autorización para su utilización por terceros.</p>
+    <br>
+    <p>Con el objetivo de proteger el trabajo desarrollado por el Equipo, preservar la integridad del proceso de diseño y garantizar la igualdad de condiciones dentro de la competición, Astra Racing podrá omitir, simplificar o modificar la información técnica publicada, reservándose el derecho de mantener confidenciales aquellos aspectos que considere estratégicos o relevantes para el desarrollo de sus proyectos.</p>
+    <br>
+    <p>Los modelos CAD, planos, diseños mecánicos, simulaciones, estudios aerodinámicos, cálculos estructurales, procesos de fabricación, configuraciones técnicas, documentación interna, procedimientos de validación, metodologías de diseño y cualquier otro elemento relacionado con el desarrollo de los vehículos constituyen información técnica propia del Equipo y únicamente podrá ser utilizada por personas expresamente autorizadas.</p>
+    <br>
+    <p>La existencia de imágenes o modelos tridimensionales visibles desde este sitio web no supone autorización para obtener medidas, reconstruir geometrías, recrear modelos digitales, fabricar piezas, desarrollar componentes equivalentes o realizar cualquier otro procedimiento destinado a reproducir total o parcialmente los proyectos desarrollados por Astra Racing.</p>
+    <br>
+    <p>Queda expresamente prohibida la utilización de fotografías, renders, modelos tridimensionales, capturas de pantalla o cualquier otro recurso visual publicado en este sitio web con el fin de elaborar modelos CAD, realizar procesos de fotogrametría, reconstrucción tridimensional, ingeniería inversa, vectorización o cualquier otra técnica destinada a obtener información técnica no divulgada expresamente.</p>
+    <br>
+    <p>Los documentos, presentaciones, informes, memorias técnicas y cualquier otro material publicado por Astra Racing tendrán carácter exclusivamente informativo y no podrán considerarse manuales de fabricación, documentación técnica oficial ni instrucciones destinadas a reproducir los proyectos desarrollados por el Equipo.</p>
+    <br>
+    <p>Astra Racing podrá publicar parcialmente determinados procesos de diseño, fabricación o validación con fines educativos o divulgativos. Dicha publicación no implicará autorización para reproducir dichos procedimientos ni supondrá renuncia alguna a los derechos que correspondan sobre los mismos.</p>
+    <br>
+    <p>El usuario reconoce que las soluciones de ingeniería desarrolladas por Astra Racing son el resultado del trabajo, experiencia, investigación y aprendizaje acumulado por los integrantes del Equipo durante el desarrollo de la competición, por lo que cualquier utilización no autorizada de dicha información podrá perjudicar tanto al propio Equipo como al resto de participantes de STEM Racing.</p>
+    <br>
+    <p>La documentación técnica publicada podrá contener información simplificada, esquemática, representativa o meramente ilustrativa, sin que ello implique que refleje necesariamente las características completas, definitivas o exactas de los proyectos desarrollados por Astra Racing.</p>
+    <br>
+    <p>La utilización de cualquier contenido técnico del presente sitio web con fines académicos, investigadores o divulgativos deberá respetar en todo momento la autoría de Astra Racing y realizarse dentro de los límites establecidos por la legislación vigente en materia de propiedad intelectual.</p>
+    <br>
+    <p>Queda igualmente prohibido utilizar el contenido técnico publicado por Astra Racing para participar, directa o indirectamente, en competiciones, concursos, proyectos educativos o actividades similares cuando dicha utilización implique la reproducción sustancial de soluciones, diseños o documentación desarrollados por el Equipo sin la correspondiente autorización.</p>
+    <br>
+    <p>Astra Racing se reserva el derecho de ampliar, modificar, restringir o eliminar en cualquier momento la información técnica publicada en este sitio web cuando existan motivos de seguridad, confidencialidad, protección de la propiedad intelectual o estrategia competitiva, sin que ello genere derecho alguno de reclamación por parte de los usuarios.</p>
+    <br>
+    <p>La difusión parcial de información técnica a través del presente sitio web no supondrá, en ningún caso, la pérdida de la confidencialidad respecto del resto de información interna del Equipo, la cual continuará protegida por la normativa vigente y por las medidas organizativas adoptadas por Astra Racing para preservar sus desarrollos.</p>
+    <br>
+    <p>El incumplimiento de las presentes disposiciones podrá dar lugar al ejercicio de las acciones legales que resulten procedentes para la protección de los derechos e intereses legítimos de Astra Racing, de sus integrantes y de cualquier tercero cuyos derechos pudieran verse afectados.</p>
+
+    <h2>6. PATROCINADORES, COLABORADORES Y ENTIDADES EXTERNAS</h2>
+    <p>Astra Racing mantiene relaciones de colaboración con empresas, instituciones, entidades educativas, organismos públicos, asociaciones y otras organizaciones que, mediante acuerdos de patrocinio, colaboración o apoyo material, contribuyen al desarrollo de las actividades del Equipo.</p>
+    <br>
+    <p>La existencia de dichas colaboraciones tiene como finalidad favorecer el desarrollo educativo, tecnológico, científico y divulgativo de Astra Racing, sin que ello implique la creación de una relación societaria, mercantil, laboral, de representación, agencia, franquicia o cualquier otra distinta de la expresamente acordada entre las partes.</p>
+    <br>
+    <p>La aparición del nombre, logotipo, marca, identidad visual o cualquier otro signo distintivo perteneciente a un patrocinador o colaborador dentro del presente sitio web responde exclusivamente a la existencia de una autorización o acuerdo de colaboración vigente, sin que ello suponga recomendación, certificación, aval o garantía sobre los productos o servicios ofrecidos por dicha entidad.</p>
+    <br>
+    <p>Del mismo modo, la condición de patrocinador o colaborador de Astra Racing no implica que dicha entidad participe en la dirección, organización, toma de decisiones, gestión interna o desarrollo técnico del Equipo, salvo que exista un acuerdo específico que establezca expresamente dicha participación.</p>
+    <br>
+    <p>La colaboración existente entre Astra Racing y sus patrocinadores no implica necesariamente la coincidencia de valores, principios, opiniones, ideologías, posicionamientos políticos, convicciones religiosas, estrategias comerciales, políticas empresariales, actuaciones públicas o cualquier otra circunstancia ajena al objeto concreto del acuerdo de colaboración.</p>
+    <br>
+    <p>Asimismo, la existencia de un acuerdo de patrocinio no supone que Astra Racing haga propios, comparta, respalde o asuma como oficiales los criterios, manifestaciones, campañas publicitarias, productos, servicios o actividades desarrolladas por las entidades patrocinadoras o colaboradoras.</p>
+    <br>
+    <p>Del mismo modo, los patrocinadores y colaboradores tampoco asumirán como propios los valores, opiniones, actuaciones, publicaciones o decisiones adoptadas por Astra Racing fuera del ámbito expresamente regulado en los correspondientes acuerdos de colaboración.</p>
+    <br>
+    <p>Salvo manifestación expresa y por escrito, ninguna de las partes actuará en representación de la otra ni estará facultada para asumir obligaciones, celebrar contratos, realizar declaraciones públicas o adquirir compromisos en nombre de la otra parte.</p>
+    <br>
+    <p>Las referencias efectuadas a empresas colaboradoras dentro del presente sitio web tendrán un carácter meramente informativo e institucional, pudiendo ser modificadas, actualizadas o eliminadas en cualquier momento como consecuencia de la finalización, suspensión o modificación de los correspondientes acuerdos.</p>
+    <br>
+    <p>Los logotipos, marcas, nombres comerciales e imágenes pertenecientes a patrocinadores o colaboradores continuarán siendo propiedad exclusiva de sus respectivos titulares, utilizándose únicamente dentro de los límites autorizados por cada entidad y con la finalidad de identificar la colaboración existente con Astra Racing.</p>
+    <br>
+    <p>Queda prohibida la reproducción, modificación, reutilización o utilización de los signos distintivos pertenecientes a los patrocinadores desde este sitio web sin la correspondiente autorización de sus respectivos titulares.</p>
+    <br>
+    <p>Astra Racing no responderá frente a los usuarios por la disponibilidad, funcionamiento, calidad, seguridad, legalidad o adecuación de los productos y servicios ofrecidos por sus patrocinadores o colaboradores, siendo cada entidad plenamente responsable de su propia actividad empresarial o institucional.</p>
+    <br>
+    <p>Del mismo modo, los patrocinadores y colaboradores no asumirán responsabilidad alguna por las actividades desarrolladas por Astra Racing fuera del alcance de los acuerdos de colaboración suscritos entre las partes.</p>
+    <br>
+    <p>Cuando el presente sitio web incorpore enlaces hacia páginas web pertenecientes a patrocinadores, colaboradores o terceras entidades, dichos enlaces tendrán carácter meramente informativo y su inclusión no implicará aprobación, recomendación o garantía alguna respecto del contenido publicado en los mismos.</p>
+    <br>
+    <p>Astra Racing realizará esfuerzos razonables para colaborar con entidades cuyos fines sean compatibles con los objetivos educativos, científicos y tecnológicos del proyecto. No obstante, la celebración de un acuerdo de colaboración no implicará una evaluación permanente de la totalidad de las actividades desarrolladas por dichas entidades.</p>
+    <br>
+    <p>La finalización de un acuerdo de patrocinio o colaboración no afectará a la validez de las presentes condiciones ni generará derecho alguno para que terceros exijan el mantenimiento de referencias, logotipos o contenidos relacionados con la entidad colaboradora dentro del presente sitio web.</p>
+    <br>
+    <p>Astra Racing se reserva el derecho de rechazar, suspender o finalizar cualquier relación de patrocinio o colaboración cuando existan motivos legales, éticos, organizativos, reputacionales o de cualquier otra naturaleza que, a juicio del Equipo, puedan afectar al correcto desarrollo del proyecto o a su imagen institucional.</p>
+
+    <h2>7. EXCLUSIÓN DE GARANTÍAS Y LIMITACIÓN DE RESPONSABILIDAD</h2>
+    <p>Astra Racing realiza sus mayores esfuerzos para garantizar que la información publicada en el presente sitio web sea veraz, precisa, útil y se encuentre razonablemente actualizada. No obstante, debido al carácter dinámico del proyecto y a la constante evolución de las actividades desarrolladas por el Equipo, determinada información podrá ser modificada, ampliada, sustituida o eliminada sin necesidad de previo aviso.</p>
+    <br>
+    <p>El Titular no garantiza la disponibilidad permanente del sitio web ni la inexistencia de interrupciones derivadas de labores de mantenimiento, actualizaciones, incidencias técnicas, fallos de suministro eléctrico, averías en los sistemas de comunicaciones o cualquier otra circunstancia ajena a su control razonable.</p>
+    <br>
+    <p>Astra Racing tampoco garantiza la ausencia absoluta de errores tipográficos, técnicos, materiales o de cualquier otra naturaleza presentes en la información publicada, comprometiéndose, no obstante, a corregirlos tan pronto como tenga conocimiento de los mismos y resulte razonablemente posible.</p>
+    <br>
+    <p>El usuario acepta que la utilización de la información contenida en este sitio web se realiza bajo su exclusiva responsabilidad, correspondiéndole valorar la adecuación, utilidad y finalidad de la misma antes de adoptar cualquier decisión basada en su contenido.</p>
+    <br>
+    <p>La información publicada en este portal posee carácter exclusivamente informativo, educativo e institucional y no constituye asesoramiento profesional, técnico, jurídico, financiero, comercial ni de ninguna otra naturaleza, salvo que expresamente se indique lo contrario.</p>
+    <br>
+    <p>Astra Racing no responderá de las decisiones, actuaciones, proyectos, desarrollos o inversiones que terceros puedan realizar tomando como referencia la información contenida en este sitio web.</p>
+    <br>
+    <p>El Titular no será responsable de los daños o perjuicios que pudieran derivarse de interrupciones del servicio, caídas del servidor, incidencias en las telecomunicaciones, ataques informáticos, virus, malware, accesos no autorizados, errores de software, incompatibilidades técnicas o cualquier otra circunstancia que afecte al funcionamiento normal del sitio web.</p>
+    <br>
+    <p>Igualmente, Astra Racing no garantiza la compatibilidad del presente sitio web con la totalidad de navegadores, sistemas operativos, dispositivos móviles, equipos informáticos o configuraciones particulares de los usuarios, pudiendo existir diferencias en la visualización o funcionamiento de determinados contenidos.</p>
+    <br>
+    <p>El Titular no será responsable de los daños que pudieran ocasionarse como consecuencia del uso indebido del presente sitio web por parte de los usuarios o de terceros, incluyendo actuaciones realizadas mediante la utilización fraudulenta de credenciales, dispositivos o conexiones a Internet.</p>
+    <br>
+    <p>Cuando el presente sitio web incorpore enlaces a páginas web de terceros, Astra Racing actuará únicamente como facilitador de acceso a dichos contenidos. En consecuencia, no asumirá responsabilidad alguna respecto de la disponibilidad, exactitud, legalidad, actualidad, funcionamiento, seguridad o contenido de las páginas enlazadas.</p>
+    <br>
+    <p>La inclusión de enlaces externos no implicará la existencia de relación comercial, recomendación, patrocinio, aprobación o vinculación jurídica entre Astra Racing y los titulares de los sitios web enlazados, salvo que expresamente se indique lo contrario.</p>
+    <br>
+    <p>Astra Racing no responderá por los contenidos publicados por terceros en redes sociales, plataformas digitales, medios de comunicación o cualquier otro soporte, incluso cuando hagan referencia al Equipo o utilicen imágenes, logotipos o información procedente del presente sitio web sin la correspondiente autorización.</p>
+    <br>
+    <p>El Titular tampoco asumirá responsabilidad por la utilización que terceros puedan realizar de la información publicada en este portal una vez haya sido reproducida, compartida, descargada o difundida fuera del control directo de Astra Racing.</p>
+    <br>
+    <p>Los usuarios serán responsables de adoptar las medidas de seguridad necesarias para proteger sus propios dispositivos, sistemas informáticos, redes y datos personales durante la navegación por Internet, incluyendo la utilización de software de protección actualizado y conexiones seguras.</p>
+    <br>
+    <p>En ningún caso Astra Racing responderá por pérdidas indirectas, lucro cesante, pérdida de oportunidades, pérdida de datos, daños reputacionales, perjuicios comerciales o cualesquiera otros daños de naturaleza indirecta que pudieran derivarse de la utilización o imposibilidad de utilización del presente sitio web.</p>
+    <br>
+    <p>La responsabilidad máxima que pudiera corresponder a Astra Racing por cualquier causa relacionada con el funcionamiento del presente sitio web quedará limitada, en la medida permitida por la legislación aplicable, a los daños directos efectivamente acreditados cuya causa resulte imputable de forma exclusiva al Titular.</p>
+    <br>
+    <p>Las limitaciones de responsabilidad previstas en el presente apartado serán igualmente aplicables a los integrantes de Astra Racing, sus estudiantes, mentores, profesores, voluntarios, colaboradores, patrocinadores y demás personas físicas o jurídicas vinculadas al proyecto, siempre que la legislación vigente así lo permita.</p>
+    <br>
+    <p>Ninguna de las limitaciones establecidas en las presentes condiciones afectará a aquellos derechos que la legislación aplicable reconozca con carácter irrenunciable a los consumidores y usuarios.</p>
+    <br>
+    <p>En caso de producirse circunstancias de fuerza mayor, caso fortuito, catástrofes naturales, pandemias, conflictos laborales, decisiones administrativas, incidencias en las infraestructuras tecnológicas o cualquier otra situación imprevisible o inevitable que impida el normal funcionamiento del sitio web, Astra Racing quedará exonerada de responsabilidad mientras persistan dichas circunstancias.</p>
+    <br>
+    <p>El presente apartado deberá interpretarse de la forma más amplia permitida por la legislación española, con el objetivo de garantizar una adecuada protección jurídica del Titular frente a reclamaciones derivadas de la utilización del sitio web.</p>
+
+    <h2>8. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES</h2>
+    <p>La protección de los datos personales de los usuarios constituye uno de los principios fundamentales de Astra Racing. Por ello, el tratamiento de cualquier dato personal obtenido a través del presente sitio web se realizará respetando en todo momento lo dispuesto en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016 (Reglamento General de Protección de Datos o RGPD), la Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), así como el resto de normativa que resulte de aplicación.</p>
+    <br>
+    <p>El responsable del tratamiento de los datos personales facilitados a través del presente sitio web será Astra Racing, equipo educativo desarrollado en el ámbito del Colegio Alameda International School, pudiendo los usuarios contactar para cualquier cuestión relacionada con el tratamiento de sus datos mediante el correo electrónico oficial: <strong>at33stemracingteamoficial@gmail.com</strong>.</p>
+    <br>
+    <p>Los datos personales facilitados por los usuarios serán tratados únicamente cuando exista una base jurídica que legitime dicho tratamiento, especialmente cuando el propio usuario haya otorgado su consentimiento mediante la cumplimentación voluntaria de cualquiera de los formularios disponibles en el sitio web o cuando resulte necesario para atender una consulta o solicitud realizada por el interesado.</p>
+    <br>
+    <p>Los datos recabados podrán incluir, entre otros, el nombre y apellidos del usuario, dirección de correo electrónico, empresa u organización de pertenencia, cargo profesional, información relativa a posibles colaboraciones o patrocinios y cualquier otra información que el propio usuario decida facilitar de forma voluntaria.</p>
+    <br>
+    <p>Los datos personales serán tratados con las siguientes finalidades:</p>
     <ul>
-        <li>Copiar, reproducir o almacenar cualquier contenido del sitio web.</li>
-        <li>Distribuir, publicar o compartir materiales expuestos en esta página.</li>
-        <li>Modificar, adaptar o transformar los contenidos publicados.</li>
-        <li>Utilizar imágenes, fotografías o vídeos del equipo para cualquier finalidad.</li>
-        <li>Emplear logotipos, nombres o elementos de identidad visual sin autorización.</li>
-        <li>Presentar como propios materiales desarrollados por el equipo.</li>
-        <li>Utilizar la información técnica, documentación o explicaciones relacionadas con el desarrollo del vehículo para la elaboración de proyectos propios, competiciones o iniciativas similares sin autorización expresa.</li>
-        <li>Tomar como referencia directa los diseños, procesos o soluciones técnicas expuestas con fines de copia o reproducción.</li>
-        <li>Eliminar o alterar referencias relativas a la autoría o titularidad de los derechos sobre los contenidos.</li>
+    <li>Atender consultas realizadas a través de los formularios de contacto.</li>
+    <li>Gestionar solicitudes de patrocinio o colaboración.</li>
+    <li>Mantener comunicaciones relacionadas con el proyecto Astra Racing.</li>
+    <li>Gestionar las relaciones institucionales con empresas, entidades educativas u organismos públicos.</li>
+    <li>Responder a solicitudes de información formuladas por los usuarios.</li>
+    <li>Cumplir las obligaciones legales que resulten aplicables.</li>
     </ul>
-    <p>El acceso a este sitio web no concede licencia ni autorización alguna para el uso de los materiales publicados más allá de lo expresamente permitido en estos términos. El uso no autorizado de cualquiera de los elementos anteriormente mencionados podrá dar lugar al ejercicio de las acciones legales que correspondan.</p>
+    <br>
+    <p>Astra Racing no utilizará los datos personales para elaborar perfiles automatizados, adoptar decisiones automatizadas que produzcan efectos jurídicos sobre los usuarios ni realizar tratamientos incompatibles con las finalidades anteriormente descritas.</p>
+    <br>
+    <p>Los datos personales únicamente serán conservados durante el tiempo estrictamente necesario para cumplir la finalidad para la que fueron recabados o mientras exista una obligación legal que exija su conservación. Una vez finalizados dichos plazos, los datos serán eliminados o, cuando proceda, debidamente bloqueados conforme a la normativa vigente.</p>
+    <br>
+    <p>Con carácter general, Astra Racing no cederá los datos personales de los usuarios a terceros, salvo obligación legal, autorización expresa del interesado o cuando dicha comunicación resulte imprescindible para la correcta gestión de la relación establecida con el usuario.</p>
+    <br>
+    <p>En aquellos casos en los que el presente sitio web utilice servicios prestados por terceros necesarios para su funcionamiento, tales como proveedores de alojamiento web, plataformas de formularios electrónicos, servicios de correo electrónico u otras herramientas tecnológicas, dichos proveedores actuarán, cuando proceda, en calidad de encargados del tratamiento conforme a la normativa vigente.</p>
+    <br>
+    <p>Cuando alguno de dichos proveedores se encuentre ubicado fuera del Espacio Económico Europeo, Astra Racing procurará que las correspondientes transferencias internacionales de datos se encuentren amparadas por las garantías previstas en el Reglamento General de Protección de Datos.</p>
+    <br>
+    <p>El usuario garantiza que los datos facilitados son exactos, veraces, completos y se encuentran actualizados, siendo responsable de cualquier daño o perjuicio que pudiera derivarse del incumplimiento de dicha obligación.</p>
+    <br>
+    <p>En caso de facilitar datos personales pertenecientes a terceras personas, el usuario declara disponer de la autorización necesaria para comunicar dichos datos, exonerando a Astra Racing de cualquier responsabilidad derivada de la falta de legitimación para efectuar dicha comunicación.</p>
+    <br>
+    <p>Astra Racing adoptará las medidas técnicas y organizativas razonablemente adecuadas para proteger los datos personales frente a su pérdida, alteración, acceso no autorizado, divulgación accidental o cualquier otra forma de tratamiento ilícito, teniendo en cuenta el estado de la técnica, los costes de aplicación y la naturaleza de los datos tratados.</p>
+    <br>
+    <p>No obstante, el usuario reconoce que ningún sistema informático conectado a Internet puede garantizar un nivel absoluto de seguridad, por lo que Astra Racing no puede asegurar la inexistencia total de accesos ilícitos realizados por terceros mediante actuaciones fraudulentas o delictivas.</p>
+    <br>
+    <p>Los usuarios podrán ejercer en cualquier momento sus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad de los datos personales mediante solicitud dirigida al correo electrónico oficial de Astra Racing, acompañando, cuando resulte necesario, documentación suficiente que permita acreditar su identidad.</p>
+    <br>
+    <p>Cuando el tratamiento de los datos personales se base en el consentimiento del interesado, éste podrá retirarlo en cualquier momento sin que dicha retirada afecte a la licitud del tratamiento realizado con anterioridad.</p>
+    <br>
+    <p>Si el usuario considera que el tratamiento de sus datos personales vulnera la normativa vigente, podrá presentar la correspondiente reclamación ante la Agencia Española de Protección de Datos (AEPD), sin perjuicio de cualquier otro recurso administrativo o judicial que pudiera corresponderle.</p>
+    <br>
+    <p>Los formularios de patrocinio disponibles en este sitio web tienen como única finalidad facilitar el primer contacto entre Astra Racing y aquellas empresas, instituciones o entidades interesadas en colaborar con el proyecto. La remisión del formulario no implicará la aceptación automática de ninguna propuesta de patrocinio ni la formalización de relación contractual alguna entre las partes.</p>
+    <br>
+    <p>Los datos facilitados mediante dichos formularios serán utilizados exclusivamente para valorar la posible colaboración propuesta, mantener las comunicaciones necesarias con la entidad interesada y gestionar, en su caso, el correspondiente proceso de negociación.</p>
+    <br>
+    <p>Astra Racing podrá modificar la presente Política de Privacidad para adaptarla a cambios normativos, criterios de las autoridades de control o modificaciones en el funcionamiento del sitio web. Las nuevas versiones serán publicadas en esta misma página y resultarán aplicables desde el momento de su publicación.</p>
 
-    <h2>4. Uso permitido</h2>
-    <p>Se permite la consulta y visualización del contenido del sitio web exclusivamente con fines informativos y personales. El acceso a esta página no otorga ningún derecho de explotación, reproducción, distribución, comunicación pública o transformación sobre los materiales publicados.</p>
+    <h2>9. POLÍTICA DE COOKIES Y TECNOLOGÍAS DE NAVEGACIÓN</h2>
+    <p>El presente sitio web utiliza cookies y tecnologías similares con la finalidad de garantizar el correcto funcionamiento de la página, mejorar la experiencia de navegación de los usuarios y permitir la prestación de determinados servicios incorporados al portal.</p>
+    <br>
+    <p>Una cookie es un pequeño archivo de texto que se almacena en el dispositivo del usuario cuando accede a un sitio web. Su función principal consiste en recordar determinada información relacionada con la navegación, permitiendo, entre otras funcionalidades, mantener la estabilidad técnica del sitio web, recordar determinadas preferencias o facilitar la integración de servicios de terceros.</p>
+    <br>
+    <p>Con carácter general, Astra Racing únicamente utiliza aquellas cookies que resultan estrictamente necesarias para el funcionamiento del sitio web y para la correcta prestación de los servicios expresamente solicitados por el usuario.</p>
+    <br>
+    <p>En caso de incorporarse servicios prestados por terceros, tales como formularios electrónicos, contenidos interactivos, modelos tridimensionales, mapas, reproductores multimedia o plataformas similares, dichos proveedores podrán instalar sus propias cookies técnicas o funcionales conforme a sus respectivas políticas de privacidad y de cookies.</p>
+    <br>
+    <p>Astra Racing no controla ni asume responsabilidad sobre las cookies gestionadas directamente por terceros ajenos al presente sitio web, recomendándose al usuario consultar las políticas de privacidad y cookies de los respectivos proveedores para obtener información detallada sobre el tratamiento realizado por dichas entidades.</p>
+    <br>
+    <p>Las cookies utilizadas por el presente sitio web no tienen como finalidad obtener categorías especiales de datos personales ni recopilar información que permita identificar directamente al usuario, salvo que éste facilite voluntariamente dichos datos mediante los formularios habilitados al efecto.</p>
+    <br>
+    <p>El usuario podrá configurar en cualquier momento su navegador para permitir, bloquear, limitar o eliminar las cookies instaladas en su dispositivo. No obstante, la desactivación de determinadas cookies podrá afectar al correcto funcionamiento de algunas funcionalidades del sitio web o impedir la utilización de determinados servicios integrados.</p>
+    <br>
+    <p>Los principales navegadores de Internet incorporan herramientas específicas para gestionar las preferencias relativas a las cookies, pudiendo el usuario consultar la documentación oficial de cada navegador para obtener información detallada sobre su configuración.</p>
+    <br>
+    <p>Astra Racing podrá modificar la presente Política de Cookies cuando resulte necesario para adaptarla a cambios legislativos, criterios interpretativos de las autoridades competentes o modificaciones técnicas introducidas en el funcionamiento del sitio web.</p>
+    <br>
+    <p>La utilización continuada del presente sitio web tras la publicación de modificaciones en la presente Política de Cookies implicará la aceptación de las nuevas condiciones, siempre que la normativa aplicable así lo permita.</p>
+    <br>
+    <p>En aquellos supuestos en los que la legislación vigente exija la obtención del consentimiento previo del usuario para la instalación de determinadas cookies no esenciales, Astra Racing implementará los mecanismos de información y consentimiento que resulten legalmente exigibles antes de proceder a su utilización.</p>
+    <br>
+    <p>Para cualquier consulta relacionada con la utilización de cookies o con el tratamiento de la información obtenida a través de las mismas, el usuario podrá ponerse en contacto con Astra Racing mediante el correo electrónico oficial indicado en el presente Aviso Legal.</p>
 
-    <h2>5. Formularios y patrocinio</h2>
-    <p>Este sitio web puede contener enlaces a formularios externos gestionados mediante servicios de terceros, como Google Forms, destinados a la solicitud de patrocinio o al contacto con el equipo. La cumplimentación y envío de dichos formularios es completamente voluntaria por parte del usuario. Los datos facilitados serán utilizados únicamente para gestionar la solicitud realizada y mantener la comunicación necesaria derivada de la misma.</p>
+    <h2>10. LEGISLACIÓN APLICABLE, JURISDICCIÓN, MODIFICACIONES Y DISPOSICIONES FINALES</h2>
+    <p>El presente Aviso Legal, las Condiciones Generales de Uso, la Política de Privacidad, la Política de Cookies y cualquier otro texto legal publicado en este sitio web se regirán e interpretarán de conformidad con la legislación española y, en particular, por la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), el Reglamento (UE) 2016/679 (RGPD), la Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), el Real Decreto Legislativo 1/1996 por el que se aprueba el Texto Refundido de la Ley de Propiedad Intelectual, así como por cualquier otra disposición normativa que resulte de aplicación.</p>
+    <br>
+    <p>Las presentes condiciones constituyen el acuerdo íntegro entre Astra Racing y el usuario respecto de la utilización del presente sitio web, sustituyendo cualquier comunicación, manifestación o entendimiento previo que pudiera existir sobre la misma materia.</p>
+    <br>
+    <p>La eventual declaración de nulidad, invalidez o inaplicabilidad de cualquiera de las cláusulas contenidas en este documento no afectará a la validez del resto de sus disposiciones, que continuarán siendo plenamente eficaces en todo aquello que no resulte afectado por dicha declaración.</p>
+    <br>
+    <p>En el supuesto de que alguna de las presentes cláusulas resultase incompatible con una norma imperativa, dicha cláusula será interpretada o adaptada en la medida estrictamente necesaria para respetar la finalidad perseguida por las partes y mantener la máxima eficacia posible del resto del documento.</p>
+    <br>
+    <p>Astra Racing podrá modificar en cualquier momento el contenido del presente Aviso Legal, las Condiciones de Uso, la Política de Privacidad o cualquier otra información publicada en este sitio web con el fin de adaptarla a cambios legislativos, resoluciones administrativas, criterios jurisprudenciales, necesidades organizativas o modificaciones técnicas del portal.</p>
+    <br>
+    <p>Las nuevas versiones serán publicadas en esta misma página y producirán efectos desde el momento de su publicación, salvo que expresamente se indique una fecha distinta de entrada en vigor.</p>
+    <br>
+    <p>Corresponde al usuario revisar periódicamente el presente documento con el fin de conocer las condiciones vigentes en cada momento, entendiéndose aceptadas aquellas que se encuentren publicadas en la fecha de acceso al sitio web.</p>
+    <br>
+    <p>El hecho de que Astra Racing no ejercite en un momento determinado cualquiera de los derechos o facultades reconocidos en el presente documento no supondrá renuncia alguna a los mismos ni impedirá su ejercicio posterior.</p>
+    <br>
+    <p>Astra Racing podrá suspender temporal o definitivamente el acceso al presente sitio web cuando concurran circunstancias técnicas, organizativas, de mantenimiento, seguridad, fuerza mayor o cualquier otra causa que aconseje dicha medida, sin que ello genere derecho a compensación, indemnización o reclamación alguna por parte de los usuarios.</p>
+    <br>
+    <p>Asimismo, Astra Racing podrá reorganizar, actualizar, sustituir o eliminar cualquiera de las secciones, contenidos, servicios, funcionalidades o recursos del presente sitio web cuando lo considere conveniente para el correcto desarrollo del proyecto.</p>
+    <br>
+    <p>Las presentes condiciones deberán interpretarse de buena fe, procurando en todo momento preservar la finalidad educativa, tecnológica y divulgativa del proyecto Astra Racing, así como la protección de los derechos e intereses legítimos de todas las personas y entidades relacionadas con el mismo.</p>
+    <br>
+    <p>Salvo que la normativa de protección de consumidores establezca otra cosa, cualquier controversia derivada de la interpretación, aplicación, ejecución o validez del presente documento será sometida a los Juzgados y Tribunales de la ciudad de Madrid, con renuncia expresa a cualquier otro fuero que pudiera corresponder a las partes.</p>
+    <br>
+    <p>En aquellos supuestos en los que el usuario tenga la condición legal de consumidor o usuario, la anterior sumisión expresa se entenderá realizada sin perjuicio de los derechos irrenunciables que le reconozca la legislación vigente.</p>
+    <br>
+    <p>Para cualquier consulta relacionada con el presente Aviso Legal o con cualquiera de las condiciones reguladas en este documento, los usuarios podrán dirigirse a Astra Racing mediante el correo electrónico oficial <strong>at33stemracingteamoficial@gmail.com</strong>, comprometiéndose el Equipo a atender las comunicaciones recibidas en un plazo razonable.</p>
+    <br>
+    <p>La utilización del presente sitio web supone la aceptación íntegra de todas las disposiciones contenidas en el presente documento. Si el usuario no estuviera conforme con cualquiera de ellas, deberá abstenerse de acceder, navegar o utilizar cualquiera de los servicios ofrecidos a través del portal.</p>
 
-    <h2>6. Protección de datos</h2>
-    <p>AT33 STEM Racing Team únicamente tendrá acceso a la información proporcionada voluntariamente por los usuarios a través de los formularios habilitados para tal fin. No se solicitarán datos distintos de aquellos estrictamente necesarios para gestionar la solicitud de patrocinio o contacto. Los datos facilitados no serán cedidos a terceros salvo obligación legal o cuando resulte necesario para la correcta gestión de la solicitud realizada. Los formularios empleados en este sitio web son gestionados mediante servicios externos proporcionados por Google. Al remitir información a través de dichos formularios, el usuario acepta también las condiciones y políticas de privacidad aplicables a dichos servicios.</p>
+    <h2>11. COMUNICACIONES ELECTRÓNICAS Y USO DE LOS FORMULARIOS</h2>
+    <p>El presente sitio web pone a disposición de los usuarios distintos medios de contacto, incluyendo formularios electrónicos y direcciones de correo electrónico, con la finalidad de facilitar la comunicación entre Astra Racing y aquellas personas, empresas o instituciones interesadas en el proyecto.</p>
+    <br>
+    <p>La utilización de cualquiera de estos medios de contacto tendrá carácter voluntario y no implicará, por sí sola, la existencia de relación contractual, comercial, laboral, societaria o de cualquier otra naturaleza entre el usuario y Astra Racing.</p>
+    <br>
+    <p>El envío de consultas, propuestas de patrocinio, solicitudes de colaboración o cualquier otra comunicación no supondrá la aceptación automática de las mismas, reservándose Astra Racing el derecho a responder, rechazar o no atender aquellas solicitudes que considere improcedentes, incompletas o incompatibles con los objetivos del proyecto.</p>
+    <br>
+    <p>El usuario garantiza que toda la información facilitada mediante los formularios del presente sitio web es veraz, exacta, completa y se encuentra actualizada, comprometiéndose a comunicar cualquier modificación relevante que pudiera producirse con posterioridad a su envío.</p>
+    <br>
+    <p>Queda prohibido utilizar los formularios de contacto para remitir información falsa, engañosa, difamatoria, ofensiva, discriminatoria, amenazante, ilícita o que pueda vulnerar derechos de terceros o la legislación vigente.</p>
+    <br>
+    <p>Asimismo, no estará permitido utilizar los formularios para el envío de publicidad no solicitada, campañas comerciales masivas, mensajes automatizados, spam, cadenas de correo, programas informáticos maliciosos o cualquier otro contenido ajeno a la finalidad prevista por Astra Racing.</p>
+    <br>
+    <p>El usuario será el único responsable del contenido de las comunicaciones remitidas a través del presente sitio web, exonerando a Astra Racing de cualquier responsabilidad derivada de la información facilitada por aquél.</p>
+    <br>
+    <p>Astra Racing podrá conservar las comunicaciones recibidas durante el tiempo estrictamente necesario para atender la consulta planteada, gestionar una posible colaboración, cumplir obligaciones legales o defender sus derechos e intereses legítimos.</p>
+    <br>
+    <p>Las comunicaciones mantenidas mediante correo electrónico o formularios electrónicos no tendrán la consideración de confidenciales salvo que exista una obligación legal o contractual que así lo establezca expresamente.</p>
+    <br>
+    <p>Cuando el usuario remita documentación, imágenes, logotipos, presentaciones, propuestas comerciales u otro material relacionado con una posible colaboración, declara disponer de todos los derechos necesarios para su envío y autoriza a Astra Racing a utilizarlos exclusivamente para evaluar la propuesta presentada.</p>
+    <br>
+    <p>La recepción de documentación por parte de Astra Racing no implicará obligación alguna de iniciar negociaciones, formalizar acuerdos de patrocinio o establecer relaciones de colaboración con el remitente.</p>
+    <br>
+    <p>Astra Racing podrá solicitar información adicional cuando resulte necesaria para valorar una propuesta de patrocinio o colaboración, comprometiéndose el usuario a facilitar únicamente aquella información que considere adecuada y pertinente.</p>
+    <br>
+    <p>Las comunicaciones electrónicas podrán ser archivadas con fines organizativos, administrativos y de seguimiento interno del proyecto, respetándose en todo momento la normativa vigente en materia de protección de datos personales.</p>
+    <br>
+    <p>El usuario acepta que Astra Racing pueda responder a las comunicaciones recibidas mediante correo electrónico o cualquier otro medio de contacto facilitado voluntariamente por el interesado, siempre que dicha comunicación resulte necesaria para atender la solicitud planteada.</p>
+    <br>
+    <p>En caso de detectarse un uso abusivo, fraudulento o contrario a la finalidad de los formularios de contacto, Astra Racing podrá bloquear el acceso del remitente, eliminar las comunicaciones recibidas y adoptar las medidas legales que resulten procedentes para la protección de sus derechos e intereses.</p>
+    <br>
+    <p>El envío de una comunicación mediante cualquiera de los formularios disponibles en este sitio web supondrá la aceptación de las presentes condiciones y de la Política de Privacidad publicada por Astra Racing.</p>
 
-    <h2>7. Enlaces externos</h2>
-    <p>Este sitio web puede incluir enlaces a páginas web externas con fines informativos o de contacto. Astra Racing no se responsabiliza del contenido, disponibilidad o políticas de privacidad de dichos sitios ajenos al equipo.</p>
+    <h2>12. USO ACEPTABLE DEL SITIO WEB Y CONDUCTAS PROHIBIDAS</h2>
+    <p>El usuario se compromete a utilizar el presente sitio web de forma responsable, diligente y conforme a la legislación vigente, respetando en todo momento los derechos e intereses legítimos de Astra Racing, de sus integrantes, patrocinadores, colaboradores y de cualquier tercero.</p>
+    <br>
+    <p>Queda expresamente prohibido utilizar el sitio web para la realización de actividades ilícitas, fraudulentas o contrarias a la buena fe, así como cualquier actuación que pueda perjudicar el normal funcionamiento del portal o afectar negativamente a la imagen, reputación o actividad de Astra Racing.</p>
+    <br>
+    <p>El usuario no podrá utilizar el presente sitio web para difundir contenido ofensivo, difamatorio, discriminatorio, amenazante, violento, obsceno, ilegal o contrario al orden público, ni para promover actividades que vulneren derechos fundamentales o la legislación vigente.</p>
+    <br>
+    <p>Se prohíbe expresamente cualquier intento de acceder sin autorización a servidores, bases de datos, sistemas internos, paneles de administración, cuentas de usuario, infraestructuras tecnológicas o cualquier otro recurso relacionado con el presente sitio web.</p>
+    <br>
+    <p>No estará permitido realizar actividades destinadas a comprometer la seguridad del portal, incluyendo, entre otras, pruebas de intrusión no autorizadas, ataques de denegación de servicio (DoS o DDoS), explotación de vulnerabilidades, interceptación de comunicaciones, manipulación de peticiones o cualquier otra actuación similar.</p>
+    <br>
+    <p>Queda prohibido introducir virus informáticos, código malicioso, ransomware, spyware, troyanos, scripts automatizados o cualquier otro elemento susceptible de alterar el funcionamiento del sitio web o de los sistemas utilizados por Astra Racing.</p>
+    <br>
+    <p>El usuario no podrá utilizar herramientas automáticas destinadas a recopilar información del presente sitio web mediante técnicas de scraping, crawling, harvesting, minería de datos, extracción automatizada de contenidos o procedimientos equivalentes sin autorización previa y por escrito de Astra Racing.</p>
+    <br>
+    <p>Asimismo, queda prohibido emplear cualquier contenido publicado en este sitio web para el entrenamiento, desarrollo, validación o mejora de modelos de inteligencia artificial, sistemas de aprendizaje automático, modelos generativos o tecnologías similares sin autorización expresa del Titular.</p>
+    <br>
+    <p>No estará permitido suplantar la identidad de Astra Racing, de cualquiera de sus integrantes, patrocinadores o colaboradores, ni crear perfiles, páginas web, publicaciones o comunicaciones que puedan inducir a terceros a creer erróneamente que existe una relación oficial con el Equipo.</p>
+    <br>
+    <p>El usuario se abstendrá de utilizar el nombre, logotipo, identidad visual, imágenes o cualquier otro elemento identificativo de Astra Racing para fines distintos de los expresamente autorizados por el Titular.</p>
+    <br>
+    <p>Queda prohibida la utilización del presente sitio web para desarrollar actividades de competencia desleal, apropiación indebida de información, obtención de ventajas competitivas o cualquier otra actuación que pueda perjudicar directa o indirectamente los intereses legítimos de Astra Racing.</p>
+    <br>
+    <p>El usuario no podrá eliminar, modificar, ocultar o alterar los avisos relativos a derechos de propiedad intelectual, marcas, derechos de autor o cualquier otra información jurídica incorporada en los contenidos publicados.</p>
+    <br>
+    <p>La utilización del sitio web deberá realizarse respetando en todo momento las limitaciones técnicas establecidas por Astra Racing, absteniéndose el usuario de realizar actuaciones que puedan provocar un consumo desproporcionado de recursos, degradar el rendimiento del servicio o impedir el acceso de otros usuarios.</p>
+    <br>
+    <p>Cualquier incumplimiento de las presentes normas podrá dar lugar a la adopción de las medidas que Astra Racing considere oportunas para proteger sus derechos e intereses, incluyendo la limitación o bloqueo del acceso al sitio web, la conservación de evidencias técnicas y el ejercicio de las acciones legales que resulten procedentes.</p>
+    <br>
+    <p>La relación de conductas descritas en el presente apartado tendrá carácter meramente enunciativo y no limitativo, entendiéndose igualmente prohibida cualquier actuación que, aun no encontrándose expresamente recogida, resulte contraria a la legislación vigente, a la buena fe o a la finalidad para la que ha sido creado el presente sitio web.</p>
 
-    <h2>8. Exclusión de responsabilidad</h2>
-    <p>Aunque se realizarán esfuerzos razonables para mantener actualizada y precisa la información publicada, Astra Racing no garantiza la ausencia de errores ni la disponibilidad permanente del sitio web. El equipo no será responsable de los daños o perjuicios que pudieran derivarse del uso de la información contenida en esta página o de la interrupción temporal del servicio.</p>
+    <h2>13. USO DEL CONTENIDO POR SISTEMAS AUTOMATIZADOS E INTELIGENCIA ARTIFICIAL</h2>
+    <p>El contenido publicado en el presente sitio web ha sido desarrollado por Astra Racing con fines exclusivamente informativos, educativos, institucionales y divulgativos, encontrándose protegido por la normativa vigente en materia de propiedad intelectual, industrial y demás disposiciones que resulten de aplicación.</p>
+    <br>
+    <p>Salvo autorización previa, expresa y por escrito de Astra Racing, queda prohibida la utilización total o parcial de cualquier contenido del presente sitio web para el entrenamiento, desarrollo, validación, ajuste, optimización o evaluación de modelos de inteligencia artificial, sistemas de aprendizaje automático, modelos fundacionales, modelos generativos, redes neuronales o cualquier otra tecnología basada en el procesamiento automatizado de información.</p>
+    <br>
+    <p>La anterior limitación comprenderá, entre otros, los textos, imágenes, fotografías, renders, vídeos, animaciones, modelos tridimensionales, diseños CAD, esquemas técnicos, documentación, logotipos, código fuente, hojas de estilo, bases de datos, documentación descargable y cualquier otro elemento publicado en el presente portal.</p>
+    <br>
+    <p>Asimismo, queda prohibida la recopilación automatizada de contenidos mediante herramientas de scraping, crawling, harvesting, indexación no autorizada, minería de datos, extracción masiva de información o cualquier otra tecnología equivalente cuya finalidad sea almacenar, reutilizar, reproducir o explotar el contenido publicado por Astra Racing.</p>
+    <br>
+    <p>El usuario no podrá emplear robots, agentes automatizados, scripts, programas informáticos o cualquier otro mecanismo destinado a acceder de forma masiva o reiterada al presente sitio web cuando dicha actuación pueda afectar al rendimiento, disponibilidad, seguridad o funcionamiento normal del portal.</p>
+    <br>
+    <p>La utilización de cualquier contenido publicado en este sitio web para generar obras derivadas, reconstrucciones digitales, simulaciones, modelos tridimensionales, sistemas automatizados de diseño, herramientas CAD asistidas por inteligencia artificial o tecnologías equivalentes requerirá autorización expresa del Titular.</p>
+    <br>
+    <p>El acceso público a determinados contenidos no implicará, en ningún caso, la concesión de una licencia para su utilización mediante procesos automatizados distintos de la simple visualización por parte del usuario a través de un navegador web convencional.</p>
+    <br>
+    <p>Astra Racing podrá implementar las medidas técnicas que considere oportunas para limitar el acceso automatizado al presente sitio web, incluyendo mecanismos destinados a detectar comportamientos anómalos, accesos masivos o actividades incompatibles con las presentes condiciones de uso.</p>
+    <br>
+    <p>La detección de actividades automatizadas que puedan comprometer la seguridad, estabilidad o integridad del sitio web podrá dar lugar a la restricción temporal o permanente del acceso, sin perjuicio del ejercicio de las acciones legales que pudieran corresponder.</p>
+    <br>
+    <p>Lo dispuesto en el presente apartado deberá entenderse sin perjuicio de las excepciones previstas por la legislación aplicable o de las autorizaciones expresamente concedidas por Astra Racing para fines concretos de investigación, colaboración académica o desarrollo tecnológico.</p>
+    <br>
+    <p>La utilización no autorizada de los contenidos mediante tecnologías automatizadas podrá dar lugar a las correspondientes acciones civiles, administrativas o penales previstas en el ordenamiento jurídico español.</p>
 
-    <h2>9. Modificaciones</h2>
-    <p>Astra Racing se reserva el derecho de modificar los presentes Términos y Condiciones en cualquier momento y sin previo aviso. Las modificaciones serán efectivas desde el momento de su publicación en este sitio web.</p>
+    <h2>14. CONTENIDOS APORTADOS POR LOS USUARIOS</h2>
+    <p>Los usuarios que remitan información a Astra Racing mediante formularios de contacto, correo electrónico o cualquier otro medio habilitado a través del presente sitio web garantizan que poseen todos los derechos, autorizaciones y facultades necesarias para comunicar dicha información.</p>
+    <br>
+    <p>El usuario será el único responsable del contenido de las comunicaciones, documentos, imágenes, logotipos, archivos, presentaciones, propuestas comerciales o cualquier otro material que remita a Astra Racing, respondiendo frente a cualquier reclamación derivada de la vulneración de derechos de terceros.</p>
+    <br>
+    <p>Queda expresamente prohibido remitir contenidos que vulneren la legislación vigente, los derechos fundamentales, la propiedad intelectual o industrial de terceros, el derecho al honor, a la intimidad, a la propia imagen o cualquier otro derecho legalmente protegido.</p>
+    <br>
+    <p>Asimismo, no podrán enviarse contenidos que resulten difamatorios, injuriosos, calumniosos, discriminatorios, amenazantes, violentos, obscenos, pornográficos, fraudulentos, engañosos o que puedan afectar negativamente a la imagen, reputación o funcionamiento de Astra Racing o de terceros.</p>
+    <br>
+    <p>El usuario garantiza que la documentación facilitada no contiene virus, programas maliciosos, código ejecutable no autorizado, macros dañinas ni cualquier otro elemento susceptible de comprometer la seguridad de los sistemas informáticos utilizados por Astra Racing.</p>
+    <br>
+    <p>Cuando el usuario remita logotipos, fotografías, material corporativo o cualquier otro contenido perteneciente a una empresa, entidad o institución, declara disponer de la correspondiente autorización para su utilización y comunicación.</p>
+    <br>
+    <p>La recepción de información por parte de Astra Racing no implicará obligación alguna de conservarla, responder a la misma, iniciar negociaciones o formalizar acuerdos de colaboración, patrocinio o cualquier otra relación jurídica.</p>
+    <br>
+    <p>Salvo indicación expresa en sentido contrario, Astra Racing podrá utilizar la información facilitada exclusivamente para analizar la consulta planteada, valorar posibles colaboraciones, mantener las comunicaciones necesarias con el remitente y gestionar administrativamente la solicitud recibida.</p>
+    <br>
+    <p>El envío de propuestas, sugerencias, recomendaciones o ideas relacionadas con el proyecto Astra Racing no implicará la adquisición por parte del remitente de derecho alguno sobre los desarrollos que posteriormente pudiera realizar el Equipo de forma independiente.</p>
+    <br>
+    <p>En ningún caso podrá entenderse que Astra Racing asume obligación de confidencialidad respecto de la información remitida espontáneamente por los usuarios, salvo que dicha obligación derive de un acuerdo específico suscrito entre ambas partes o resulte exigible por la legislación aplicable.</p>
+    <br>
+    <p>Astra Racing se reserva el derecho de eliminar, bloquear, archivar o no atender aquellas comunicaciones cuyo contenido resulte manifiestamente improcedente, ilícito, ofensivo, reiterativo, fraudulento o incompatible con la finalidad del presente sitio web.</p>
+    <br>
+    <p>Cuando resulte necesario para la defensa de sus derechos e intereses legítimos, Astra Racing podrá conservar las evidencias técnicas relacionadas con las comunicaciones recibidas, respetando en todo momento la normativa vigente en materia de protección de datos personales.</p>
+    <br>
+    <p>El usuario mantendrá indemne a Astra Racing frente a cualquier reclamación, procedimiento judicial, sanción administrativa, indemnización o gasto derivado de la falsedad, ilicitud o falta de legitimación respecto de la información facilitada mediante el presente sitio web.</p>
+    <br>
+    <p>La utilización de cualquiera de los medios de contacto habilitados por Astra Racing implicará la aceptación íntegra de las condiciones establecidas en el presente apartado.</p>
 
-    <h2>10. Contacto</h2>
-    <p>Para cualquier consulta relacionada con estos Términos y Condiciones, puede contactar con el equipo a través del siguiente correo electrónico: <strong>at33stemracingteamoficial@gmail.com</strong></p>
+    <h2>15. DISPOSICIONES FINALES Y ENTRADA EN VIGOR</h2>
+    <p>El presente Aviso Legal, Términos y Condiciones de Uso, Política de Privacidad y Política de Cookies constituye el texto íntegro que regula las relaciones entre Astra Racing y los usuarios del presente sitio web en todo aquello relativo a su acceso, navegación y utilización.</p>
+    <br>
+    <p>La utilización del sitio web implica que el usuario ha leído, comprendido y aceptado íntegramente todas las disposiciones contenidas en el presente documento. En caso de no estar de acuerdo con cualquiera de sus cláusulas, el usuario deberá abstenerse de acceder, navegar o utilizar los servicios y contenidos ofrecidos a través del portal.</p>
+    <br>
+    <p>Astra Racing se reserva el derecho de modificar, actualizar, ampliar, sustituir o eliminar total o parcialmente el contenido del presente documento cuando resulte necesario para adaptarlo a cambios legislativos, resoluciones administrativas o judiciales, avances tecnológicos, modificaciones organizativas del Equipo o mejoras en el funcionamiento del sitio web.</p>
+    <br>
+    <p>Las modificaciones entrarán en vigor desde el momento de su publicación en este sitio web, salvo que expresamente se establezca una fecha distinta de aplicación. La navegación continuada por el portal tras la entrada en vigor de dichas modificaciones supondrá la aceptación de las nuevas condiciones por parte del usuario.</p>
+    <br>
+    <p>Si alguna de las disposiciones contenidas en el presente documento fuese declarada nula, inválida o inaplicable por una autoridad competente, dicha circunstancia no afectará a la validez del resto de las cláusulas, que continuarán siendo plenamente eficaces en todo aquello que no resulte afectado por dicha declaración.</p>
+    <br>
+    <p>La falta de ejercicio por parte de Astra Racing de cualquiera de los derechos o facultades reconocidos en el presente documento no constituirá renuncia a los mismos, pudiendo ejercitarse en cualquier momento mientras la legislación vigente así lo permita.</p>
+    <br>
+    <p>El presente documento deberá interpretarse de conformidad con la legislación española, procurando en todo momento preservar la finalidad educativa, tecnológica, científica e institucional del proyecto Astra Racing, así como la adecuada protección de sus derechos, intereses y activos materiales e inmateriales.</p>
+    <br>
+    <p>Para cualquier cuestión relacionada con el contenido del presente Aviso Legal, con el ejercicio de derechos en materia de protección de datos, con la utilización de contenidos protegidos o con cualquier otro aspecto jurídico relacionado con este sitio web, los usuarios podrán dirigirse a Astra Racing mediante el correo electrónico oficial <strong>at33stemracingteamoficial@gmail.com</strong>.</p>
+    <br>
+    <p><strong>Versión del documento:</strong> 1.0</p>
+    <br>
+    <p><strong>Fecha de entrada en vigor:</strong> 23 de junio de 2026.</p>
+    <br>
+    <p><strong>Última actualización:</strong> 23 de junio de 2026.</p>
+    <br>
+    <p>El presente documento ha sido redactado en idioma español. En caso de que se publique una traducción oficial a cualquier otro idioma, prevalecerá en todo momento la versión redactada en español para la interpretación, aplicación y resolución de cualquier controversia derivada de su contenido.</p>
+    <br>
+    <p>La numeración, denominación y orden de los apartados incluidos en el presente documento tienen una finalidad exclusivamente organizativa y facilitarán su consulta, sin que puedan alterar, limitar o modificar el alcance jurídico de cualquiera de las disposiciones aquí contenidas.</p>
+    <br>
+    <p>©2026 Astra Racing. Todos los derechos reservados.</p>
 </main>
 
 <footer>

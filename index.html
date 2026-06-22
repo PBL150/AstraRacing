@@ -253,12 +253,33 @@
         .patrocinadores-title{font-size:clamp(2rem,5vw,3.5rem);text-transform:uppercase;margin-bottom:40px;}
         .sponsor-level{width:100%;margin-bottom:60px;}
         .sponsor-level-title{color:white;margin-bottom:25px;letter-spacing:2px;text-transform:uppercase;font-size:1.1rem;}
-        .sponsor-grid-oro,.sponsor-grid-plata,.sponsor-grid-bronce{display:flex;justify-content:center;align-items:center;gap:25px;flex-wrap:wrap;}
-        .sponsor-box{background:rgba(33,38,67,.10);border-radius:24px;display:flex;align-items:center;justify-content:center;padding:30px;border:1px solid transparent;transition:.5s var(--ease);overflow:hidden;}
-        .sponsor-box:hover{background:rgba(33,38,67,.20);border-color:rgba(74,91,168,.40);transform:translateY(-5px);}
-        .sponsor-box.oro{width:420px;height:220px;}.sponsor-box.plata{width:320px;height:180px;}.sponsor-box.bronce{width:240px;height:140px;}
-        .sponsor-logo{width:100%;height:100%;object-fit:contain;padding:15px;filter:grayscale(100%) brightness(2);opacity:.8;transition:.5s var(--ease);}
-        .sponsor-box:hover .sponsor-logo{filter:grayscale(0%) brightness(1);opacity:1;}
+        
+        .sponsor-grid-oro, .sponsor-grid-plata, .sponsor-grid-bronce, .sponsor-grid-pit {
+            display:flex; justify-content:center; align-items:center; gap:25px; flex-wrap:wrap;
+        }
+        .sponsor-box {
+            background:rgba(33,38,67,.10); border-radius:24px; display:flex; align-items:center; justify-content:center; padding:30px; border:1px solid transparent; transition:.5s var(--ease); overflow:hidden;
+        }
+        .sponsor-box:hover {
+            background:rgba(33,38,67,.20); border-color:rgba(74,91,168,.40); transform:translateY(-5px);
+        }
+        
+        /* Ajuste de enlaces e imágenes para que no se corten */
+        .sponsor-box a {
+            display:flex; width:100%; height:100%; align-items:center; justify-content:center;
+        }
+        .sponsor-logo {
+            width:100%; height:100%; object-fit:contain; filter:grayscale(100%) brightness(2); opacity:.8; transition:.5s var(--ease);
+        }
+        .sponsor-box:hover .sponsor-logo {
+            filter:grayscale(0%) brightness(1); opacity:1;
+        }
+
+        /* Dimensiones de las cajas por categoría */
+        .sponsor-box.oro { width:420px; height:220px; }
+        .sponsor-box.plata { width:320px; height:180px; }
+        .sponsor-box.bronce { width:240px; height:140px; }
+        .sponsor-box.pit { width:180px; height:100px; } /* Tamaño más pequeño para Pit Lane */
 
         /* Botones */
         .btn-buy{display:inline-block;padding:18px 45px;background:var(--principal);color:var(--blanco);text-decoration:none;border-radius:12px;border:1px solid var(--b-blue);border-bottom:4px solid #161a2d;box-shadow:0 4px 166px rgba(33,38,67,.4);transition:all .2s var(--ease);cursor:pointer;text-transform:uppercase;font-size:.9rem;margin-top:20px;position:relative;z-index:5;}
@@ -295,9 +316,18 @@
         @media(max-width:950px){
             section{height:auto;min-height:100vh;padding:100px 6% 80px;}
             .coche-grid{grid-template-columns:1fr;}
-            .sponsor-grid-oro,.sponsor-grid-plata,.sponsor-grid-bronce{flex-direction:column;gap:20px;}
-            .sponsor-box.oro,.sponsor-box.plata,.sponsor-box.bronce{width:100%;max-width:420px;}
-            .sponsor-box.oro{height:200px;}.sponsor-box.plata{height:170px;}.sponsor-box.bronce{height:140px;}
+            
+            .sponsor-grid-oro, .sponsor-grid-plata, .sponsor-grid-bronce, .sponsor-grid-pit {
+                flex-direction:column; gap:20px;
+            }
+            .sponsor-box.oro, .sponsor-box.plata, .sponsor-box.bronce, .sponsor-box.pit {
+                width:100%; max-width:420px;
+            }
+            .sponsor-box.oro{height:200px;}
+            .sponsor-box.plata{height:170px;}
+            .sponsor-box.bronce{height:140px;}
+            .sponsor-box.pit{height:100px;} /* Ajuste de altura en móvil para Pit Lane */
+            
             footer{text-align:center;}
             .footer-grid{grid-template-columns:1fr;}
         }
@@ -466,6 +496,7 @@
         <div class="sponsor-grid-plata">
             <div class="sponsor-box plata"><a href="https://www.dentalsuarezburgos.es" target="_blank" rel="noopener"><img src="Logo_clinica.png" alt="Suarez-Burgos" class="sponsor-logo"></a></div>
             <div class="sponsor-box plata"><a href="404.html" target="_blank" rel="noopener"><img src="Logo_bahiafisio.png" alt="Bahía Fisio" class="sponsor-logo"></a></div>
+            <div class="sponsor-box plata"><a href="404.html" target="_blank" rel="noopener"><img src="Logo_gestoria.png" alt="Gestoría Nuria Sanches Herrero" class="sponsor-logo"></a></div>
         </div>
     </div>
     <div class="sponsor-level reveal">
@@ -477,9 +508,9 @@
     </div>
     <div class="sponsor-level reveal">
         <h3 class="sponsor-level-title">CLASE Pit Lane</h3>
-        <div class="sponsor-grid-bronce">
-            <div class="sponsor-box bronce"><a href="404.html" target="_blank" rel="noopener"><img src="Logo.png" alt="Logo" class="sponsor-logo"></a></div>
-            <div class="sponsor-box bronce"><a href="404.html" target="_blank" rel="noopener"><img src="Logo.png" alt="Logo" class="sponsor-logo"></a></div>
+        <div class="sponsor-grid-pit">
+            <div class="sponsor-box pit"><a href="404.html" target="_blank" rel="noopener"><img src="Logo.png" alt="Logo" class="sponsor-logo"></a></div>
+            <div class="sponsor-box pit"><a href="404.html" target="_blank" rel="noopener"><img src="Logo.png" alt="Logo" class="sponsor-logo"></a></div>
         </div>
     </div>
 </section>
