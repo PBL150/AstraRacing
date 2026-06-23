@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astra Racing | Aviso legal</title>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="Favicon.png"/>
+
+<style>
+:root{
+    --principal:#212643;
+    --secundario:#66221d;
+    --bg-deep:#0a0a0a;
+    --bg-alt:#0f0f0f;
+    --surface:#141414;
+    --b-blue:rgba(33,38,67,.95);
+    --b-red:rgba(102,34,29,.40);
+    --blanco:#ffffff;
+    --ease:cubic-bezier(.4,0,.2,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Carter One',cursive;}
+html{scroll-behavior:smooth;background:var(--bg-deep);-webkit-font-smoothing:antialiased;}
+body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
+
+/* --- ESTILO BOTÓN DESCARGA --- */
+.download-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    background: var(--secundario);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 10px 0 20px 0;
+    transition: background .3s var(--ease), transform .2s ease;
+    border: 1px solid var(--b-blue);
+}
+.download-btn:hover {
+    background: var(--principal);
+    transform: translateY(-2px);
+}
+
+/* --- NAVEGACIÓN DESKTOP --- */
+.nav-wrap{ position:fixed;top:0;left:0;width:100%; z-index:5000;display:flex;flex-direction:column; align-items:center;padding-top:22px; pointer-events:none; }
+.nav-main{ background:var(--surface); border:1px solid var(--b-blue); box-shadow:0 0 0 1px var(--b-red); width:90%;max-width:1200px;height:68px;padding:0 24px; border-radius:16px;display:flex;justify-content:space-between; align-items:center;pointer-events:auto; transition:border-radius .4s var(--ease); position:relative;z-index:2; }
+.nav-main.sub-open{border-radius:16px 16px 0 0;}
+.nav-logo{height:38px;}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-links a{ color:var(--blanco);text-decoration:none;font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-links a:hover{background:rgba(102,34,29,.35);opacity:1;}
+.nav-links a.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+.nav-links a.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+.nav-inicio-container{ position:relative; }
+.nav-inicio-link{ display:flex;align-items:center;gap:7px; color:var(--blanco);text-decoration:none;font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65; transition:background .25s,opacity .25s;white-space:nowrap;cursor:pointer; }
+.nav-inicio-link:hover{background:rgba(102,34,29,.35);opacity:1;}
+.nav-inicio-link.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+.nav-inicio-link.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+.chevron{ display:inline-block;width:7px;height:7px; border-right:2px solid currentColor;border-bottom:2px solid currentColor; transform:rotate(45deg);transition:transform .35s var(--ease); margin-top:-2px;flex-shrink:0; }
+.chevron.up{transform:rotate(-135deg);margin-top:2px;}
+.nav-sub{ width:90%;max-width:1200px; background:var(--surface); border:1px solid var(--b-blue);border-top:none; box-shadow:0 0 0 1px var(--b-red),0 16px 32px rgba(0,0,0,.6); border-radius:0 0 16px 16px; display:flex;align-items:center;justify-content:center; gap:8px; pointer-events:auto; max-height:0;overflow:hidden;opacity:0;padding:0 24px; transition:max-height .4s var(--ease),opacity .35s var(--ease),padding .4s var(--ease); }
+.nav-sub.open{max-height:100px;opacity:1;padding:14px 24px;}
+.nav-sub a{ color:var(--blanco);text-decoration:none;font-size:.78rem; text-transform:uppercase;letter-spacing:1px;padding:9px 18px; border-radius:9px;opacity:.6; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-sub a:hover{background:rgba(102,34,29,.35);opacity:1;}
+.nav-sub a.section-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+.nav-sub a.section-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+
+/* --- NAVEGACIÓN MÓVIL --- */
+@media (min-width: 1001px) { .nav-mob-pill, .nav-mob-panel, .nav-mob-overlay { display: none !important; } }
+@media(max-width:1000px){
+    .nav-wrap{ display:none; }
+    .nav-mob-pill{ position:fixed;top:28px;right:28px;z-index:5000;width:52px;height:52px;background:var(--surface);border:1px solid var(--b-blue);box-shadow:0 0 0 1px var(--b-red),0 8px 24px rgba(0,0,0,.6);border-radius:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto; }
+    .nav-mob-pill .menu-toggle{ display:flex;flex-direction:column;gap:5px;pointer-events:none; }
+    .nav-mob-pill .menu-toggle span{width:22px;height:2px;background:var(--blanco);transition:.4s var(--ease);}
+    .nav-mob-panel{ position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);z-index:5000;width:270px;background:var(--surface);border:1px solid var(--b-blue);box-shadow:0 0 0 1px var(--b-red),0 24px 60px rgba(0,0,0,.8);border-radius:22px;padding:44px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease),transform .35s var(--ease); }
+    .nav-mob-panel.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);}
+    .nav-mob-close{ position:absolute;top:13px;right:13px;width:30px;height:30px;background:rgba(33,38,67,.4);border:1px solid var(--b-blue);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center; }
+    .nav-mob-close::before,.nav-mob-close::after{content:'';position:absolute;width:14px;height:2px;background:white;transform:rotate(45deg);}
+    .nav-mob-close::after{transform:rotate(-45deg);}
+    .nav-mob-logo{height:30px;margin-bottom:12px;}
+    .nav-mob-panel a.mob-page-link, .nav-mob-panel a.mob-inicio-link{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.95rem; text-transform:uppercase;letter-spacing:1px;padding:10px 16px; border-radius:10px;opacity:.7; transition:background .25s,opacity .25s; background:none;font-family:'Carter One',cursive;cursor:pointer; display:flex;align-items:center;justify-content:center;gap:7px; }
+    .nav-mob-panel a.mob-page-link:hover, .nav-mob-panel a.mob-inicio-link:hover{background:rgba(102,34,29,.35);opacity:1;}
+    .nav-mob-panel a.mob-page-link.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+    .nav-mob-panel a.mob-page-link.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+    .nav-mob-panel a.mob-inicio-link.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+    .nav-mob-panel a.mob-inicio-link.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+    .nav-mob-sub{ width:100%; overflow:hidden;max-height:0;opacity:0; transition:max-height .4s var(--ease),opacity .3s var(--ease); display:flex;flex-direction:column;gap:2px; background:rgba(33,38,67,.12); border-radius:10px; padding:0 6px; }
+    .nav-mob-sub.open{max-height:280px;opacity:1;padding:6px;}
+    .nav-mob-sub a{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.85rem; text-transform:uppercase;letter-spacing:1px;padding:9px 12px; border-radius:8px;opacity:.65; transition:background .2s,opacity .2s; }
+    .nav-mob-sub a:hover{background:rgba(102,34,29,.35);opacity:1;}
+    .nav-mob-sub a.section-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+    .nav-mob-sub a.section-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+    .nav-mob-overlay{ position:fixed;inset:0;z-index:4999; background:rgba(0,0,0,.5); opacity:0;pointer-events:none; transition:opacity .35s var(--ease); }
+    .nav-mob-overlay.open{opacity:1;pointer-events:auto;}
+}
+
+/* --- CONTENIDO TÉRMINOS --- */
+.terms-container{ padding:180px 5% 100px; max-width:900px; margin:0 auto; text-align:left; color:rgba(255,255,255,0.8); line-height:1.8; }
+.terms-container h1{ color:var(--blanco); font-size:2.5rem; margin-bottom:30px; text-align:center; }
+.terms-container h2{ color:var(--principal); font-size:1.5rem; margin-top:40px; margin-bottom:15px; }
+.terms-container ul{ margin-left:20px; margin-bottom:20px; }
+.terms-container li{ margin-bottom:5px; }
+.terms-container p{ font-size: 1rem; margin-bottom: 15px;}
+
+footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 1px 0 var(--b-red);padding:80px 8% 40px;text-align:left;color:var(--blanco);}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1200px;margin:0 auto;align-items:start;}
+.footer-col h4{text-transform:uppercase;font-size:1.1rem;margin-bottom:25px;letter-spacing:1px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col ul li a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.95rem;transition:color .3s var(--ease);}
+.footer-col ul li a:hover{color:var(--blanco);}
+.footer-bottom{margin-top:60px;padding-top:30px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.85rem;color:rgba(255,255,255,.35);}
+@media(max-width:950px){ footer{text-align:center;} .footer-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+
+<body>
+
+<div class="nav-wrap">
+    <nav class="nav-main" id="navMain">
+        <img src="Logonegativo.png" alt="Logo" class="nav-logo">
+        <div class="nav-links">
+            <div class="nav-inicio-container" id="inicioContainer">
+                <a href="index.html" class="nav-inicio-link" id="inicioBtn">
+                    Inicio <span class="chevron" id="chevron"></span>
+                </a>
+            </div>
+            <a href="proyecto.html">Proyecto</a>
+            <a href="competiciones.html">Competiciones</a>
+            <div class="nav-inicio-container" id="equipoContainer">
+                <a href="equipo.html" class="nav-inicio-link" id="equipoBtn">
+                    Equipo <span class="chevron" id="equipoChevron"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav-sub" id="navSub">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#coche-sec">Coche</a>
+        <a href="index.html#donar">Impulsa</a>
+        <a href="index.html#patrocinadores">Patrocinadores</a>
+    </nav>
+    <nav class="nav-sub" id="navSubEquipo">
+        <a href="columbaracing.html">Columba Racing</a>
+        <a href="laquimiaracing.html">Laquimia Racing</a>
+    </nav>
+</div>
+
+<div class="nav-mob-overlay" id="mobOverlay"></div>
+<div class="nav-mob-pill" id="mobPill">
+    <div class="menu-toggle"><span id="ms1"></span><span id="ms2"></span><span id="ms3"></span></div>
+</div>
+<div class="nav-mob-panel" id="mobPanel">
+    <div class="nav-mob-close" id="mobClose"></div>
+    <img src="Logonegativo.png" alt="Logo" class="nav-mob-logo">
+
+    <a href="index.html" class="mob-inicio-link" id="mobInicioBtn">
+        Inicio <span class="chevron" id="mobChevron"></span>
+    </a>
+    <div class="nav-mob-sub" id="mobSub">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#coche-sec">Coche</a>
+        <a href="index.html#donar">Impulsa</a>
+        <a href="index.html#patrocinadores">Patrocinadores</a>
+    </div>
+
+    <a href="proyecto.html" class="mob-page-link">Proyecto</a>
+    <a href="competiciones.html" class="mob-page-link">Competiciones</a>
+
+    <a href="equipo.html" class="mob-inicio-link" id="mobEquipoBtn">
+        Equipo <span class="chevron" id="mobEquipoChevron"></span>
+    </a>
+    <div class="nav-mob-sub" id="mobSubEquipo">
+        <a href="columbaracing.html">Columba Racing</a>
+        <a href="laquimiaracing.html">Laquimia Racing</a>
+    </div>
+</div>
+
+<main class="terms-container">
+    <h1>Aviso legal, condiciones generales de uso, política de privacidad y política de cookies</h1>
+    
+    <a href="Aviso_legal.pdf" class="download-btn" download>Descargar en documento PDF</a>
+
+    <h2>1. Aviso legal e información del titular</h2>
+    <p>En cumplimiento de lo dispuesto en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), así como de la demás normativa aplicable, se facilita a los usuarios la siguiente información relativa al titular de este sitio web.</p>
+    <p>El sitio web oficial de Astra Racing tiene como finalidad dar a conocer la actividad del equipo, sus proyectos, competiciones, integrantes, patrocinadores, iniciativas educativas y demás contenidos relacionados con su participación en el programa internacional STEM Racing.</p>
+    <p>Asimismo, constituye el canal oficial para la difusión de información institucional, técnica y divulgativa del equipo.</p>
+
+    <h3>Datos identificativos</h3>
+    <ul style="font-family: sans-serif; font-size: 1rem;">
+        <li>Denominación: Astra Racing.</li>
+        <li>Naturaleza: Equipo educativo participante en STEM Racing. Centro educativo: Alameda International School.</li>
+        <li>Domicilio: Madrid (España).</li>
+        <li>Correo electrónico de contacto: at33stemracingteamoficial@gmail.com.</li>
+    </ul>
+
+    <p>A efectos del presente documento, las referencias a Astra Racing, el Titular, el Equipo o la Entidad se entenderán realizadas indistintamente a la organización responsable de este sitio web.</p>
+    <p>El acceso, navegación o utilización del sitio web atribuye la condición de usuario e implica la aceptación plena y sin reservas del presente Aviso legal, de las Condiciones generales de uso, de la Política de privacidad, de la Política de cookies y de cualquier otro texto legal que resulte aplicable y se encuentre publicado en este portal.</p>
+    <p>Cuando el usuario no esté de acuerdo con cualquiera de las condiciones establecidas en estos textos legales, deberá abstenerse de acceder o utilizar el sitio web.</p>
+    <p>Astra Racing podrá modificar, actualizar o ampliar el contenido de los presentes textos legales para adaptarlos a cambios normativos, técnicos, organizativos o derivados de la evolución del propio proyecto.</p>
+    <p>Las modificaciones producirán efectos desde el momento de su publicación, salvo que se indique expresamente otra fecha de entrada en vigor.</p>
+    <p>La información publicada en este sitio web tiene carácter informativo, educativo e institucional.</p>
+    <p>Salvo que se indique expresamente lo contrario, ningún contenido podrá interpretarse como una oferta contractual, un asesoramiento profesional o una garantía sobre los proyectos, actividades o resultados desarrollados por Astra Racing.</p>
+
+    <h2>2. Condiciones generales de uso</h2>
+    <p>El acceso y la navegación por este sitio web son gratuitos, sin perjuicio del coste que pueda suponer la conexión a Internet contratada por el usuario con su proveedor de servicios.</p>
+    <p>El acceso al sitio web atribuye la condición de usuario e implica la aceptación de las presentes Condiciones generales de uso, así como del resto de los textos legales publicados por Astra Racing.</p>
+    <p>El usuario se compromete a utilizar el sitio web de forma lícita, responsable y conforme a la legislación vigente, la buena fe, el orden público y la finalidad para la que ha sido creado.</p>
+    <p>Asimismo, deberá abstenerse de realizar cualquier actuación que pueda perjudicar los derechos, intereses o la reputación de Astra Racing o de terceros.</p>
+    <p>El acceso al sitio web no supone el establecimiento de relación contractual, mercantil, laboral, profesional o de cualquier otra naturaleza entre Astra Racing y el usuario, salvo acuerdo expreso formalizado por escrito.</p>
+    <p>La información facilitada por el usuario a través de los formularios o de cualquier otro medio de contacto deberá ser veraz, exacta y estar actualizada.</p>
+    <p>El usuario será el único responsable de las manifestaciones realizadas y de las consecuencias derivadas de la comunicación de datos falsos o inexactos.</p>
+
+    <h3>Con carácter general, el usuario se compromete a no:</h3>
+    <ul style="font-family: sans-serif; font-size: 1rem;">
+        <li>Utilizar el sitio web para fines ilícitos, fraudulentos o contrarios a la legislación vigente.</li>
+        <li>Alterar, dañar, inutilizar o comprometer el funcionamiento del sitio web, de sus servicios o de la infraestructura tecnológica que lo soporta.</li>
+        <li>Introducir programas, archivos o códigos informáticos que puedan afectar a la seguridad, integridad o disponibilidad del portal.</li>
+        <li>Acceder o intentar acceder sin autorización a áreas restringidas, servidores, bases de datos, sistemas internos o cualquier otro recurso tecnológico del Titular.</li>
+        <li>Eludir o intentar vulnerar las medidas de seguridad implantadas para proteger el sitio web.</li>
+        <li>Realizar actuaciones que puedan provocar una carga desproporcionada sobre los sistemas o afectar al normal funcionamiento del servicio.</li>
+        <li>Utilizar el sitio web de forma que pueda inducir a error sobre la identidad, representación o vinculación con Astra Racing.</li>
+    </ul>
+
+    <p>Astra Racing podrá adoptar las medidas técnicas u organizativas que resulten necesarias para preservar la seguridad, disponibilidad e integridad del sitio web.</p>
+    <p>En caso de detectar un uso contrario a estas condiciones o cualquier actuación que pueda comprometer el funcionamiento del portal, el Titular podrá limitar, suspender o bloquear el acceso al usuario afectado, sin que ello genere derecho a indemnización.</p>
+    <p>Asimismo, Astra Racing podrá retirar o no atender aquellas comunicaciones recibidas a través de sus canales de contacto cuando resulten manifiestamente ilícitas, ofensivas, fraudulentas, constituyan correo no solicitado o sean incompatibles con la finalidad del sitio web.</p>
+    <p>El incumplimiento de las presentes condiciones podrá dar lugar a las acciones legales que correspondan para la defensa de los derechos e intereses de Astra Racing.</p>
+
+    <h2>3. Derechos y obligaciones del usuario</h2>
+    <p>El usuario tiene derecho a acceder y navegar por este sitio web de forma gratuita, así como a consultar los contenidos publicados con fines exclusivamente personales, informativos, educativos o divulgativos, siempre que ello se realice de conformidad con la legislación vigente y con las presentes condiciones.</p>
+    <p>La utilización del sitio web deberá efectuarse de forma responsable, respetando en todo momento los derechos e intereses de Astra Racing, de sus integrantes, patrocinadores, colaboradores y de cualquier tercero cuyos derechos puedan verse afectados por la actividad desarrollada a través del portal.</p>
+    <p>El usuario se compromete a utilizar la información disponible de manera veraz y leal, absteniéndose de difundir contenidos falsos, manipulados o descontextualizados que puedan perjudicar la imagen, reputación o actividad de Astra Racing.</p>
+    <p>Cuando el usuario utilice los canales de contacto habilitados en el sitio web, deberá actuar con respeto y buena fe, evitando el envío de mensajes ofensivos, amenazantes, discriminatorios, difamatorios, fraudulentos o contrarios al ordenamiento jurídico.</p>
+    <p>Del mismo modo, queda prohibido utilizar dichos canales para el envío de publicidad no solicitada, comunicaciones comerciales masivas o cualquier otra forma de spam.</p>
+    <p>En caso de detectar errores, incidencias técnicas o posibles vulnerabilidades de seguridad, el usuario se compromete a comunicarlas a Astra Racing a través de los medios oficiales de contacto, absteniéndose de explotarlas o divulgarlas de forma que puedan comprometer la seguridad del sitio web o perjudicar al Titular.</p>
+    <p>Cuando el usuario facilite datos personales de terceros mediante cualquiera de los formularios disponibles, declara contar con la autorización o base jurídica necesaria para ello, asumiendo la responsabilidad que pudiera derivarse de su comunicación.</p>
+    <p>El usuario responderá de los daños y perjuicios ocasionados como consecuencia del incumplimiento de las presentes condiciones o del uso indebido del sitio web, sin perjuicio de las acciones legales que puedan corresponder a Astra Racing para la defensa de sus derechos e intereses legítimos.</p>
+    <p>El ejercicio de los derechos reconocidos al usuario en ningún caso implicará la adquisición de derechos de propiedad intelectual, industrial, tecnológica o de cualquier otra naturaleza sobre los contenidos, proyectos o recursos publicados en este sitio web, los cuales se regirán por lo dispuesto en el apartado correspondiente.</p>
+
+    <h2>4. Propiedad intelectual e industrial</h2>
+    <p>Todos los contenidos publicados en este sitio web, incluidos, entre otros, textos, fotografías, imágenes, vídeos, diseños, ilustraciones, renders, modelos tridimensionales, planos, documentación técnica, memorias, gráficos, logotipos, nombres comerciales, signos distintivos, elementos gráficos, código fuente, estructura del sitio web y cualquier otro material, son titularidad de Astra Racing o se utilizan con la autorización de sus legítimos titulares y se encuentran protegidos por la legislación española, europea e internacional en materia de propiedad intelectual e industrial.</p>
+    <p>La publicación de dichos contenidos en este sitio web tiene una finalidad exclusivamente informativa, educativa e institucional.</p>
+    <p>Salvo autorización previa y expresa de Astra Racing o cuando la legislación aplicable lo permita, el acceso al sitio web no atribuye al usuario ningún derecho de explotación sobre los contenidos publicados.</p>
+    <p>En consecuencia, queda prohibida la reproducción, distribución, comunicación pública, transformación, adaptación, traducción, modificación, comercialización o cualquier otra forma de explotación, total o parcial, de los contenidos del sitio web por cualquier medio o soporte, salvo autorización previa y por escrito del Titular.</p>
+    <p>Asimismo, el usuario deberá respetar en todo momento la autoría de los contenidos publicados y se abstendrá de eliminar, ocultar o modificar cualquier aviso, marca, referencia o identificación relativa a los derechos de propiedad intelectual o industrial incorporados en ellos.</p>
+    <p>Las marcas, nombres comerciales, logotipos y demás signos distintivos de Astra Racing, así como los de sus patrocinadores, colaboradores, entidades organizadoras o terceros que puedan aparecer en el sitio web, pertenecen a sus respectivos titulares y no podrán utilizarse sin la autorización correspondiente.</p>
+    <p>La utilización puntual de contenidos con fines académicos, divulgativos o informativos deberá respetar, en todo caso, la normativa aplicable, citar adecuadamente su procedencia y no generar confusión acerca de su origen, autoría o relación con Astra Racing.</p>
+    <p>La inclusión de enlaces hacia este sitio web será libre siempre que no implique la reproducción de sus contenidos fuera de los límites legalmente permitidos, no induzca a error sobre la existencia de una relación con Astra Racing y no perjudique su imagen, reputación o intereses legítimos.</p>
+    <p>Astra Racing podrá ejercer cuantas acciones civiles, administrativas o penales resulten procedentes frente a cualquier utilización no autorizada de los contenidos publicados en este sitio web o frente a cualquier vulneración de sus derechos de propiedad intelectual o industrial.</p>
+
+    <h2>5. Protección del contenido técnico y de los proyectos de ingeniería</h2>
+    <p>Astra Racing desarrolla proyectos tecnológicos y de ingeniería en el marco del programa STEM Racing, pudiendo publicar en este sitio web documentación técnica, modelos tridimensionales, diseños CAD, renders, simulaciones, planos, especificaciones, memorias, estudios, procesos de fabricación, metodologías de trabajo, ensayos, fotografías y demás materiales relacionados con el diseño, desarrollo y fabricación de sus proyectos.</p>
+    <p>La publicación de estos contenidos tiene una finalidad exclusivamente informativa, educativa, divulgativa e institucional, sin que ello implique la cesión de derechos de explotación, reproducción o reutilización por parte de terceros.</p>
+    <p>Salvo autorización previa y expresa de Astra Racing, queda prohibida la utilización de estos contenidos para desarrollar proyectos total o parcialmente similares cuando dicha utilización suponga el aprovechamiento de soluciones técnicas, diseños, metodologías, procesos, documentación o cualquier otro elemento que constituya el resultado del trabajo realizado por el equipo.</p>
+    <p>Del mismo modo, no estará permitido copiar, adaptar, modificar, reconstruir, reproducir o redistribuir, total o parcialmente, los diseños, modelos, planos, procesos de fabricación, documentación técnica o cualquier otro contenido de carácter técnico publicado en este sitio web con fines comerciales, competitivos o distintos de los expresamente autorizados por Astra Racing.</p>
+    <p>La divulgación de información técnica a través del sitio web no supondrá, en ningún caso, la renuncia a los derechos que correspondan a Astra Racing sobre los desarrollos realizados ni permitirá presumir la existencia de licencias, autorizaciones o cesiones de derechos no otorgadas expresamente.</p>
+    <p>Cuando el sitio web incorpore contenidos desarrollados conjuntamente con patrocinadores, colaboradores, proveedores, instituciones educativas u otras entidades, los derechos correspondientes continuarán perteneciendo a sus respectivos titulares o se ejercerán conforme a los acuerdos alcanzados entre las partes.</p>
+    <p>Astra Racing se reserva el derecho de modificar, actualizar, retirar o limitar el acceso a cualquier contenido técnico cuando existan motivos de seguridad, confidencialidad, protección de la propiedad intelectual o industrial, cumplimiento normativo o cualquier otra causa que lo justifique.</p>
+    <p>La utilización no autorizada de los contenidos regulados en este apartado podrá dar lugar al ejercicio de las acciones legales que correspondan para la protección de los derechos e intereses legítimos de Astra Racing y, en su caso, de los terceros titulares de los derechos afectados.</p>
+
+    <h2>6. Patrocinadores y colaboraciones</h2>
+    <p>Astra Racing podrá establecer acuerdos de patrocinio, colaboración o cooperación con empresas, entidades, instituciones, organizaciones y profesionales que contribuyan al desarrollo del proyecto mediante aportaciones económicas, técnicas, materiales, formativas o de cualquier otra naturaleza.</p>
+    <p>Las condiciones, derechos y obligaciones derivados de cada colaboración se regirán por el acuerdo específico suscrito entre Astra Racing y la entidad correspondiente.</p>
+    <p>El presente documento tiene carácter general y no sustituye ni modifica las condiciones particulares pactadas entre las partes.</p>
+    <p>Astra Racing podrá ofrecer diferentes modalidades de patrocinio, cada una con prestaciones, niveles de visibilidad y beneficios específicos.</p>
+    <p>Salvo pacto expreso en contrario, las características de cada modalidad serán las vigentes en el momento de la formalización del correspondiente acuerdo.</p>
+    <p>La ubicación de logotipos, marcas o elementos identificativos en el vehículo de competición, la equipación oficial, la página web, el material promocional o cualquier otro soporte podrá adaptarse por razones técnicas, estéticas, organizativas, reglamentarias o derivadas de las normas de STEM Racing, procurando en todo caso respetar el nivel de visibilidad correspondiente a la modalidad de patrocinio contratada.</p>
+    <p>Las menciones en redes sociales, la participación en campañas de comunicación, la distribución de material promocional y la presencia en eventos o competiciones se realizarán conforme al plan de patrocinio contratado y a la planificación del equipo, pudiendo modificarse cuando existan causas organizativas, técnicas, de seguridad, fuerza mayor o circunstancias ajenas al control de Astra Racing.</p>
+    <p>Las invitaciones a competiciones, actos institucionales, jornadas de puertas abiertas o cualquier otro evento organizado por Astra Racing estarán sujetas a la disponibilidad de plazas, a las condiciones de acceso establecidas por los organizadores y a las medidas de seguridad que resulten aplicables.</p>
+    <p>Su concesión no implicará, en ningún caso, un derecho absoluto de acceso cuando concurran limitaciones justificadas.</p>
+    <p>La presencia de logotipos, nombres comerciales, marcas o referencias a patrocinadores y colaboradores en este sitio web tiene una finalidad exclusivamente institucional e informativa y responde al reconocimiento de su apoyo al proyecto.</p>
+    <p>Dicha presencia no constituye una recomendación, garantía o promoción comercial de los productos o servicios ofrecidos por dichas entidades.</p>
+    <p>Todos los signos distintivos de los patrocinadores y colaboradores pertenecen a sus respectivos titulares y se utilizan conforme a la autorización concedida o a la normativa aplicable.</p>
+    <p>Del mismo modo, la denominación, identidad visual, logotipos y demás elementos distintivos de Astra Racing únicamente podrán ser utilizados por los patrocinadores dentro de los límites establecidos en el acuerdo suscrito entre las partes.</p>
+    <p>Cuando el sitio web incluya enlaces a páginas web, perfiles en redes sociales u otros recursos pertenecientes a patrocinadores o colaboradores, dichos enlaces tendrán carácter meramente informativo.</p>
+    <p>Astra Racing no controla sus contenidos, políticas o servicios y, por tanto, no asume responsabilidad alguna respecto de la información publicada por dichos terceros.</p>
+    <p>Astra Racing podrá actualizar la relación de patrocinadores y colaboradores publicada en este sitio web cuando se formalicen nuevos acuerdos, finalicen colaboraciones existentes o concurran circunstancias que justifiquen su modificación o retirada.</p>
+
+    <h2>7. Exclusión de garantías y limitación de responsabilidad</h2>
+    <p>Astra Racing realiza un esfuerzo continuo para mantener la información publicada en este sitio web actualizada, exacta y accesible.</p>
+    <p>No obstante, debido a la naturaleza educativa y dinámica del proyecto, no garantiza que todos los contenidos permanezcan permanentemente completos, actualizados, libres de errores o disponibles en todo momento.</p>
+    <p>El acceso y utilización del sitio web se realizan bajo la exclusiva responsabilidad del usuario.</p>
+    <p>Astra Racing no garantiza la disponibilidad ininterrumpida del portal ni la ausencia de interrupciones, incidencias técnicas, errores informáticos o fallos derivados de tareas de mantenimiento, actualizaciones, causas de fuerza mayor o circunstancias ajenas a su control.</p>
+    <p>Asimismo, Astra Racing no será responsable de los daños o perjuicios que puedan derivarse de:</p>
+    <ul style="font-family: sans-serif; font-size: 1rem;">
+        <li>La interrupción, suspensión o funcionamiento incorrecto del sitio web. La imposibilidad temporal de acceder a determinados contenidos o servicios.</li>
+        <li>Errores, omisiones o inexactitudes que pudieran existir en la información publicada, cuando no hayan sido causados por dolo o negligencia grave.</li>
+        <li>Ataques informáticos, virus, programas maliciosos u otros elementos tecnológicos introducidos por terceros, siempre que Astra Racing hubiera adoptado las medidas de seguridad razonablemente exigibles.</li>
+        <li>La utilización indebida del sitio web por parte de los usuarios o de terceros.</li>
+        <li>Las decisiones adoptadas por los usuarios basándose exclusivamente en la información publicada en este sitio web.</li>
+    </ul>
+    <p>La información técnica, educativa o divulgativa publicada por Astra Racing tiene carácter meramente informativo y no constituye asesoramiento profesional, técnico, jurídico, económico ni de cualquier otra naturaleza.</p>
+    <p>Corresponde al usuario valorar su idoneidad para cada caso concreto.</p>
+    <p>Cuando el sitio web contenga enlaces a páginas, plataformas o recursos gestionados por terceros, Astra Racing no será responsable de su disponibilidad, contenido, funcionamiento, políticas o servicios, ni de los daños que pudieran derivarse de su utilización.</p>
+    <p>Astra Racing podrá modificar, suspender o retirar total o parcialmente los contenidos, funcionalidades o servicios del sitio web cuando resulte necesario por motivos técnicos, organizativos, legales, de seguridad o derivados de la evolución del proyecto, sin que ello genere derecho a indemnización para los usuarios.</p>
+    <p>Nada de lo dispuesto en este apartado limitará o excluirá aquellas responsabilidades que no puedan ser excluidas o limitadas conforme a la legislación aplicable.</p>
+
+    <h2>8. Protección de datos personales</h2>
+    <p>Astra Racing se compromete a garantizar la protección de los datos personales de los usuarios y a tratarlos conforme a lo dispuesto en el Reglamento (UE) 2016/679, General de Protección de Datos (RGPD), en la Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), y en el resto de la normativa que resulte aplicable.</p>
+    <p>Los datos personales facilitados por los usuarios a través de los formularios de contacto, del correo electrónico o de cualquier otro canal habilitado en este sitio web serán tratados únicamente cuando exista una base jurídica que legitime dicho tratamiento y exclusivamente para las finalidades para las que hubieran sido recabados.</p>
+    <p>Con carácter general, Astra Racing podrá tratar los datos personales para:</p>
+    <ul style="font-family: sans-serif; font-size: 1rem;">
+        <li>Atender consultas, solicitudes de información o comunicaciones realizadas por los usuarios.</li>
+        <li>Gestionar las relaciones con patrocinadores, colaboradores o entidades interesadas en el proyecto.</li>
+    </ul>
+    <p>Asimismo, cuando el usuario considere que el tratamiento de sus datos personales vulnera la normativa vigente, podrá presentar una reclamación ante la autoridad de control competente, sin perjuicio de cualquier otro recurso administrativo o judicial que pudiera corresponderle.</p>
+
+    <h2>9. Política de cookies</h2>
+    <p>Este sitio web utiliza cookies y tecnologías similares con la finalidad de garantizar su correcto funcionamiento, mejorar la experiencia de navegación, analizar el uso del sitio web y, cuando proceda, ofrecer contenidos o funcionalidades adaptadas a las preferencias del usuario.</p>
+    <p>Las cookies son pequeños archivos que se almacenan en el dispositivo del usuario durante la navegación y permiten recordar determinada información sobre su visita, facilitando el funcionamiento de la página y la prestación de determinados servicios.</p>
+    <p>Las cookies utilizadas por Astra Racing podrán clasificarse, entre otras, en las siguientes categorías:</p>
+    <ul style="font-family: sans-serif; font-size: 1rem;">
+        <li>Cookies técnicas: necesarias para el funcionamiento del sitio web y la correcta prestación de sus servicios.</li>
+        <li>Cookies de personalización: permiten recordar determinadas preferencias del usuario durante la navegación.</li>
+        <li>Cookies de análisis: recopilan información estadística, generalmente de forma agregada, sobre la utilización del sitio web.</li>
+    </ul>
+    <p>Astra Racing podrá actualizar la presente Política de cookies cuando resulte necesario para adaptarla a cambios normativos, técnicos o funcionales del sitio web.</p>
+    <p>Las modificaciones serán publicadas en este mismo apartado y producirán efectos desde su fecha de publicación.</p>
+
+    <h2>10. Uso de formularios y canales de contacto</h2>
+    <p>Astra Racing pone a disposición de los usuarios distintos formularios y canales de contacto con la finalidad de facilitar la comunicación con el equipo, atender consultas, gestionar solicitudes de patrocinio, establecer colaboraciones y responder a cualquier otra petición relacionada con las actividades desarrolladas por el proyecto.</p>
+    <p>La utilización de estos medios de contacto implica el compromiso del usuario de facilitar información veraz, exacta y actualizada, absteniéndose de suplantar la identidad de terceros o de proporcionar datos respecto de los cuales no disponga de la correspondiente legitimación.</p>
+    <p>Los formularios y direcciones de contacto no podrán utilizarse para el envío de publicidad no solicitada, comunicaciones comerciales ajenas a Astra Racing, mensajes automatizados, cadenas de mensajes, contenido ilícito, ofensivo, difamatorio, discriminatorio o cualquier otra comunicación que resulte contraria a la legislación vigente o a la finalidad de dichos canales.</p>
+
+    <h2>11. Uso de inteligencia artificial y sistemas automatizados</h2>
+    <p>Los contenidos publicados en este sitio web han sido desarrollados por Astra Racing o por terceros autorizados y se ponen a disposición de los usuarios con fines exclusivamente informativos, educativos e institucionales.</p>
+    <p>Salvo autorización previa y expresa del Titular o cuando la legislación aplicable lo permita, no estará permitido utilizar los contenidos del sitio web mediante sistemas automatizados con la finalidad de recopilar, extraer, indexar, reproducir, analizar o reutilizar de forma masiva la información publicada.</p>
+    <p>En particular, no estará permitido emplear los contenidos del sitio web para el entrenamiento, ajuste, validación o desarrollo de modelos de inteligencia artificial, sistemas de aprendizaje automático, modelos generativos, bases de conocimiento, asistentes virtuales u otras tecnologías equivalentes cuando dicho uso implique la reproducción, extracción o explotación de los contenidos protegidos sin la correspondiente autorización.</p>
+
+    <h2>12. Legislación aplicable y jurisdicción</h2>
+    <p>El presente Aviso legal, las Condiciones generales de uso y el resto de los textos legales publicados en este sitio web se regirán e interpretarán de conformidad con la legislación española.</p>
+    <p>Cualquier controversia, discrepancia o reclamación que pudiera derivarse del acceso, utilización o interpretación del sitio web, o de la aplicación de los presentes textos legales, se someterá a los Juzgados y Tribunales que resulten competentes conforme a la normativa vigente.</p>
+    <p>Cuando la legislación permita la sumisión expresa a un determinado fuero y el usuario no tenga la condición de consumidor o usuario conforme a la normativa de protección de los consumidores, ambas partes acuerdan someterse, con renuncia expresa a cualquier otro fuero que pudiera corresponderles, a los Juzgados y Tribunales de Madrid.</p>
+    <p>Si alguna de las disposiciones contenidas en los presentes textos legales fuera declarada total o parcialmente nula, inválida o inaplicable por resolución judicial o administrativa, dicha circunstancia no afectará a la validez del resto de las disposiciones.</p>
+
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col"><h4>Legal</h4><ul><li><a href="aviso-legal.html">Aviso legal</a></li></ul></div>
+        <div class="footer-col"><h4>Participa</h4><ul><li><a href="https://forms.gle/9HtCJhGGW6w2E2Rh6">Formulario de Patrocinio</a></li></ul></div>
+        <div class="footer-col"><h4>Mapa del Sitio</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="proyecto.html">Proyecto</a></li><li><a href="competiciones.html">Competiciones</a></li><li><a href="equipo.html">Equipo</a></li></ul></div>
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+                <li><a href="mailto:at33stemracingteamoficial@gmail.com">at33stemracingteamoficial@gmail.com</a></li>
+                <li><a href="https://www.instagram.com/astraracing_" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@AT33StemRacingTeam" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="https://x.com/AT33RacingTeam" target="_blank" rel="noopener">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Astra Racing. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+    /* ========================
+       DESKTOP — Submenú Inicio
+    ======================== */
+    const inicioBtn       = document.getElementById('inicioBtn');
+    const navSub          = document.getElementById('navSub');
+    const navMain         = document.getElementById('navMain');
+    const chevron         = document.getElementById('chevron');
+    const inicioContainer = document.getElementById('inicioContainer');
+    let timer;
+
+    function openSub() {
+        clearTimeout(timer);
+        if(typeof navSubEquipo !== 'undefined') {
+            navSubEquipo.classList.remove('open');
+            if(typeof equipoChevron !== 'undefined') equipoChevron.classList.remove('up');
+        }
+        navSub.classList.add('open');
+        navMain.classList.add('sub-open');
+        chevron.classList.add('up');
+    }
+    function closeSub() {
+        timer = setTimeout(() => {
+            if (!navSub.matches(':hover') && !inicioContainer.matches(':hover')) {
+                navSub.classList.remove('open');
+                if (typeof navSubEquipo === 'undefined' || !navSubEquipo.classList.contains('open')) {
+                    navMain.classList.remove('sub-open');
+                }
+                chevron.classList.remove('up');
+            }
+        }, 300);
+    }
+
+    if(inicioBtn && navSub && inicioContainer) {
+        inicioBtn.addEventListener('mouseenter', openSub);
+        inicioContainer.addEventListener('mouseleave', closeSub);
+        navSub.addEventListener('mouseenter', openSub);
+        navSub.addEventListener('mouseleave', closeSub);
+    }
+
+    /* ========================
+       DESKTOP — Submenú Equipo
+    ======================== */
+    const equipoBtn       = document.getElementById('equipoBtn');
+    const navSubEquipo    = document.getElementById('navSubEquipo');
+    const equipoChevron   = document.getElementById('equipoChevron');
+    const equipoContainer = document.getElementById('equipoContainer');
+    let timerEquipo;
+
+    function openSubEquipo() {
+        clearTimeout(timerEquipo);
+        if(typeof navSub !== 'undefined') {
+            navSub.classList.remove('open');
+            if(typeof chevron !== 'undefined') chevron.classList.remove('up');
+        }
+        navSubEquipo.classList.add('open');
+        navMain.classList.add('sub-open');
+        equipoChevron.classList.add('up');
+    }
+    function closeSubEquipo() {
+        timerEquipo = setTimeout(() => {
+            if (!navSubEquipo.matches(':hover') && !equipoContainer.matches(':hover')) {
+                navSubEquipo.classList.remove('open');
+                if (typeof navSub === 'undefined' || !navSub.classList.contains('open')) {
+                    navMain.classList.remove('sub-open');
+                }
+                equipoChevron.classList.remove('up');
+            }
+        }, 300);
+    }
+
+    if(equipoBtn && navSubEquipo && equipoContainer) {
+        equipoBtn.addEventListener('mouseenter', openSubEquipo);
+        equipoContainer.addEventListener('mouseleave', closeSubEquipo);
+        navSubEquipo.addEventListener('mouseenter', openSubEquipo);
+        navSubEquipo.addEventListener('mouseleave', closeSubEquipo);
+    }
+
+    /* ========================
+       MÓVIL
+    ======================== */
+    const mobPill          = document.getElementById('mobPill');
+    const mobPanel         = document.getElementById('mobPanel');
+    const mobClose         = document.getElementById('mobClose');
+    const mobOverlay       = document.getElementById('mobOverlay');
+    const mobInicioBtn     = document.getElementById('mobInicioBtn');
+    const mobSub           = document.getElementById('mobSub');
+    const mobChevron       = document.getElementById('mobChevron');
+    const mobEquipoBtn     = document.getElementById('mobEquipoBtn');
+    const mobSubEquipo     = document.getElementById('mobSubEquipo');
+    const mobEquipoChevron = document.getElementById('mobEquipoChevron');
+
+    function toggleMobMenu() {
+        mobPanel.classList.toggle('open');
+        mobOverlay.classList.toggle('open');
+    }
+
+    function closeMobMenu() {
+        mobPanel.classList.remove('open');
+        mobOverlay.classList.remove('open');
+        if(mobSub) { mobSub.classList.remove('open'); }
+        if(mobChevron) { mobChevron.classList.remove('up'); }
+        if(mobSubEquipo) { mobSubEquipo.classList.remove('open'); }
+        if(mobEquipoChevron) { mobEquipoChevron.classList.remove('up'); }
+    }
+
+    if(mobPill) mobPill.addEventListener('click', toggleMobMenu);
+    if(mobClose) mobClose.addEventListener('click', closeMobMenu);
+    if(mobOverlay) mobOverlay.addEventListener('click', closeMobMenu);
+
+    if(mobInicioBtn && mobSub && mobChevron) {
+        mobInicioBtn.addEventListener('click', (e) => {
+            if (e.target !== mobInicioBtn && e.target !== mobChevron) return;
+            e.preventDefault();
+            mobSub.classList.toggle('open');
+            mobChevron.classList.toggle('up');
+        });
+    }
+
+    if(mobEquipoBtn && mobSubEquipo && mobEquipoChevron) {
+        mobEquipoBtn.addEventListener('click', (e) => {
+            if (e.target !== mobEquipoBtn && e.target !== mobEquipoChevron) return;
+            e.preventDefault();
+            mobSubEquipo.classList.toggle('open');
+            mobEquipoChevron.classList.toggle('up');
+        });
+    }
+
+    document.querySelectorAll('.mob-page-link, .nav-mob-sub a').forEach(link => {
+        link.addEventListener('click', closeMobMenu);
+    });
+</script>
+</body>
+</html>
