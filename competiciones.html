@@ -78,43 +78,316 @@ body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
     .nav-mob-overlay.open{opacity:1;pointer-events:auto;}
 }
 
-/* --- CONTENIDO --- */
-section{min-height:100vh;padding:180px 5% 100px;background:var(--bg-deep);}
-.page-title{font-size:clamp(2.5rem, 6vw, 5rem); text-transform:uppercase; margin-bottom:80px; word-break:break-word;}
+/* --- REVEAL ANIMATION --- */
+.reveal{opacity:0;transform:translateY(40px) scale(.97);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease);will-change:transform,opacity;}
+.reveal.active{opacity:1;transform:translateY(0) scale(1);}
+.reveal-d1{ transition-delay:.15s; }
+
+/* --- HERO SECTION --- */
+.page-hero{
+    min-height: 38vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 140px 5% 60px;
+    background: var(--bg-deep);
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(ellipse 60% 50% at 20% 60%, rgba(33,38,67,0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 40%, rgba(102,34,29,0.15) 0%, transparent 70%);
+    pointer-events:none;
+}
+
+.page-hero h1{
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.divider{
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #212643, #4a5ba8, #66221d, transparent);
+}
 
 /* --- DISEÑO COMPETICIONES --- */
-.season-block { margin-bottom: 120px; max-width: 1200px; margin-left: auto; margin-right: auto; }
-.section-header { display: flex; align-items: center; gap: 20px; margin-bottom: 60px; }
-.line { flex-grow: 1; height: 2px; background: linear-gradient(90deg, var(--principal), var(--secundario)); }
-.year-tag { font-size: 3rem; color: var(--blanco); text-shadow: 0 0 15px var(--secundario); }
-.race-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+section.competiciones-wrap {
+    min-height: 100vh;
+    padding: 100px 5% 140px;
+    background: var(--bg-alt);
+}
 
-.race-card { position: relative; background: var(--surface); padding: 2px; border-radius: 4px; overflow: hidden; transition: 0.4s var(--ease); border: 1px solid rgba(255,255,255,0.05); min-height: 400px; display: flex; flex-direction: column; }
-.race-card::before { content: ''; position: absolute; inset: -2px; background: linear-gradient(45deg, var(--principal), var(--secundario)); opacity: 0; transition: 0.4s; z-index: 1; }
-.race-card:hover::before { opacity: 1; }
-.card-inner { background: var(--bg-deep); padding: 30px; position: relative; z-index: 2; flex-grow: 1; display: flex; flex-direction: column; cursor: pointer; }
+.season-block {
+    margin-bottom: 120px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.team-logo-card { width: 120px; height: auto; margin: 0 auto 20px auto; display: block; }
-.card-inner h3 { margin-bottom: 15px; font-size: 1.4rem; }
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
 
-.gallery-wrap { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; pointer-events: none; }
-.gallery-item { flex: 0 0 100%; height: 240px; border-radius: 4px; overflow: hidden; }
-.gallery-item img { width: 100%; height: 100%; object-fit: contain; }
+.line {
+    flex-grow: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--principal), var(--secundario), transparent);
+}
 
-.stats-box { margin-top: auto; display: flex; justify-content: space-between; border-top: 1px solid var(--b-blue); padding-top: 20px; gap: 10px; }
-.stat-item { display: flex; flex-direction: column; flex: 1; text-align: center; }
-.stat-val { font-size: 1.6rem; color: var(--secundario); }
+.year-tag {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--blanco);
+    text-shadow: 0 0 20px rgba(33,38,67,0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
-#viewer { position: fixed; inset: 0; background: rgba(0,0,0,0.96); z-index: 9999; display: none; padding: 80px 20px; overflow-y: auto; }
-.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-.grid-item { aspect-ratio: 1; overflow: hidden; border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: .3s; }
-.grid-item img { width: 100%; height: 100%; object-fit: cover; }
-.grid-item:hover { border-color: var(--secundario); transform: scale(1.02); }
-.close-btn { position: fixed; top: 30px; right: 40px; cursor: pointer; font-size: 3rem; color: white; z-index: 10000; }
+.race-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
 
-#fullView { position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 10001; display: none; align-items: center; justify-content: center; padding: 20px; }
-#fullView img { max-width: 90%; max-height: 90vh; object-fit: contain; }
+.race-card {
+    position: relative;
+    background: var(--surface);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+    border: 1px solid var(--b-blue);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px rgba(33,38,67,.2);
+}
 
+.race-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(74,91,168,0.1), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s var(--ease);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.race-card:hover {
+    transform: translateY(-8px);
+    border-color: #4a5ba8;
+    box-shadow: 0 0 0 1px var(--secundario), 0 16px 40px rgba(0,0,0,.5);
+}
+
+.race-card:hover::before {
+    opacity: 1;
+}
+
+.card-inner {
+    padding: 40px 30px 30px;
+    position: relative;
+    z-index: 2;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-logo-card {
+    width: 140px;
+    height: auto;
+    margin: 0 auto 25px auto;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
+}
+
+.card-inner h3 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- ESTILO ORIGINAL DE IMAGEN PRINCIPAL --- */
+.card-img-main {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    transition: transform 0.5s var(--ease);
+}
+
+.race-card:hover .card-img-main {
+    transform: scale(1.03);
+}
+
+.stats-box {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 25px;
+    gap: 15px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    background: rgba(33,38,67,0.15);
+    padding: 15px 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.stat-val {
+    font-size: 1.5rem;
+    color: var(--blanco);
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* Indicador de "Ver Galería" */
+.view-gallery-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--principal);
+    border: 1px solid var(--b-blue);
+    color: white;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    z-index: 10;
+}
+
+.race-card:hover .view-gallery-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- LIGHTBOX Y VISOR --- */
+#viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: none;
+    padding: 100px 5%;
+    overflow-y: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    aspect-ratio: 1 / 1; /* Cuadrícula cuadrada restaurada */
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--b-blue);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s var(--ease);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    border-color: #4a5ba8;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.close-btn {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    background: var(--principal);
+    border: 1px solid var(--b-blue);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: background 0.3s var(--ease);
+}
+
+.close-btn::before, .close-btn::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+}
+.close-btn::after { transform: rotate(-45deg); }
+.close-btn:hover { background: var(--secundario); }
+
+#fullView {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.98);
+    z-index: 10001;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#fullView img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- FOOTER --- */
 footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 1px 0 var(--b-red);padding:80px 8% 40px;text-align:left;color:var(--blanco);}
 .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1200px;margin:0 auto;align-items:start;}
 .footer-col h4{text-transform:uppercase;font-size:1.1rem;margin-bottom:25px;letter-spacing:1px;}
@@ -123,12 +396,27 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
 .footer-col ul li a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.95rem;position:relative;padding-bottom:4px;display:inline-block;transition:color .3s var(--ease);}
 .footer-col ul li a:hover{color:var(--blanco);}
 .footer-bottom{margin-top:60px;padding-top:30px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.85rem;color:rgba(255,255,255,.35);}
-@media(max-width:950px){footer{text-align:center;}.footer-grid{grid-template-columns:1fr;}}
+
+@media(max-width:950px){
+    footer{text-align:center;}
+    .footer-grid{grid-template-columns:1fr;}
+    .race-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width:600px){
+    .page-hero{ padding:120px 6% 50px; }
+    .card-inner{ padding: 30px 20px 20px; }
+    .stats-box{ flex-direction: column; gap: 10px; }
+    .grid-container{ grid-template-columns: 1fr; }
+}
 </style>
 </head>
 
 <body>
 
+<!-- ========================
+     NAVEGACIÓN — DESKTOP
+======================== -->
 <div class="nav-wrap">
     <nav class="nav-main" id="navMain">
         <img src="Logonegativo.png" alt="Logo" class="nav-logo">
@@ -159,6 +447,9 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     </nav>
 </div>
 
+<!-- ========================
+     NAVEGACIÓN — MÓVIL
+======================== -->
 <div class="nav-mob-overlay" id="mobOverlay"></div>
 <div class="nav-mob-pill" id="mobPill">
     <div class="menu-toggle"><span id="ms1"></span><span id="ms2"></span><span id="ms3"></span></div>
@@ -189,16 +480,30 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     </div>
 </div>
 
-<section>
-    <h1 class="page-title">Competiciones</h1>
+<!-- ========================
+     HERO
+======================== -->
+<header class="page-hero">
+    <h1>Competiciones</h1>
+</header>
 
+<div class="divider"></div>
+
+<section class="competiciones-wrap">
+    
+    <!-- 2025 -->
     <div class="season-block">
-        <div class="section-header"><div class="year-tag">2025</div><div class="line"></div></div>
+        <div class="section-header reveal">
+            <div class="year-tag">2025</div>
+            <div class="line"></div>
+        </div>
         <div class="race-grid">
-            <div class="race-card" onclick="openViewer(['2025-2.png', '2025-3.png', '2025-4.png', '2025-5.png'])">
+            <div class="race-card reveal reveal-d1" onclick="openViewer(['2025-2.png', '2025-3.png', '2025-4.png', '2025-5.png'])">
+                <span class="view-gallery-btn">Ver Galería</span>
                 <div class="card-inner">
-                    <img src="Columba.png" alt="Logo" class="team-logo-card">
-                    <div class="gallery-wrap"><div class="gallery-item"><img src="Coche2025.png"></div></div>
+                    <img src="Columba.png" alt="Logo Columba" class="team-logo-card">
+                    <!-- Imagen simple restaurada -->
+                    <img src="Coche2025.png" alt="Coche 2025" class="card-img-main">
                     <div class="stats-box">
                         <div class="stat-item"><span class="stat-label">Posición</span><span class="stat-val">10º</span></div>
                         <div class="stat-item"><span class="stat-label">Rivales</span><span class="stat-val">35</span></div>
@@ -209,14 +514,21 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
         </div>
     </div>
 
+    <!-- 2026 -->
     <div class="season-block">
-        <div class="section-header"><div class="year-tag">2026</div><div class="line"></div></div>
+        <div class="section-header reveal">
+            <div class="year-tag">2026</div>
+            <div class="line"></div>
+        </div>
         <div class="race-grid">
-            <div class="race-card" onclick="openViewer(['imagen3.jpg'])">
+            <!-- Columba 2026 -->
+            <div class="race-card reveal reveal-d1" onclick="openViewer(['imagen3.jpg'])">
+                <span class="view-gallery-btn">Ver Galería</span>
                 <div class="card-inner">
                     <img src="Columba.png" alt="Columba" class="team-logo-card">
                     <h3>Columba Racing</h3>
-                    <div class="gallery-wrap"><div class="gallery-item"><img src="imagen3.jpg"></div></div>
+                    <!-- Imagen simple restaurada -->
+                    <img src="imagen3.jpg" alt="Coche Columba Racing 2026" class="card-img-main">
                     <div class="stats-box">
                         <div class="stat-item"><span class="stat-label">Posición</span><span class="stat-val">NA</span></div>
                         <div class="stat-item"><span class="stat-label">Rivales</span><span class="stat-val">NA</span></div>
@@ -224,11 +536,15 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
                     </div>
                 </div>
             </div>
-            <div class="race-card" onclick="openViewer(['imagen4.jpg', 'imagen5.jpg'])">
+            
+            <!-- Laquimia 2026 -->
+            <div class="race-card reveal reveal-d2" onclick="openViewer(['imagen4.jpg', 'imagen5.jpg'])">
+                <span class="view-gallery-btn">Ver Galería</span>
                 <div class="card-inner">
                     <img src="Laquimia.png" alt="Laquimia" class="team-logo-card">
                     <h3>Laquimia Racing</h3>
-                    <div class="gallery-wrap"><div class="gallery-item"><img src="imagen4.jpg"></div></div>
+                    <!-- Imagen simple restaurada -->
+                    <img src="imagen4.jpg" alt="Coche Laquimia Racing 2026" class="card-img-main">
                     <div class="stats-box">
                         <div class="stat-item"><span class="stat-label">Posición</span><span class="stat-val">NA</span></div>
                         <div class="stat-item"><span class="stat-label">Rivales</span><span class="stat-val">NA</span></div>
@@ -240,11 +556,13 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     </div>
 </section>
 
+<!-- Visor Galería -->
 <div id="viewer">
-    <span class="close-btn" onclick="closeViewer()">&times;</span>
+    <div class="close-btn" onclick="closeViewer()"></div>
     <div class="grid-container" id="gridContainer"></div>
 </div>
 
+<!-- Imagen Completa -->
 <div id="fullView" onclick="this.style.display='none'">
     <img id="fullImg" src="" alt="Imagen a pantalla completa">
 </div>
@@ -269,6 +587,20 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
 
 <script>
     /* ========================
+       ANIMACIONES REVEAL
+    ======================== */
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+        const wh = window.innerHeight;
+        reveals.forEach(el => {
+            if (el.getBoundingClientRect().top < wh - 100) el.classList.add('active');
+            else el.classList.remove('active');
+        });
+    }
+    window.addEventListener('scroll', checkReveal, { passive: true });
+    window.addEventListener('load', checkReveal);
+
+    /* ========================
        GALERÍA
     ======================== */
     function openViewer(imgs) {
@@ -286,8 +618,20 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
             container.appendChild(div);
         });
         document.getElementById('viewer').style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
-    function closeViewer() { document.getElementById('viewer').style.display = 'none'; }
+
+    function closeViewer() { 
+        document.getElementById('viewer').style.display = 'none'; 
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.getElementById('fullView').style.display = 'none';
+            closeViewer();
+        }
+    });
 
     /* ========================
        DESKTOP — Submenú Inicio
@@ -371,11 +715,13 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     function toggleMobMenu() {
         mobPanel.classList.toggle('open');
         mobOverlay.classList.toggle('open');
+        document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
     }
 
     function closeMobMenu() {
         mobPanel.classList.remove('open');
         mobOverlay.classList.remove('open');
+        document.body.style.overflow = '';
         mobSub.classList.remove('open');
         mobChevron.classList.remove('up');
         mobSubEquipo.classList.remove('open');
