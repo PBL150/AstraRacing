@@ -23,6 +23,14 @@
     --b-red:rgba(102,34,29,.40);
     --blanco:#ffffff;
     --ease:cubic-bezier(.4,0,.2,1);
+
+    /* Colores de equipo */
+    --columba:#212643;
+    --columba-glow:rgba(33,38,67,.5);
+    --columba-mid:rgba(33,38,67,.25);
+    --laquimia:#66221d;
+    --laquimia-glow:rgba(102,34,29,.5);
+    --laquimia-mid:rgba(102,34,29,.25);
 }
 
 *{
@@ -33,6 +41,7 @@
 }
 
 html{
+    scroll-snap-type:y mandatory; /* Anclaje de scroll */
     scroll-behavior:smooth;
     background:var(--bg-deep);
     -webkit-font-smoothing:antialiased;
@@ -97,102 +106,220 @@ body{
     .nav-mob-sub a.section-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
     .nav-mob-overlay{ position:fixed;inset:0;z-index:4999; background:rgba(0,0,0,.5); opacity:0;pointer-events:none; transition:opacity .35s var(--ease); }
     .nav-mob-overlay.open{opacity:1;pointer-events:auto;}
+
+    html { scroll-snap-type: none; } /* Desactiva el anclaje en móviles */
+}
+
+/* ------------------- */
+/* ANIMACIONES         */
+/* ------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(.97);
+    transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+    will-change: transform, opacity;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+
+/* ------------------- */
+/* HERO DE PÁGINA      */
+/* ------------------- */
+.page-hero {
+    min-height: 38vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 140px 5% 60px;
+    background: var(--bg-deep);
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    scroll-snap-align: start; /* Anclaje de scroll */
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 50% at 20% 60%, rgba(33,38,67,0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 40%, rgba(102,34,29,0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.page-hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+}
+
+.page-hero h1 em {
+    font-style: normal;
+    color: var(--blanco);
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #212643, #4a5ba8, #66221d, transparent);
+    scroll-snap-align: none; /* Sin anclaje aquí */
 }
 
 /* ------------------- */
 /* SECCIÓN EQUIPO      */
 /* ------------------- */
-section{
-    min-height:100vh;
-    padding:180px 5% 100px;
-    background:var(--bg-deep);
+.team-block {
+    padding: 80px 5% 100px;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh; /* Para ocupar pantalla completa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start; /* Anclaje de scroll */
 }
 
-.page-title{
-    font-size:clamp(3rem,8vw,5rem);
-    text-transform:uppercase;
-    margin-bottom:80px;
+.team-block.columba-block { background: var(--bg-alt); }
+.team-block.laquimia-block { background: var(--bg-deep); }
+
+.team-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.columba-block::before {
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(33,38,67,0.2) 0%, transparent 70%);
+}
+.laquimia-block::before {
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(102,34,29,0.15) 0%, transparent 70%);
 }
 
-.team-section{
-    max-width:1400px;
-    margin:0 auto 120px;
+.team-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; 
+    margin-bottom: 60px;
+    position: relative;
+    text-align: center;
 }
 
-.team-logo {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.team-header-logo {
+    height: 110px; 
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px var(--columba-glow));
+}
+.laquimia-block .team-header-logo {
+    filter: drop-shadow(0 0 20px var(--laquimia-glow));
 }
 
-.team-title{
-    font-size:clamp(2rem,5vw,3rem);
-    text-transform:uppercase;
-    margin-bottom:60px;
-    color:var(--principal);
+.team-header-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.team-accent-line {
+    height: 3px;
+    width: 60px;
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+.columba-block .team-accent-line { background: linear-gradient(90deg, #212643, #4a5ba8); }
+.laquimia-block .team-accent-line { background: linear-gradient(90deg, #66221d, #a33830); }
+
+/* ------------------- */
+/* GRID Y TARJETAS     */
+/* ------------------- */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.member-card {
+    background: var(--surface);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.columba-block .member-card:hover {
+    border-color: #4a5ba8;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 0 1px var(--columba);
+}
+
+.laquimia-block .member-card:hover {
+    border-color: #a33830;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 0 1px var(--laquimia);
+}
+
+.member-img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    background: #111;
+}
+
+.member-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease);
+}
+
+.member-card:hover .member-img-wrap img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 25px 20px;
+    text-align: center;
+    background: var(--surface);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.member-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-info p {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* ------------------- */
-/* GRID MIEMBROS       */
+/* FOOTER              */
 /* ------------------- */
-.members-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:70px 40px;
-}
-
-.member{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.member img{
-    width:250px;
-    height:250px;
-    object-fit:cover;
-    transition:transform .3s ease;
-}
-
-.member:hover img{
-    transform:translateY(-10px);
-}
-
-.member-divider{
-    width:200px;
-    height:4px;
-    margin:0 0 20px 0;
-    background:linear-gradient(90deg, transparent, var(--principal), var(--secundario), transparent);
-    transition:transform .4s var(--ease);
-}
-
-.member:hover .member-divider {
-    transform: scaleX(1.2);
-}
-
-.member h3{
-    font-size:1.2rem;
-    margin-bottom:10px;
-}
-
-.member p{
-    opacity:.7;
-    font-size:.95rem;
-}
-
-@media(max-width:950px){
-    .members-grid{
-        grid-template-columns:1fr;
-    }
-    .member img{
-        width:220px;
-        height:220px;
-    }
-}
-
 footer{
     background:#0d0d0d;
     border-top:1px solid var(--b-blue);
@@ -200,6 +327,7 @@ footer{
     padding:80px 8% 40px;
     text-align:left;
     color:var(--blanco);
+    scroll-snap-align: end; /* Anclaje de scroll */
 }
 
 .footer-grid{
@@ -255,15 +383,18 @@ footer{
 @media(max-width:950px){
     footer{ text-align:center; }
     .footer-grid{ grid-template-columns:1fr; }
+    .members-grid{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+
+@media(max-width:600px){
+    .page-hero{ padding: 120px 6% 40px; }
+    .team-block{ padding: 60px 5% 80px; min-height: auto; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ========================
-     NAVEGACIÓN — DESKTOP
-======================== -->
 <div class="nav-wrap">
     <nav class="nav-main" id="navMain">
         <img src="Logonegativo.png" alt="Logo" class="nav-logo">
@@ -282,23 +413,18 @@ footer{
             </div>
         </div>
     </nav>
-    <!-- Submenú Inicio -->
     <nav class="nav-sub" id="navSub">
         <a href="index.html#nosotros">Nosotros</a>
         <a href="index.html#coche-sec">Coche</a>
         <a href="index.html#donar">Impulsa</a>
         <a href="index.html#patrocinadores">Patrocinadores</a>
     </nav>
-    <!-- Submenú Equipo -->
     <nav class="nav-sub" id="navSubEquipo">
         <a href="columbaracing.html">Columba Racing</a>
         <a href="laquimiaracing.html">Laquimia Racing</a>
     </nav>
 </div>
 
-<!-- ========================
-     NAVEGACIÓN — MÓVIL
-======================== -->
 <div class="nav-mob-overlay" id="mobOverlay"></div>
 
 <div class="nav-mob-pill" id="mobPill">
@@ -333,89 +459,141 @@ footer{
     </div>
 </div>
 
-<section>
-    <h1 class="page-title">Nuestros Equipos</h1>
+<header class="page-hero">
+    <h1>Nuestros <em>Equipos</em></h1>
+</header>
 
-    <div class="team-section">
-        <img src="Columba.png" alt="Logo Columba" class="team-logo">
-        <h2 class="team-title">Columba Racing</h2>
-        <div class="members-grid">
-            <div class="member">
-                <img src="Miembros/MaximoSalas.png" alt="">
-                <div class="member-divider"></div>
+<div class="divider"></div>
+
+<section id="columba" class="team-block columba-block">
+    <div class="team-header reveal">
+        <img src="Columba.png" alt="Logo Columba" class="team-header-logo">
+        <div>
+            <h2 class="team-header-title">Columba Racing</h2>
+            <div class="team-accent-line"></div>
+        </div>
+    </div>
+
+    <div class="members-grid">
+        <div class="member-card reveal">
+            <div class="member-img-wrap">
+                <img src="Miembros/MaximoSalas.png" alt="Máximo Salas">
+            </div>
+            <div class="member-info">
                 <h3>Máximo Salas</h3>
                 <p>Director de Equipo</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d1">
+            <div class="member-img-wrap">
                 <img src="Miembros/AntonioLopez.png" alt="Antonio Lopez">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Antonio Lopez</h3>
                 <p>Ingeniero de diseño (CAD)</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d2">
+            <div class="member-img-wrap">
                 <img src="miembro3.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Diseño CAD</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal">
+            <div class="member-img-wrap">
                 <img src="miembro4.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Marketing</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d1">
+            <div class="member-img-wrap">
                 <img src="miembro5.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Patrocinios</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d2">
+            <div class="member-img-wrap">
                 <img src="miembro6.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Manufactura</p>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="team-section">
-        <img src="Laquimia.png" alt="Logo Laquimia" class="team-logo">
-        <h2 class="team-title">Laquimia Racing</h2>
-        <div class="members-grid">
-            <div class="member">
+<div class="divider"></div>
+
+<section id="laquimia" class="team-block laquimia-block">
+    <div class="team-header reveal">
+        <img src="Laquimia.png" alt="Logo Laquimia" class="team-header-logo">
+        <div>
+            <h2 class="team-header-title">Laquimia Racing</h2>
+            <div class="team-accent-line"></div>
+        </div>
+    </div>
+
+    <div class="members-grid">
+        <div class="member-card reveal">
+            <div class="member-img-wrap">
                 <img src="Miembros/IvanHerreros.png" alt="Iván Herreros">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Iván Herreros</h3>
                 <p>Director de Equipo</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d1">
+            <div class="member-img-wrap">
                 <img src="Miembros/ManuelRodriguez.png" alt="Manuel Rodriguez">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Manuel Rodriguez</h3>
                 <p>Construcción</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d2">
+            <div class="member-img-wrap">
                 <img src="miembro9.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Diseño CAD</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal">
+            <div class="member-img-wrap">
                 <img src="miembro10.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Marketing</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d1">
+            <div class="member-img-wrap">
                 <img src="miembro11.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Patrocinios</p>
             </div>
-            <div class="member">
+        </div>
+        <div class="member-card reveal reveal-d2">
+            <div class="member-img-wrap">
                 <img src="miembro12.png" alt="Nombre Apellido">
-                <div class="member-divider"></div>
+            </div>
+            <div class="member-info">
                 <h3>Nombre Apellido</h3>
                 <p>Manufactura</p>
             </div>
@@ -530,15 +708,15 @@ footer{
     /* ========================
        MÓVIL
     ======================== */
-    const mobPill          = document.getElementById('mobPill');
-    const mobPanel         = document.getElementById('mobPanel');
-    const mobClose         = document.getElementById('mobClose');
-    const mobOverlay       = document.getElementById('mobOverlay');
-    const mobInicioBtn     = document.getElementById('mobInicioBtn');
-    const mobSub           = document.getElementById('mobSub');
-    const mobChevron       = document.getElementById('mobChevron');
-    const mobEquipoBtn     = document.getElementById('mobEquipoBtn');
-    const mobSubEquipo     = document.getElementById('mobSubEquipo');
+    const mobPill         = document.getElementById('mobPill');
+    const mobPanel        = document.getElementById('mobPanel');
+    const mobClose        = document.getElementById('mobClose');
+    const mobOverlay      = document.getElementById('mobOverlay');
+    const mobInicioBtn    = document.getElementById('mobInicioBtn');
+    const mobSub          = document.getElementById('mobSub');
+    const mobChevron      = document.getElementById('mobChevron');
+    const mobEquipoBtn    = document.getElementById('mobEquipoBtn');
+    const mobSubEquipo    = document.getElementById('mobSubEquipo');
     const mobEquipoChevron = document.getElementById('mobEquipoChevron');
 
     function toggleMobMenu() {
@@ -576,6 +754,25 @@ footer{
     document.querySelectorAll('.mob-page-link, .nav-mob-sub a').forEach(link => {
         link.addEventListener('click', closeMobMenu);
     });
+
+    /* ========================
+       REVEAL ON SCROLL
+    ======================== */
+    const reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+        const wh = window.innerHeight;
+        reveals.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < wh - 100) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', checkReveal, { passive: true });
+    window.addEventListener('load', checkReveal);
+    checkReveal();
 </script>
 
 </body>
