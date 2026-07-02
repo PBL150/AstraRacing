@@ -21,6 +21,7 @@
     --surface:#141414;
     --b-blue:rgba(33,38,67,.95);
     --b-red:rgba(102,34,29,.40);
+    --b-blue-hover: rgba(33,38,67,.7);
     --blanco:#ffffff;
     --ease:cubic-bezier(.4,0,.2,1);
 }
@@ -87,7 +88,7 @@ body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
 }
 
 /* ========================
-   SECCIONES — pantalla completa (como index.html)
+   SECCIONES — pantalla completa
 ======================== */
 section{
     height: auto;
@@ -104,6 +105,7 @@ section{
 }
 
 #filosofia   { background: var(--bg-deep); }
+#proyecto    { background: var(--bg-alt); }
 #camiseta    { background: var(--bg-alt);  }
 #rrss        { background: var(--bg-deep); }
 
@@ -111,6 +113,7 @@ section{
 
 .reveal{opacity:0;transform:translateY(50px) scale(.96);transition:opacity 1.4s var(--ease),transform 1.4s var(--ease);will-change:transform,opacity;}
 .reveal.active{opacity:1;transform:translateY(0) scale(1);}
+.reveal-d1{ transition-delay:.15s; }
 
 /* ========================
    SECCIÓN 1 — FILOSOFÍA
@@ -132,7 +135,7 @@ section{
 }
 
 .filosofia-logo{
-    width: min(320px, 100%);
+    width: min(450px, 100%);  /* Logo más grande */
     height: auto;
     filter: drop-shadow(0 0 40px rgba(33,38,67,0.6));
     transition: filter .4s var(--ease);
@@ -159,6 +162,7 @@ section{
     line-height: 1.85;
     border-left: 2px solid var(--principal);
     padding-left: 20px;
+    margin-bottom: 30px;
 }
 
 /* Botón Miembros */
@@ -182,7 +186,97 @@ section{
 }
 
 /* ========================
-   SECCIÓN 2 — CAMISETA
+   SECCIÓN 2 — PROYECTO (REDISEÑO CONSISTENTE)
+======================== */
+.proyecto-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+}
+
+.proyecto-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.proyecto-text h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 0;
+}
+
+.proyecto-text p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.85;
+    border-left: 2px solid var(--principal);
+    padding-left: 20px;
+    margin: 0;
+}
+
+/* Botón Proyecto (mismo estilo que btn-miembros) */
+.btn-proyecto {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--principal);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+    border: 1px solid transparent;
+    width: fit-content;
+}
+.btn-proyecto:hover {
+    background-color: transparent;
+    border-color: var(--principal);
+    transform: translateY(-2px);
+}
+
+.proyecto-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyecto-img-container {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--b-blue);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    position: relative;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.proyecto-img-container:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 2px var(--principal);
+}
+
+.proyecto-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.5s var(--ease);
+}
+
+.proyecto-img-container:hover img {
+    transform: scale(1.04);
+}
+
+/* ========================
+   SECCIÓN 3 — CAMISETA
 ======================== */
 .section-label{
     font-size: .7rem;
@@ -221,8 +315,8 @@ section{
 }
 
 .camiseta-card:hover{
-    border-color: rgba(74,91,168,.6);
-    box-shadow: 0 0 0 1px var(--b-red), 0 16px 40px rgba(0,0,0,.5);
+    border-color: var(--b-blue-hover);
+    box-shadow: 0 0 0 1px var(--principal), 0 16px 40px rgba(0,0,0,.5);
     transform: translateY(-4px);
 }
 
@@ -243,16 +337,8 @@ section{
     color: rgba(255,255,255,0.4);
 }
 
-/* PROYECTO */
-#proyecto { background: var(--bg-alt); }
-.proyecto-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; width: 100%; align-items: center; }
-.proyecto-img{ width: 100%; border-radius: 16px; border: 1px solid var(--b-blue); }
-.proyecto-text{ text-align: left; }
-.proyecto-title{ font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
-.proyecto-desc{ font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 30px; }
-
 /* ========================
-   SECCIÓN 3 — REDES SOCIALES
+   SECCIÓN 4 — REDES SOCIALES
 ======================== */
 .rrss-title{
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -295,8 +381,8 @@ section{
 
 .rrss-card:hover{
     background: rgba(33,38,67,.25);
-    border-color: rgba(74,91,168,.7);
-    box-shadow: 0 0 0 1px var(--b-red), 0 12px 32px rgba(0,0,0,.5);
+    border-color: var(--b-blue-hover);
+    box-shadow: 0 0 0 1px var(--principal), 0 12px 32px rgba(0,0,0,.5);
     transform: translateY(-5px);
 }
 
@@ -346,6 +432,29 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     }
     .filosofia-text-col{ text-align: center; }
     .filosofia-p{ border-left: none; border-top: 2px solid var(--principal); padding-left: 0; padding-top: 16px; }
+    
+    .proyecto-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .proyecto-text {
+        text-align: center;
+        align-items: center;
+    }
+    .proyecto-text p {
+        border-left: none;
+        border-top: 2px solid var(--principal);
+        padding-left: 0;
+        padding-top: 16px;
+    }
+    .btn-proyecto {
+        align-self: center;
+    }
+    .proyecto-img-container {
+        max-width: 100%;
+    }
+    
     .camiseta-grid{ grid-template-columns: 1fr; max-width: 400px; }
     footer{ text-align: center; }
     .footer-grid{ grid-template-columns: 1fr; }
@@ -449,7 +558,6 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
             <p class="filosofia-p">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, sapien non varius posuere, purus erat convallis velit, vitae tincidunt arcu nunc sed nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed efficitur, mauris at luctus posuere, erat neque tempus lorem, vitae facilisis odio erat ac nunc. Donec feugiat urna vel magna.
             </p>
-            <br>
             <a href="equipo.html#columba" class="btn-miembros">Descubre los miembros de nuestro equipo</a>
         </div>
     </div>
@@ -458,10 +566,29 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
 <div class="divider"></div>
 
 <!-- ========================
-     SECCIÓN 2 — CAMISETA
+     SECCIÓN 2 — PROYECTO (REDISEÑADO)
+======================== -->
+<section id="proyecto">
+    <div class="proyecto-wrapper">
+        <div class="proyecto-text reveal">
+            <h2>Nuestro Proyecto</h2>
+            <p>Conoce los detalles de nuestra temporada actual, donde la aerodinámica y la innovación se encuentran para alcanzar la victoria.</p>
+            <a href="proyecto.html#columba" class="btn-proyecto">Saber más</a>
+        </div>
+        <div class="proyecto-image-col reveal reveal-d1">
+            <div class="proyecto-img-container">
+                <img src="Coche_2025/2.png" alt="Coche Columba Racing">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ========================
+     SECCIÓN 3 — CAMISETA
 ======================== -->
 <section id="camiseta">
-    <p class="section-label reveal">Equipación oficial</p>
     <h2 class="camiseta-title reveal">Nuestra camiseta</h2>
     <div class="camiseta-grid">
         <div class="camiseta-card reveal">
@@ -477,21 +604,8 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
 
 <div class="divider"></div>
 
-<section id="proyecto">
-        <div class="proyecto-grid">
-            <div class="proyecto-text">
-                <h2 class="proyecto-title">Nuestro Proyecto</h2>
-                <p class="proyecto-desc">Conoce los detalles de nuestra temporada actual, donde la aerodinámica y la innovación se encuentran para alcanzar la victoria.</p>
-                <a href="proyecto.html#columba" class="btn-miembros">Saber más</a>
-            </div>
-            <img src="Coche_2025/2.png" alt="Coche Columba Racing" class="proyecto-img">
-        </div>
-    </section>
-
-<div class="divider"></div>
-
 <!-- ========================
-     SECCIÓN 3 — REDES SOCIALES
+     SECCIÓN 4 — REDES SOCIALES
 ======================== -->
 <section id="rrss">
     <h2 class="rrss-title reveal">Redes sociales</h2>

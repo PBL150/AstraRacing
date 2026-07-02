@@ -35,10 +35,6 @@
 html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg-deep);-webkit-font-smoothing:antialiased;}
 body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
 
-/* ============================================================
-   EXCEPCIÓN (Punto 1): Forzar colores originales de Astra 
-   en Navegación y Footer (Azul principal, Rojo secundario)
-============================================================ */
 /* Desktop Nav */
 .nav-main { 
     background:var(--surface); 
@@ -88,14 +84,13 @@ footer .footer-col ul li a::after {
 
 /* Fin Excepciones */
 
-
 /* ========================
    NAVEGACIÓN — DESKTOP
 ======================== */
 .nav-wrap{ position:fixed;top:0;left:0;width:100%; z-index:5000;display:flex;flex-direction:column; align-items:center;padding-top:22px; pointer-events:none; }
-.nav-main{ width:90%;max-width:1200px;height:68px;padding:0 24px; border-radius:16px;display:flex;justify-content:space-between; align-items:center;pointer-events:auto; transition:border-radius .4s var(--ease); position:relative;z-index:2; }
+.nav-main{ width:90%;max-width:1200px;height:75px;padding:0 24px; border-radius:16px;display:flex;justify-content:space-between; align-items:center;pointer-events:auto; transition:border-radius .4s var(--ease); position:relative;z-index:2; }
 .nav-main.sub-open{border-radius:16px 16px 0 0;}
-.nav-logo{height:38px;}
+.nav-logo{height:55px;} /* Logo más grande */
 .nav-links{display:flex;gap:8px;align-items:center;}
 .nav-links a{ color:var(--blanco);text-decoration:none;font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65; transition:background .25s,opacity .25s;white-space:nowrap; }
 .nav-links a:hover{background:rgba(102,34,29,.35);opacity:1;}
@@ -128,7 +123,7 @@ footer .footer-col ul li a::after {
     .nav-mob-close{ position:absolute;top:13px;right:13px;width:30px;height:30px;background:rgba(33,38,67,.4);border:1px solid var(--b-blue);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center; }
     .nav-mob-close::before,.nav-mob-close::after{content:'';position:absolute;width:14px;height:2px;background:white;transform:rotate(45deg);}
     .nav-mob-close::after{transform:rotate(-45deg);}
-    .nav-mob-logo{height:30px;margin-bottom:12px;}
+    .nav-mob-logo{height:40px;margin-bottom:12px;}
     .nav-mob-panel a.mob-page-link, .nav-mob-panel a.mob-inicio-link{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.95rem; text-transform:uppercase;letter-spacing:1px;padding:10px 16px; border-radius:10px;opacity:.7; transition:background .25s,opacity .25s; background:none;font-family:'Carter One',cursive;cursor:pointer; display:flex;align-items:center;justify-content:center;gap:7px; }
     .nav-mob-panel a.mob-page-link:hover, .nav-mob-panel a.mob-inicio-link:hover{background:rgba(102,34,29,.35);opacity:1;}
     .nav-mob-panel a.mob-page-link.page-active:hover,
@@ -143,7 +138,7 @@ footer .footer-col ul li a::after {
 }
 
 /* ========================
-   SECCIONES — pantalla completa (como index.html)
+   SECCIONES — pantalla completa
 ======================== */
 section{
     height: auto;
@@ -160,14 +155,16 @@ section{
 }
 
 #filosofia   { background: var(--bg-deep); }
-#camiseta    { background: var(--bg-alt);  }
-#rrss        { background: var(--bg-deep); }
+#proyecto    { background: var(--bg-alt); }
+#camiseta    { background: var(--bg-deep);  }
+#rrss        { background: var(--bg-alt); }
 
 /* Divisor Laquimia (Rojo principal) */
 .divider{height:1px;width:100%;scroll-snap-align:none;background:linear-gradient(90deg,transparent,#66221d,#a85b4a,#212643,transparent);}
 
 .reveal{opacity:0;transform:translateY(50px) scale(.96);transition:opacity 1.4s var(--ease),transform 1.4s var(--ease);will-change:transform,opacity;}
 .reveal.active{opacity:1;transform:translateY(0) scale(1);}
+.reveal-d1{ transition-delay:.15s; }
 
 /* ========================
    SECCIÓN 1 — FILOSOFÍA
@@ -189,7 +186,7 @@ section{
 }
 
 .filosofia-logo{
-    width: min(320px, 100%);
+    width: min(450px, 100%);  /* Logo más grande */
     height: auto;
     /* Brillo Laquimia (Rojo) */
     filter: drop-shadow(0 0 40px rgba(102,34,29,0.6));
@@ -241,7 +238,97 @@ section{
 }
 
 /* ========================
-   SECCIÓN 2 — CAMISETA
+   SECCIÓN 2 — PROYECTO (REDISEÑO CONSISTENTE)
+======================== */
+.proyecto-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+}
+
+.proyecto-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.proyecto-text h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 0;
+}
+
+.proyecto-text p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.85;
+    border-left: 2px solid var(--principal);
+    padding-left: 20px;
+    margin: 0;
+}
+
+/* Botón Proyecto (mismo estilo que btn-miembros) */
+.btn-proyecto {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--principal);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+    border: 1px solid transparent;
+    width: fit-content;
+}
+.btn-proyecto:hover {
+    background-color: transparent;
+    border-color: var(--principal);
+    transform: translateY(-2px);
+}
+
+.proyecto-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyecto-img-container {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--b-red);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    position: relative;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.proyecto-img-container:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 2px var(--principal);
+}
+
+.proyecto-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.5s var(--ease);
+}
+
+.proyecto-img-container:hover img {
+    transform: scale(1.04);
+}
+
+/* ========================
+   SECCIÓN 3 — CAMISETA
 ======================== */
 .section-label{
     font-size: .7rem;
@@ -304,16 +391,8 @@ section{
     color: rgba(255,255,255,0.4);
 }
 
-/* PROYECTO */
-#proyecto { background: var(--bg-alt); }
-.proyecto-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; width: 100%; align-items: center; }
-.proyecto-img{ width: 100%; border-radius: 16px; border: 1px solid var(--b-red); }
-.proyecto-text{ text-align: left; }
-.proyecto-title{ font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
-.proyecto-desc{ font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 30px; }
-
 /* ========================
-   SECCIÓN 3 — REDES SOCIALES
+   SECCIÓN 4 — REDES SOCIALES
 ======================== */
 .rrss-title{
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -383,8 +462,7 @@ section{
 .rrss-card:hover .rrss-name{ opacity: 1; }
 
 /* ========================
-   FOOTER (Estilos base heredados de Astraracing 
-   y forzados en la sección de excepciones arriba)
+   FOOTER
 ======================== */
 footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align:end;color:var(--blanco);}
 .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1200px;margin:0 auto;align-items:start;}
@@ -410,6 +488,29 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
     }
     .filosofia-text-col{ text-align: center; }
     .filosofia-p{ border-left: none; border-top: 2px solid var(--principal); padding-left: 0; padding-top: 16px; }
+    
+    .proyecto-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .proyecto-text {
+        text-align: center;
+        align-items: center;
+    }
+    .proyecto-text p {
+        border-left: none;
+        border-top: 2px solid var(--principal);
+        padding-left: 0;
+        padding-top: 16px;
+    }
+    .btn-proyecto {
+        align-self: center;
+    }
+    .proyecto-img-container {
+        max-width: 100%;
+    }
+    
     .camiseta-grid{ grid-template-columns: 1fr; max-width: 400px; }
     footer{ text-align: center; }
     .footer-grid{ grid-template-columns: 1fr; }
@@ -431,9 +532,6 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
 
 <body>
 
-<!-- ========================
-     NAVEGACIÓN — DESKTOP
-======================== -->
 <div class="nav-wrap">
     <nav class="nav-main" id="navMain">
         <img src="Logonegativo.png" alt="Logo" class="nav-logo">
@@ -445,7 +543,6 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
             </div>
             <a href="proyecto.html">Proyecto</a>
             <a href="competiciones.html">Competiciones</a>
-            <a href="patrocinador.html">Ser patrocinador</a>
             <div class="nav-inicio-container" id="equipoContainer">
                 <a href="equipo.html" class="nav-inicio-link page-active" id="equipoBtn">
                     Equipo <span class="chevron" id="equipoChevron"></span>
@@ -454,20 +551,17 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
         </div>
     </nav>
     <nav class="nav-sub" id="navSub">
-        <a href="#nosotros">Nosotros</a>
-        <a href="#coche-sec">Coche</a>
-        <a href="#donar">Impulsa</a>
-        <a href="#patrocinadores">Patrocinadores</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#coche-sec">Coche</a>
+        <a href="index.html#donar">Impulsa</a>
+        <a href="index.html#patrocinadores">Patrocinadores</a>
     </nav>
     <nav class="nav-sub" id="navSubEquipo">
         <a href="columbaracing.html">Columba Racing</a>
-        <a href="laquimiaracing.html">Laquimia Racing</a>
+        <a href="laquimiaracing.html" class="section-active">Laquimia Racing</a>
     </nav>
 </div>
 
-<!-- ========================
-     NAVEGACIÓN — MÓVIL
-======================== -->
 <div class="nav-mob-overlay" id="mobOverlay"></div>
 <div class="nav-mob-pill" id="mobPill">
     <div class="menu-toggle"><span id="ms1"></span><span id="ms2"></span><span id="ms3"></span></div>
@@ -480,10 +574,10 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
         Inicio <span class="chevron" id="mobChevron"></span>
     </a>
     <div class="nav-mob-sub" id="mobSub">
-        <a href="#nosotros">Nosotros</a>
-        <a href="#coche-sec">Coche</a>
-        <a href="#donar">Impulsa</a>
-        <a href="#patrocinadores">Patrocinadores</a>
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#coche-sec">Coche</a>
+        <a href="index.html#donar">Impulsa</a>
+        <a href="index.html#patrocinadores">Patrocinadores</a>
     </div>
 
     <a href="proyecto.html" class="mob-page-link">Proyecto</a>
@@ -494,10 +588,8 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
     </a>
     <div class="nav-mob-sub" id="mobSubEquipo">
         <a href="columbaracing.html">Columba Racing</a>
-        <a href="laquimiaracing.html">Laquimia Racing</a>
+        <a href="laquimiaracing.html" class="section-active">Laquimia Racing</a>
     </div>
-
-    <a href="patrocinador.html" class="mob-page-link">Ser patrocinador</a>
 </div>
 
 <section id="filosofia">
@@ -507,10 +599,27 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
         </div>
         <div class="filosofia-text-col reveal">
             <h1>Laquimia<br><span>Racing</span></h1>
-            <p class="filosofia-p"> Con la pasión y el corazón siempre por delante, Laquimia Racing es un equipo que viene a romper lo establecido dentro de la competición STEM más grande del mundo. Impulsados por una insaciable exploración de nuevos conceptos y una búsqueda que roza los límites de la razón humana, buscamos el 110% a través de la innovación y la creatividad. No venimos solo a fabricar un coche; venimos a crear algo totalmente nuevo. Esa es nuestra meta: fusionar la pasión, el amor por el detalle en cada pieza y la unión de este equipo para construir algo que vaya más allá de la ingeniería convencional. Otros de nuestros valores son la verdad y la integridad; creemos en ellos como si del núcleo de una estrella se tratase. Solo a través de ellos se consigue construir lo que verdaderamente importa.</p>
-            <p class="filosofia-p"> Porque es así, con la mirada en las estrellas y los pies en el suelo, como comienzan las grandes historias. Siempre innovando y disfrutando.</p>
-            <p class="filosofia-p"> Soñamos, transformamos y construimos. La suerte está echada.</p>
-            <a href="equipo.html#laquimia" class="btn-miembros">Descubre los miembros de nuestro equipo</a>
+            <p class="filosofia-p">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, sapien non varius posuere, purus erat convallis velit, vitae tincidunt arcu nunc sed nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed efficitur, mauris at luctus posuere, erat neque tempus lorem, vitae facilisis odio erat ac nunc. Donec feugiat urna vel magna.
+            </p>
+            <a href="equipo.html" class="btn-miembros">Descubre los miembros de nuestro equipo</a>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="proyecto">
+    <div class="proyecto-wrapper">
+        <div class="proyecto-text reveal">
+            <h2>Nuestro Proyecto</h2>
+            <p>Conoce los detalles de nuestra temporada actual, donde la aerodinámica y la innovación se encuentran para alcanzar la victoria.</p>
+            <a href="proyecto.html#laquimia" class="btn-proyecto">Saber más sobre el coche</a>
+        </div>
+        <div class="proyecto-image-col reveal reveal-d1">
+            <div class="proyecto-img-container">
+                <img src="Coche_2025/CocheLaquimia.png" alt="Coche Laquimia Racing">
+            </div>
         </div>
     </div>
 </section>
@@ -518,7 +627,6 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
 <div class="divider"></div>
 
 <section id="camiseta">
-    <p class="section-label reveal">Equipación oficial</p>
     <h2 class="camiseta-title reveal">Nuestra camiseta</h2>
     <div class="camiseta-grid">
         <div class="camiseta-card reveal">
@@ -534,25 +642,12 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
 
 <div class="divider"></div>
 
-<section id="proyecto">
-        <div class="proyecto-grid">
-            <div class="proyecto-text">
-                <h2 class="proyecto-title">Nuestro Proyecto</h2>
-                <p class="proyecto-desc">Conoce los detalles de nuestra temporada actual, donde la aerodinámica y la innovación se encuentran para alcanzar la victoria.</p>
-                <a href="proyecto.html#laquimia" class="btn-miembros">Saber más</a>
-            </div>
-            <img src="Coche_2025/CocheLaquimia.png" alt="Coche Laquimia Racing" class="proyecto-img">
-        </div>
-    </section>
-
-<div class="divider"></div>
-
 <section id="rrss">
     <h2 class="rrss-title reveal">Redes sociales</h2>
     <p class="rrss-sub reveal">Sigue a Laquimia Racing y no te pierdas ninguna novedad</p>
     <div class="rrss-grid reveal">
 
-        <a href="https://www.instagram.com/astraracing_" target="_blank" rel="noopener" class="rrss-card">
+        <a href="https://www.instagram.com/laquimiaracingteam/" target="_blank" rel="noopener" class="rrss-card">
             <svg class="rrss-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.8"/>
                 <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8"/>
@@ -590,18 +685,12 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
     <div class="footer-grid">
         <div class="footer-col"><h4>Legal</h4><ul><li><a href="aviso-legal.html">Aviso legal</a></li></ul></div>
         <div class="footer-col"><h4>Participa</h4><ul><li><a href="https://forms.gle/9HtCJhGGW6w2E2Rh6">Formulario de Patrocinio</a></li></ul></div>
-        <div class="footer-col">
-            <h4>Mapa del Sitio</h4>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="proyecto.html">Proyecto</a></li>
-                <li><a href="competiciones.html">Competiciones</a></li>
-                <li><a href="patrocinador.html">Ser patrocinador</a></li>
-                <li><a href="equipo.html">Equipo</a></li>
-                <li><a href="columbaracing.html">Columba Racing</a></li>
-                <li><a href="laquimiaracing.html">Laquimia Racing</a></li>
-            </ul>
-        </div>
+        <div class="footer-col"><h4>Mapa del Sitio</h4><ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="proyecto.html">Proyecto</a></li>
+            <li><a href="competiciones.html">Competiciones</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+        </ul></div>
         <div class="footer-col">
             <h4>Contacto</h4>
             <ul>
@@ -609,7 +698,6 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
                 <li><a href="https://www.instagram.com/astraracing_" target="_blank" rel="noopener">Instagram</a></li>
                 <li><a href="https://www.youtube.com/@AT33StemRacingTeam" target="_blank" rel="noopener">YouTube</a></li>
                 <li><a href="https://x.com/AT33RacingTeam" target="_blank" rel="noopener">Twitter</a></li>
-                <li><a href="https://www.tiktok.com/@at33.stemracingteam" target="_blank" rel="noopener">TikTok</a></li>
             </ul>
         </div>
     </div>
