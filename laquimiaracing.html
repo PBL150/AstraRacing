@@ -304,6 +304,14 @@ section{
     color: rgba(255,255,255,0.4);
 }
 
+/* PROYECTO */
+#proyecto { background: var(--bg-alt); }
+.proyecto-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; width: 100%; align-items: center; }
+.proyecto-img{ width: 100%; border-radius: 16px; border: 1px solid var(--b-red); }
+.proyecto-text{ text-align: left; }
+.proyecto-title{ font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
+.proyecto-desc{ font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 30px; }
+
 /* ========================
    SECCIÓN 3 — REDES SOCIALES
 ======================== */
@@ -431,7 +439,7 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
         <img src="Logonegativo.png" alt="Logo" class="nav-logo">
         <div class="nav-links">
             <div class="nav-inicio-container" id="inicioContainer">
-                <a href="index.html" class="nav-inicio-link page-active" id="inicioBtn">
+                <a href="index.html" class="nav-inicio-link" id="inicioBtn">
                     Inicio <span class="chevron" id="chevron"></span>
                 </a>
             </div>
@@ -439,7 +447,7 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
             <a href="competiciones.html">Competiciones</a>
             <a href="patrocinador.html">Ser patrocinador</a>
             <div class="nav-inicio-container" id="equipoContainer">
-                <a href="equipo.html" class="nav-inicio-link" id="equipoBtn">
+                <a href="equipo.html" class="nav-inicio-link page-active" id="equipoBtn">
                     Equipo <span class="chevron" id="equipoChevron"></span>
                 </a>
             </div>
@@ -468,7 +476,7 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
     <div class="nav-mob-close" id="mobClose"></div>
     <img src="Logonegativo.png" alt="Logo" class="nav-mob-logo">
 
-    <a href="index.html" class="mob-inicio-link page-active" id="mobInicioBtn">
+    <a href="index.html" class="mob-inicio-link" id="mobInicioBtn">
         Inicio <span class="chevron" id="mobChevron"></span>
     </a>
     <div class="nav-mob-sub" id="mobSub">
@@ -481,7 +489,7 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
     <a href="proyecto.html" class="mob-page-link">Proyecto</a>
     <a href="competiciones.html" class="mob-page-link">Competiciones</a>
 
-    <a href="equipo.html" class="mob-inicio-link" id="mobEquipoBtn">
+    <a href="equipo.html" class="mob-inicio-link page-active" id="mobEquipoBtn">
         Equipo <span class="chevron" id="mobEquipoChevron"></span>
     </a>
     <div class="nav-mob-sub" id="mobSubEquipo">
@@ -499,9 +507,9 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
         </div>
         <div class="filosofia-text-col reveal">
             <h1>Laquimia<br><span>Racing</span></h1>
-            <p class="filosofia-p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis, sapien non varius posuere, purus erat convallis velit, vitae tincidunt arcu nunc sed nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed efficitur, mauris at luctus posuere, erat neque tempus lorem, vitae facilisis odio erat ac nunc. Donec feugiat urna vel magna.
-            </p>
+            <p class="filosofia-p"> Con la pasión y el corazón siempre por delante, Laquimia Racing es un equipo que viene a romper lo establecido dentro de la competición STEM más grande del mundo. Impulsados por una insaciable exploración de nuevos conceptos y una búsqueda que roza los límites de la razón humana, buscamos el 110% a través de la innovación y la creatividad. No venimos solo a fabricar un coche; venimos a crear algo totalmente nuevo. Esa es nuestra meta: fusionar la pasión, el amor por el detalle en cada pieza y la unión de este equipo para construir algo que vaya más allá de la ingeniería convencional. Otros de nuestros valores son la verdad y la integridad; creemos en ellos como si del núcleo de una estrella se tratase. Solo a través de ellos se consigue construir lo que verdaderamente importa.</p>
+            <p class="filosofia-p"> Porque es así, con la mirada en las estrellas y los pies en el suelo, como comienzan las grandes historias. Siempre innovando y disfrutando.</p>
+            <p class="filosofia-p"> Soñamos, transformamos y construimos. La suerte está echada.</p>
             <a href="equipo.html#laquimia" class="btn-miembros">Descubre los miembros de nuestro equipo</a>
         </div>
     </div>
@@ -523,6 +531,19 @@ footer{background:#0d0d0d;padding:80px 8% 40px;text-align:left;scroll-snap-align
         </div>
     </div>
 </section>
+
+<div class="divider"></div>
+
+<section id="proyecto">
+        <div class="proyecto-grid">
+            <div class="proyecto-text">
+                <h2 class="proyecto-title">Nuestro Proyecto</h2>
+                <p class="proyecto-desc">Conoce los detalles de nuestra temporada actual, donde la aerodinámica y la innovación se encuentran para alcanzar la victoria.</p>
+                <a href="proyecto.html#laquimia" class="btn-miembros">Saber más</a>
+            </div>
+            <img src="Coche_2025/CocheLaquimia.png" alt="Coche Laquimia Racing" class="proyecto-img">
+        </div>
+    </section>
 
 <div class="divider"></div>
 

@@ -243,6 +243,14 @@ section{
     color: rgba(255,255,255,0.4);
 }
 
+/* PROYECTO */
+#proyecto { background: var(--bg-alt); }
+.proyecto-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; width: 100%; align-items: center; }
+.proyecto-img{ width: 100%; border-radius: 16px; border: 1px solid var(--b-blue); }
+.proyecto-text{ text-align: left; }
+.proyecto-title{ font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
+.proyecto-desc{ font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 30px; }
+
 /* ========================
    SECCIÓN 3 — REDES SOCIALES
 ======================== */
@@ -367,7 +375,7 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
         <img src="Logonegativo.png" alt="Logo" class="nav-logo">
         <div class="nav-links">
             <div class="nav-inicio-container" id="inicioContainer">
-                <a href="index.html" class="nav-inicio-link page-active" id="inicioBtn">
+                <a href="index.html" id="inicioBtn">
                     Inicio <span class="chevron" id="chevron"></span>
                 </a>
             </div>
@@ -375,7 +383,7 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
             <a href="competiciones.html">Competiciones</a>
             <a href="patrocinador.html">Ser patrocinador</a>
             <div class="nav-inicio-container" id="equipoContainer">
-                <a href="equipo.html" class="nav-inicio-link" id="equipoBtn">
+                <a href="equipo.html" class="nav-inicio-link page-active" id="equipoBtn">
                     Equipo <span class="chevron" id="equipoChevron"></span>
                 </a>
             </div>
@@ -404,7 +412,7 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     <div class="nav-mob-close" id="mobClose"></div>
     <img src="Logonegativo.png" alt="Logo" class="nav-mob-logo">
 
-    <a href="index.html" class="mob-inicio-link page-active" id="mobInicioBtn">
+    <a href="index.html" class="mob-inicio-link" id="mobInicioBtn">
         Inicio <span class="chevron" id="mobChevron"></span>
     </a>
     <div class="nav-mob-sub" id="mobSub">
@@ -417,7 +425,7 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
     <a href="proyecto.html" class="mob-page-link">Proyecto</a>
     <a href="competiciones.html" class="mob-page-link">Competiciones</a>
 
-    <a href="equipo.html" class="mob-inicio-link" id="mobEquipoBtn">
+    <a href="equipo.html" class="mob-inicio-link page-active" id="mobEquipoBtn">
         Equipo <span class="chevron" id="mobEquipoChevron"></span>
     </a>
     <div class="nav-mob-sub" id="mobSubEquipo">
@@ -466,6 +474,19 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
         </div>
     </div>
 </section>
+
+<div class="divider"></div>
+
+<section id="proyecto">
+        <div class="proyecto-grid">
+            <div class="proyecto-text">
+                <h2 class="proyecto-title">Nuestro Proyecto</h2>
+                <p class="proyecto-desc">Conoce los detalles de nuestra temporada actual, donde la aerodinámica y la innovación se encuentran para alcanzar la victoria.</p>
+                <a href="proyecto.html#columba" class="btn-miembros">Saber más</a>
+            </div>
+            <img src="Coche_2025/2.png" alt="Coche Columba Racing" class="proyecto-img">
+        </div>
+    </section>
 
 <div class="divider"></div>
 
